@@ -1,0 +1,50 @@
+import React from 'react';
+import { CORE_FOCUS_ITEMS } from '../data/content';
+import { Cpu, LineChart, Binary, Layers } from 'lucide-react';
+
+export const CoreFocusStrip: React.FC = () => {
+  const getIcon = (idx: number) => {
+    switch (idx) {
+      case 0: return <Cpu className="w-5 h-5 text-emerald-400" />;
+      case 1: return <LineChart className="w-5 h-5 text-cyan-400" />;
+      case 2: return <Binary className="w-5 h-5 text-blue-400" />;
+      case 3: return <Layers className="w-5 h-5 text-purple-400" />;
+      default: return <Cpu className="w-5 h-5 text-emerald-400" />;
+    }
+  };
+
+  return (
+    <section className="bg-[#101216] border-b border-[#242830] py-8 relative" id="core-focus-strip">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {CORE_FOCUS_ITEMS.map((item, idx) => (
+            <div
+              key={item.number}
+              className="group p-5 rounded-lg bg-[#14171C] border border-[#242830] hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden"
+            >
+              {/* Subtle accent hover bar */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-mono text-2xl font-bold text-emerald-400/80 group-hover:text-emerald-400 transition-colors">
+                  {item.number}
+                </span>
+                <div className="p-2 rounded bg-[#101216] border border-[#242830] group-hover:border-emerald-500/30 transition-colors">
+                  {getIcon(idx)}
+                </div>
+              </div>
+
+              <h3 className="font-mono text-xs font-bold text-[#F5F5F5] tracking-widest uppercase mb-1.5 group-hover:text-emerald-300 transition-colors">
+                {item.title}
+              </h3>
+
+              <p className="font-sans text-xs text-[#9299A5] leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
