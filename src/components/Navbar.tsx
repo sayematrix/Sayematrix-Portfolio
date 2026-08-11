@@ -79,9 +79,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="font-sans text-sm font-bold tracking-widest text-[#F5F5F5] group-hover:text-emerald-400 transition-colors">
                 SAYEMATRIX
               </span>
-              <span className="hidden sm:block text-[10px] font-mono text-[#9299A5] tracking-tight">
-                SYSTEMS / RESEARCH / VENTURES
-              </span>
             </div>
           </button>
 
