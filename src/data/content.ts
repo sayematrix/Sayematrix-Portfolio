@@ -1,4 +1,8 @@
 import { Project, ResearchNote, ExpertiseCategory, Venture, EcosystemDomain, TimelineMilestone } from '../types';
+import { RESEARCH_PAPERS } from './researchPapers';
+
+export const RESEARCH_NOTES: ResearchNote[] = RESEARCH_PAPERS;
+export { RESEARCH_PAPERS };
 
 export const PERSONAL_INFO = {
   name: 'SAYEM',
@@ -41,8 +45,15 @@ export const PERSONAL_INFO = {
     'Learning', 'Faith', 'Fitness', 'Discipline', 'Creativity', 'Technology', 'Business', 'Personal Development'
   ],
   contact: {
-    linkedin: 'https://linkedin.com/in/sayematrix',
-    email: 'contact@sayematrix.com',
+    email: 'sayem.professiona@gmail.com',
+    emailNote: 'For professional inquiries and opportunities.',
+    linkedin: 'https://www.linkedin.com/in/sayematrix/',
+    linkedinNote: 'For professional networking and industry connections.',
+    github: 'https://github.com/sayematrix',
+    githubNote: 'For technical projects, systems, and experiments.',
+    sayematrixNote: 'For my digital work, ideas, content, and ecosystem.',
+    instagram: 'https://instagram.com/sayematrix',
+    youtube: 'https://youtube.com/@sayematrix',
     location: 'Bangladesh'
   }
 };
@@ -369,168 +380,6 @@ export const SELECTED_PROJECTS: Project[] = [
       'Expanding macro research scope to global liquidity cycles'
     ],
     tags: ['Research', 'Data', 'Strategy', 'Intelligence']
-  }
-];
-
-export const RESEARCH_NOTES: ResearchNote[] = [
-  {
-    id: 'note-001',
-    noteNumber: '#001',
-    title: 'MARKET MICROSTRUCTURE',
-    subtitle: 'Understanding how financial markets actually move under order flow dynamics.',
-    excerpt: 'Examining the interplay between limit order books, market maker inventory risk, and high-frequency liquidity provider behavior.',
-    category: 'FINANCE',
-    date: '2026-02-15',
-    readTime: '8 min read',
-    tags: ['Finance', 'Quant', 'Markets', 'Microstructure'],
-    content: `
-Market prices do not move simply because of vague "buyer versus seller" counts; they move because of asymmetric order flow aggressively consuming available depth on the order book.
-
-### Core Order Book Mechanics
-1. **Limit Orders**: Provide passive liquidity at specified price levels.
-2. **Market Orders**: Consume passive liquidity instantly, crossing the bid-ask spread.
-3. **Spread & Slippage**: The spread reflects market maker compensation for inventory risk and adverse selection.
-
-When an institutional participant executes a large algorithmic block (e.g., VWAP/TWAP), liquidity is swept through multiple price levels, creating temporary price impact before arbitrageurs re-balance correlated assets.
-
-### Mathematical Representation
-Order Flow Imbalance (OFI) at timestamp t can be expressed as:
-$$OFI_t = \\Delta V_{bid,t} - \\Delta V_{ask,t}$$
-
-Where changes in volume at the best bid and ask indicate net aggressive pressure.
-    `,
-    keyTakeaways: [
-      'Price changes are driven by market orders crossing the bid-ask spread to absorb limit order liquidity.',
-      'Order Flow Imbalance (OFI) provides short-term predictive signal for tick directional movement.',
-      'Algorithmic execution strategies must minimize market impact by splitting orders intelligently.'
-    ],
-    codeSnippet: `# Order Flow Imbalance (OFI) Calculation Example
-def calculate_ofi(bid_price, bid_size, ask_price, ask_size):
-    delta_bid_size = bid_size.diff()
-    delta_ask_size = ask_size.diff()
-    
-    # Logic for price level movement
-    ofi = (delta_bid_size * (bid_price.diff() >= 0)) - (delta_ask_size * (ask_price.diff() <= 0))
-    return ofi`
-  },
-  {
-    id: 'note-002',
-    noteNumber: '#002',
-    title: 'ALGORITHMIC BACKTESTING ARCHITECTURES',
-    subtitle: 'Avoiding look-ahead bias and overfitting in quantitative strategy design.',
-    excerpt: 'A comprehensive methodology for constructing event-driven backtesting engines that mirror real-world market latency and slippage.',
-    category: 'QUANT',
-    date: '2026-03-01',
-    readTime: '12 min read',
-    tags: ['Quant', 'Backtesting', 'Algorithmic Trading', 'Python'],
-    content: `
-The majority of retail quantitative strategy backtests are illusory. They suffer from subtle look-ahead bias, curve-fitting on historical noise, and unrealistic execution assumptions.
-
-### Common Pitfalls in Strategy Design
-- **Look-Ahead Bias**: Utilizing future candle close data within signal generation calculation.
-- **Survivorship Bias**: Filtering out delisted or defunct symbols from historical universe data.
-- **Slippage Ignorance**: Assuming fills at theoretical mid-prices during high-volatility releases.
-
-### Walk-Forward Optimization
-Instead of optimizing parameters on 100% of the dataset, split historical data into rolling in-sample (train) and out-of-sample (test) segments.
-    `,
-    keyTakeaways: [
-      'Event-driven architecture is superior to vectorized backtests when evaluating trade execution logic.',
-      'Monte Carlo simulations stress-test strategy resilience against randomized sequence returns.',
-      'Transaction costs and slippage must be modeled dynamically based on market volatility.'
-    ],
-    codeSnippet: `class EventDrivenBacktester:
-    def __init__(self, data_feed, execution_handler, risk_manager):
-        self.data = data_feed
-        self.executor = execution_handler
-        self.risk = risk_manager
-
-    def run(self):
-        while self.data.has_next():
-            event = self.data.get_next_tick()
-            if self.risk.validate(event):
-                self.executor.execute(event)`
-  },
-  {
-    id: 'note-003',
-    noteNumber: '#003',
-    title: 'MULTI-AGENT AI WORKFLOWS',
-    subtitle: 'Structuring deterministic orchestration across LLM agents.',
-    excerpt: 'How to combine autonomous AI agents into disciplined computational pipelines that execute complex multi-step technical workflows.',
-    category: 'AI',
-    date: '2026-03-20',
-    readTime: '10 min read',
-    tags: ['AI', 'Automation', 'Multi-Agent', 'Architecture'],
-    content: `
-Single-prompt LLM interactions fail when tasked with enterprise processes requiring state management, tool calling, and deterministic error handling.
-
-### The Directed Acyclic Graph (DAG) Model
-By structuring AI interactions as nodes within a state graph, each agent is given a tightly scoped responsibility:
-1. **Planner Agent**: Deconstructs objective into atomic steps.
-2. **Executor Agent**: Calls external APIs / tools with schema validation.
-3. **Critic Agent**: Verifies output quality against pre-defined constraints.
-
-This approach eliminates hallucinations and ensures consistent operational outcomes.
-    `,
-    keyTakeaways: [
-      'Agent scope should be kept narrow to maximize schema compliance and output accuracy.',
-      'State graphs allow deterministic rollbacks when an agent step fails validation.',
-      'Structured JSON schemas enforce seamless handoffs between specialized agents.'
-    ],
-    codeSnippet: `// Deterministic Agent Step Example
-interface AgentStep<TInput, TOutput> {
-  id: string;
-  inputSchema: ZodSchema<TInput>;
-  outputSchema: ZodSchema<TOutput>;
-  execute(input: TInput): Promise<TOutput>;
-}`
-  },
-  {
-    id: 'note-004',
-    noteNumber: '#004',
-    title: 'MACROECONOMIC LIQUIDITY DRIVERS',
-    subtitle: 'Tracking central bank balance sheets, RRP, and TGA dynamics.',
-    excerpt: 'Analyzing how global fiat liquidity impulses dictate risk asset valuations across crypto, equities, and commodities.',
-    category: 'MACRO',
-    date: '2026-04-05',
-    readTime: '15 min read',
-    tags: ['Macro', 'Finance', 'Liquidity', 'Markets'],
-    content: `
-Asset prices at a macro scale are heavily governed by net central bank liquidity rather than individual corporate earnings.
-
-### Net Liquidity Formula
-$$USD\\ Net\\ Liquidity = Fed\\ Balance\\ Sheet - Treasury\\ General\\ Account\\ (TGA) - Reverse\\ Repo\\ (RRP)$$
-
-Tracking weekly shifts in TGA balances and Reverse Repo facility usage provides high-probability directional bias for broad financial markets.
-    `,
-    keyTakeaways: [
-      'Net USD liquidity expansion correlates strongly with risk asset rallies.',
-      'Treasury General Account drain adds net liquidity into the commercial banking system.',
-      'Global macro signals dictate quantitative positioning strategies.'
-    ]
-  },
-  {
-    id: 'note-005',
-    noteNumber: '#005',
-    title: 'AUTONOMOUS QUANTITATIVE RISK ENGINES',
-    subtitle: 'Dynamic volatility targeting and draw-down circuit breakers.',
-    excerpt: 'Implementing real-time VaR (Value at Risk) metrics and position-sizing algorithms to safeguard capital in turbulent markets.',
-    category: 'STRATEGY',
-    date: '2026-05-12',
-    readTime: '9 min read',
-    tags: ['Quant', 'Risk Management', 'Finance', 'Strategy'],
-    content: `
-Systematic risk management is the single determinant of long-term capital survival. Without dynamic position sizing based on real-time volatility, any profitable strategy will eventually suffer catastrophic drawdown.
-
-### Volatility Targeting Algorithm
-Position sizes should adjust inversely to asset ATR (Average True Range) or implied volatility:
-$$Position\\ Size = \\frac{Account\\ Risk\\ \\% \\times Total\\ Equity}{ATR \\times Point\\ Value}$$
-    `,
-    keyTakeaways: [
-      'Volatility-targeted portfolios experience significantly smoother equity curves.',
-      'Automated drawdown circuit breakers override strategy execution when safety limits are breached.',
-      'Risk management must operate independently from strategy signal generation.'
-    ]
   }
 ];
 

@@ -100,10 +100,19 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
             <ul className="space-y-2 text-xs font-mono">
               <li>
                 <a
+                  href={`mailto:${PERSONAL_INFO.contact.email}`}
+                  className="hover:text-[#F5F5F5] flex items-center justify-between transition-colors"
+                >
+                  <span>Email</span>
+                  <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                </a>
+              </li>
+              <li>
+                <a
                   href={PERSONAL_INFO.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F5F5F5] flex items-center gap-1 transition-colors"
+                  className="hover:text-[#F5F5F5] flex items-center justify-between transition-colors"
                 >
                   <span>LinkedIn</span>
                   <ArrowUpRight className="w-3 h-3 text-emerald-400" />
@@ -111,11 +120,35 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
               </li>
               <li>
                 <a
-                  href={`mailto:${PERSONAL_INFO.contact.email}`}
-                  className="hover:text-[#F5F5F5] flex items-center gap-1 transition-colors"
+                  href={PERSONAL_INFO.contact.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F5F5F5] flex items-center justify-between transition-colors"
                 >
-                  <span>Email</span>
+                  <span>GitHub</span>
                   <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PERSONAL_INFO.contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F5F5F5] flex items-center justify-between transition-colors"
+                >
+                  <span>SAYEMATRIX (IG)</span>
+                  <ArrowUpRight className="w-3 h-3 text-pink-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PERSONAL_INFO.contact.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F5F5F5] flex items-center justify-between transition-colors"
+                >
+                  <span>SAYEMATRIX (YT)</span>
+                  <ArrowUpRight className="w-3 h-3 text-red-400" />
                 </a>
               </li>
               <li className="pt-2 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
