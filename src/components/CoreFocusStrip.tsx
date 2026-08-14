@@ -14,13 +14,13 @@ export const CoreFocusStrip: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#101216] border-b border-[#242830] py-8 relative" id="core-focus-strip">
+    <section className="bg-[#041618] border-b border-[#0E353C] py-8 relative" id="core-focus-strip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {CORE_FOCUS_ITEMS.map((item, idx) => (
             <div
               key={item.number}
-              className="group p-5 rounded-lg bg-[#14171C] border border-[#242830] hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden"
+              className="group p-5 rounded-lg bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/50 hover:bg-[#0A2B30] transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden shadow-sm"
             >
               {/* Subtle accent hover bar */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -29,16 +29,16 @@ export const CoreFocusStrip: React.FC = () => {
                 <span className="font-mono text-2xl font-bold text-emerald-400/80 group-hover:text-emerald-400 transition-colors">
                   {item.number}
                 </span>
-                <div className="p-2 rounded bg-[#101216] border border-[#242830] group-hover:border-emerald-500/30 transition-colors">
+                <div className="p-2 rounded bg-[#031214] border border-[#0E353C] group-hover:border-emerald-500/30 transition-colors">
                   {getIcon(idx)}
                 </div>
               </div>
 
-              <h3 className="font-mono text-xs font-bold text-[#F5F5F5] tracking-widest uppercase mb-1.5 group-hover:text-emerald-300 transition-colors">
+              <h3 className="font-mono text-xs font-bold text-[#F8FAFC] tracking-widest uppercase mb-1.5 group-hover:text-emerald-300 transition-colors">
                 {item.title}
               </h3>
 
-              <p className="font-sans text-xs text-[#9299A5] leading-relaxed">
+              <p className="font-sans text-xs text-[#94A3B8] leading-relaxed">
                 {item.description}
               </p>
             </div>

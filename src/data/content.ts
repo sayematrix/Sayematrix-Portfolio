@@ -8,23 +8,23 @@ export const PERSONAL_INFO = {
   name: 'SAYEM',
   brand: 'SAYEMATRIX',
   company: 'SANR Corporation Limited',
-  tagline: 'Founder. Builder. Systems Thinker.',
-  headline: 'Building at the intersection of AI, Automation, Financial Intelligence, and Digital Systems.',
-  subheadline: 'I research complex problems, build practical systems, and turn ideas into technology, tools, digital products, and long-term ventures.',
-  primaryStatement: 'Building systems, not just projects.',
-  location: 'Bangladesh',
+  tagline: 'Founder • Systems Professional • Quantitative Researcher',
+  headline: 'Building at the intersection of AI, Automation, Financial Technology, and Quantitative Systems.',
+  subheadline: 'Focused on multi-agent AI, financial market technology, automated workflow infrastructure, and quantitative decision platforms.',
+  primaryStatement: 'Engineering resilient systems, quantitative tools, and scalable ventures.',
+  location: 'Bangladesh · Remote — Worldwide',
   education: 'Southeast University',
   roles: [
     'Founder | SANR Corporation Limited',
-    'Creator & Builder | SAYEMATRIX',
-    'AI • Automation • FinTech • Financial Intelligence',
-    'Quantitative Analysis • Digital Systems • Research',
+    'Creator & Systems Architect | SAYEMATRIX',
+    'AI & Automation • Financial Technology & Systems',
+    'Quantitative Analysis • Market Systems • Research',
   ],
-  bioSummary: `AI, automation, financial technology, and financial markets enthusiast focused on building intelligent systems, quantitative tools, automation workflows, and digital products.`,
+  bioSummary: `Systems-focused professional, technology founder, and quantitative practitioner building at the convergence of AI, financial engineering, and automated digital infrastructure.`,
   fullBioParagraphs: [
-    `Building at the intersection of AI, Automation, Financial Intelligence, and Financial Markets—with the goal of turning complex knowledge into intelligent systems, tools, and businesses.`,
-    `I am interested in how technology, finance, and intelligent systems can work together to solve real problems, improve decision-making, and create better ways of working.`,
-    `Through SANR Corporation Limited and the SAYEMATRIX ecosystem, I explore multi-disciplinary research, practical software engineering, quantitative finance, and digital infrastructure to build long-term value.`
+    `Engineers multi-agent AI workflows, financial analytical engines, and automated digital architecture to solve complex operational and decision-making challenges.`,
+    `Focuses on combining quantitative modeling, high-throughput algorithmic workflows, and market technology to extract actionable intelligence and improve systemic efficiency.`,
+    `Through SANR Corporation Limited and the SAYEMATRIX ecosystem, conducts multidisciplinary technical research and develops proprietary digital systems for long-term venture growth.`
   ],
   philosophies: [
     'RESEARCH DEEPLY.',
@@ -32,11 +32,11 @@ export const PERSONAL_INFO = {
     'CREATE LONG-TERM VALUE.'
   ],
   workingPrinciples: [
-    'Learn Deeply',
-    'Build Practically',
-    'Test in Reality',
-    'Improve Continuously',
-    'Create Long-Term Value'
+    'Research Deeply',
+    'Build Systematically',
+    'Validate in Production',
+    'Iterate Continuously',
+    'Deliver Enduring Value'
   ],
   operatingLoop: [
     'Faith', 'Learn', 'Build', 'Earn', 'Create', 'Grow', 'Impact'
@@ -51,10 +51,12 @@ export const PERSONAL_INFO = {
     linkedinNote: 'For professional networking and industry connections.',
     github: 'https://github.com/sayematrix',
     githubNote: 'For technical projects, systems, and experiments.',
-    sayematrixNote: 'For my digital work, ideas, content, and ecosystem.',
+    telegram: 'https://t.me/sayematrix',
+    telegramNote: 'For direct messaging and real-time engagement.',
+    sayematrixNote: 'For digital work, ideas, content, and ecosystem.',
     instagram: 'https://instagram.com/sayematrix',
     youtube: 'https://youtube.com/@sayematrix',
-    location: 'Bangladesh'
+    location: 'Bangladesh · Remote — Worldwide'
   }
 };
 
@@ -62,17 +64,17 @@ export const CORE_FOCUS_ITEMS = [
   {
     number: '01',
     title: 'AI & AUTOMATION',
-    description: 'Intelligent multi-agent systems, automated workflows, and cognitive decision tools.'
+    description: 'Intelligent multi-agent architectures, automated workflow pipelines, and cognitive decision tools.'
   },
   {
     number: '02',
     title: 'FINANCIAL TECHNOLOGY',
-    description: 'Algorithmic tools, market analytical engines, and quantitative infrastructure.'
+    description: 'Algorithmic trading engines, financial data analytics, and quantitative risk infrastructure.'
   },
   {
     number: '03',
     title: 'QUANTITATIVE SYSTEMS',
-    description: 'Mathematical market modeling, backtesting frameworks, and systematic risk management.'
+    description: 'Mathematical market modeling, tick-level backtesting frameworks, and systematic risk management.'
   },
   {
     number: '04',
@@ -84,33 +86,38 @@ export const CORE_FOCUS_ITEMS = [
 export const CURRENT_FOCUS_GRID = [
   {
     number: '01',
-    title: 'AI-POWERED SYSTEMS',
-    description: 'Developing autonomous agentic workflows and context-aware computational decision engines.'
+    title: 'AI-POWERED FINANCIAL SYSTEMS',
+    description: 'Architecting context-aware AI models and sub-second RAG engines for real-time financial market intelligence.'
   },
   {
     number: '02',
-    title: 'AUTOMATION WORKFLOWS',
-    description: 'Engineering resilient backend pipelines that automate complex business and digital tasks.'
+    title: 'QUANTITATIVE TRADING & MARKET INTELLIGENCE',
+    description: 'Developing multi-asset backtesting frameworks, Expert Advisors (MQL5/Python), and market microstructure analysis.'
   },
   {
     number: '03',
-    title: 'FINANCIAL TECHNOLOGIES',
-    description: 'Architecting market technology interfaces, liquidity metrics, and portfolio tracking tools.'
+    title: 'FINANCIAL AUTOMATION',
+    description: 'Engineering resilient backend data pipelines and automated reporting workflows for financial operations.'
   },
   {
     number: '04',
-    title: 'QUANTITATIVE TOOLS',
-    description: 'Building custom backtesting routines, Expert Advisors (MQL5/Python), and risk engines.'
+    title: 'AI WORKFLOW AUTOMATION',
+    description: 'Building autonomous multi-agent orchestration pipelines that streamline complex technical and operational tasks.'
   },
   {
     number: '05',
-    title: 'DIGITAL PRODUCTS',
-    description: 'Designing structured digital knowledge bases, productivity platforms, and web assets.'
+    title: 'FINANCIAL DATA & ANALYTICS',
+    description: 'Designing real-time liquidity indicators, volatility metrics, and portfolio risk management dashboards.'
   },
   {
     number: '06',
-    title: 'RESEARCH & INTELLIGENCE',
-    description: 'Publishing deep analytical notes across macroeconomic, technological, and market domains.'
+    title: 'DIGITAL PRODUCTS & INFRASTRUCTURE',
+    description: 'Constructing modular digital tools, structured knowledge repositories, and web assets for global platforms.'
+  },
+  {
+    number: '07',
+    title: 'EMERGING FINANCIAL TECHNOLOGIES',
+    description: 'Researching macroeconomic liquidity, decentralized financial protocols, and low-latency execution architectures.'
   }
 ];
 
@@ -119,107 +126,90 @@ export const EXPERTISE_CATEGORIES: ExpertiseCategory[] = [
     id: 'ai-automation',
     number: '01',
     title: 'AI & AUTOMATION',
-    subtitle: 'Building cognitive agents and automated operational engines',
+    subtitle: 'Cognitive agent architectures and operational workflow automation',
     iconName: 'Bot',
     skills: [
       'Artificial Intelligence',
-      'AI Automation',
-      'AI Systems Design',
-      'AI Workflow Automation',
-      'Intelligent Automation',
-      'Automation Engineering'
+      'AI Automation Engineering',
+      'Multi-Agent Systems Design',
+      'Workflow Automation Pipelines',
+      'LLM RAG & Knowledge Graphs',
+      'Autonomous Task Orchestration'
     ]
   },
   {
     id: 'fintech-quant',
     number: '02',
     title: 'FINANCIAL TECHNOLOGY & QUANTITATIVE SYSTEMS',
-    subtitle: 'Systematic financial engineering and statistical modeling',
+    subtitle: 'Systematic financial engineering, algorithmic models, and risk analytics',
     iconName: 'LineChart',
     skills: [
       'Quantitative Finance & Modeling',
-      'Financial Analysis',
+      'Financial Systems Architecture',
       'Financial Risk Management',
-      'Portfolio Management',
-      'Asset Allocation & Diversification',
-      'Financial Modeling',
-      'Risk & Money Management',
-      'Financial Technology'
+      'Portfolio Optimization & Asset Allocation',
+      'Algorithmic Financial Analysis',
+      'Risk & Capital Management'
     ]
   },
   {
     id: 'market-tech',
     number: '03',
     title: 'MARKET TECHNOLOGY & SYSTEMS',
-    subtitle: 'High-frequency algorithmic execution and strategy backtesting',
+    subtitle: 'Algorithmic execution frameworks and strategy backtesting engines',
     iconName: 'Cpu',
     skills: [
-      'Algorithmic Trading',
-      'Trading Strategy Development',
-      'Expert Advisor Development',
-      'Python',
-      'C++',
-      'MQL5 / MT5',
-      'High-Frequency Trading',
-      'Backtesting',
-      'Strategy Optimization'
+      'Algorithmic Trading Systems',
+      'Automated Strategy Development',
+      'Expert Advisor Development (MQL5)',
+      'Python & C++ Financial Systems',
+      'Backtesting & Walk-Forward Optimization',
+      'Market Microstructure Analysis'
     ]
   },
   {
     id: 'financial-markets',
     number: '04',
     title: 'FINANCIAL MARKETS',
-    subtitle: 'Multi-asset market dynamics and macroeconomic analysis',
+    subtitle: 'Multi-asset market dynamics, macroeconomics, and market intelligence',
     iconName: 'TrendingUp',
     skills: [
-      'Technical Analysis',
-      'Fundamental Analysis',
-      'Sentiment Analysis',
-      'Behavioral Finance',
-      'Market Microstructure',
-      'Institutional Analysis',
-      'Macroeconomic Analysis',
-      'Global Economic Analysis',
-      'Investment Analysis',
-      'Derivatives',
-      'DeFi',
-      'Blockchain',
-      'Crypto'
+      'Technical & Quantitative Analysis',
+      'Fundamental Economic Analysis',
+      'Macroeconomic Intelligence',
+      'Market Microstructure & Order Flow',
+      'Institutional Derivatives & Futures',
+      'Digital Assets & Market Structure'
     ]
   },
   {
     id: 'research-intelligence',
     number: '05',
     title: 'RESEARCH & INTELLIGENCE',
-    subtitle: 'Data-driven investigation and cross-disciplinary strategy',
+    subtitle: 'Empirical research, quantitative investigation, and multi-domain strategy',
     iconName: 'BrainCircuit',
     skills: [
-      'Quantitative Analysis',
-      'Data Analysis',
-      'Financial Research',
-      'Market Research',
-      'Economic Research',
-      'Historical Research',
-      'Strategic Research',
-      'Multidisciplinary Research'
+      'Quantitative Research',
+      'Financial & Market Data Analytics',
+      'Systemic Risk Investigation',
+      'Economic & Macro Research',
+      'Interdisciplinary Technical Synthesis',
+      'Strategic Systems Research'
     ]
   },
   {
     id: 'business-digital',
     number: '06',
     title: 'BUSINESS & DIGITAL SYSTEMS',
-    subtitle: 'Scalable digital infrastructure and operational efficiency',
+    subtitle: 'Scalable digital infrastructure, systems architecture, and business automation',
     iconName: 'Layers',
     skills: [
-      'Digital Systems',
-      'Notion Systems',
-      'Productivity Systems',
-      'E-commerce Growth Systems',
-      'IT Automation',
-      'Algorithmic Automation',
-      'International Business',
-      'Operational Efficiency',
-      'Project Management'
+      'Digital Infrastructure Design',
+      'Enterprise Automation Systems',
+      'Information Architecture & Databases',
+      'Operational Efficiency Engineering',
+      'E-commerce & Growth Systems',
+      'International Venture Engineering'
     ]
   }
 ];
@@ -228,11 +218,11 @@ export const SELECTED_PROJECTS: Project[] = [
   {
     id: 'project-ai-automation',
     number: '01',
-    title: 'AI & AUTOMATION SYSTEMS',
-    category: 'AI / Automation / Workflows',
+    title: 'AI & Automation Systems',
+    category: 'AI / Multi-Agent / Workflows',
     status: 'Active',
     featured: true,
-    description: 'Researching and developing AI-powered workflows and automation systems for productivity, business processes, and digital operations.',
+    description: 'Engineers autonomous multi-agent orchestration frameworks and deterministic workflow engines to automate complex enterprise and data processing operations.',
     overview: 'An integrated framework connecting multi-step language model agents with API endpoints, database triggers, and event notification streams.',
     problem: 'Manual operational workflows in digital business create execution bottlenecks, high error rates, and delayed decision latency.',
     approach: 'Constructed deterministic workflow graphs where LLMs perform reasoning at specific decision nodes while structured code enforces execution constraints.',
@@ -267,11 +257,11 @@ export const SELECTED_PROJECTS: Project[] = [
   {
     id: 'project-financial-quant',
     number: '02',
-    title: 'FINANCIAL & QUANTITATIVE SYSTEMS',
+    title: 'Financial & Quantitative Systems',
     category: 'Quant / Trading / Modeling',
     status: 'Active',
     featured: true,
-    description: 'Developing and researching algorithmic and quantitative approaches to financial markets.',
+    description: 'Architects high-throughput algorithmic backtesting engines, tick-data analytical pipelines, and real-time risk assessment modules for financial markets.',
     overview: 'A high-performance algorithmic evaluation engine for tick-level backtesting, trade strategy execution, and dynamic value-at-risk calculations.',
     problem: 'Retail and institutional traders often rely on overfitting backtests that fail under real market slippage and regime changes.',
     approach: 'Built a vectorized Python & MQL5 simulation environment with Monte Carlo walk-forward optimization and spread-sensitivity stress testing.',
@@ -306,11 +296,11 @@ export const SELECTED_PROJECTS: Project[] = [
   {
     id: 'project-digital-products',
     number: '03',
-    title: 'DIGITAL PRODUCTS & SYSTEMS',
+    title: 'Digital Products & Systems',
     category: 'Products / Infrastructure',
     status: 'Building',
     featured: true,
-    description: 'Designing digital products, knowledge systems, productivity workflows, and structured digital infrastructure.',
+    description: 'Constructs structured knowledge management databases, modular digital utilities, and scalable web infrastructure for high-performance workflows.',
     overview: 'A cohesive digital workspace system and product suite designed for founders, researchers, and systems thinkers to manage intellectual capital.',
     problem: 'Information overload and fragmented tools prevent knowledge workers from transforming raw research into actionable assets.',
     approach: 'Created atomic knowledge databases mapped to execution pipelines, transforming raw notes into published assets and modular tools.',
@@ -345,11 +335,11 @@ export const SELECTED_PROJECTS: Project[] = [
   {
     id: 'project-research-lab',
     number: '04',
-    title: 'RESEARCH & INTELLIGENCE',
+    title: 'Research & Intelligence',
     category: 'Research / Strategy / Macro',
     status: 'Research',
     featured: true,
-    description: 'Exploring financial, economic, technological, strategic, and multidisciplinary research.',
+    description: 'Publishes empirical quantitative studies, macroeconomic liquidity analyses, and system architecture papers on emerging financial technologies.',
     overview: 'A continuous analytical research laboratory compiling quantitative market studies, technological trend forecasts, and system design frameworks.',
     problem: 'Short-term hype cycles obscure fundamental shifts in technology, economic liquidity, and market mechanics.',
     approach: 'Conducted rigorous multi-disciplinary synthesis combining macroeconomic data, academic papers, open-source codebase analysis, and empirical testing.',
@@ -387,14 +377,14 @@ export const VENTURES: Venture[] = [
   {
     id: 'sanr-corp',
     name: 'SANR CORPORATION LIMITED',
-    label: 'LONG-TERM BUSINESS VENTURE',
-    subtitle: 'Primary Business Foundation',
-    description: 'SANR Corporation Limited is the primary long-term business venture and a foundation for future companies, projects, investments, technologies, and business initiatives. SANR represents a long-term ambition to build a scalable business organization focused on sustainable value, systems, opportunities, and ventures.',
+    label: 'PRIMARY BUSINESS VENTURE',
+    subtitle: 'Primary Corporate Foundation',
+    description: 'SANR Corporation Limited serves as the primary corporate foundation for building, holding, and scaling technology ventures, software equity, software intellectual property, and strategic investments.',
     highlights: [
-      'Core corporate framework for multi-domain ventures',
-      'Focus on long-term capital allocation & software equity',
-      'Incubator for AI, FinTech, and operational business systems',
-      'Built with strategic patience and institutional structure'
+      'Corporate framework for multi-domain software ventures',
+      'Capital allocation and software equity development',
+      'Incubator for AI, FinTech, and enterprise automation',
+      'Structured for sustainable, long-term institutional value'
     ],
     status: 'Active / Core Foundation',
     linkText: 'Explore SANR'
@@ -404,12 +394,12 @@ export const VENTURES: Venture[] = [
     name: 'SAYEMATRIX',
     label: 'DIGITAL ECOSYSTEM',
     subtitle: 'Independent Digital Operating System',
-    description: 'SAYEMATRIX is an independent digital ecosystem focused on learning, knowledge, content creation, digital products, technology, systems, business, health, fitness, productivity, mindset, personal development, creativity, and long-term growth. It is a space to learn, explore, build, document, and share.',
+    description: 'SAYEMATRIX is an independent digital operating system and knowledge brand integrating multi-disciplinary research, digital products, technology frameworks, financial tools, and cognitive growth platforms.',
     highlights: [
-      'Multi-domain knowledge & software hub',
-      'Modular digital assets and structured learning platforms',
-      'Unified brand connecting faith, human focus, wealth, and creativity',
-      'Personal Operating System built for scalable impact'
+      'Unified digital operating system and research platform',
+      'Modular knowledge products and proprietary tools',
+      'Integrated platform for AI, FinTech, and human optimization',
+      'Engineered for continuous research and scalable impact'
     ],
     status: 'Active / Evolving Engine',
     linkText: 'Explore SAYEMATRIX'
@@ -492,7 +482,7 @@ export const ECOSYSTEM_DOMAINS: EcosystemDomain[] = [
 
 export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   {
-    year: '2026',
+    year: 'Working',
     title: 'Building AI + Financial Systems',
     subtitle: 'Research & Advanced System Integration',
     description: 'Developing high-throughput AI automation frameworks, quantitative trading tools, and multi-agent workflow systems.',

@@ -65,7 +65,7 @@ export interface ResearchPaper {
   id: string;
   paperNumber: string; // e.g. "PUB-2026-001"
   noteNumber?: string; // backwards compatibility
-  doi: string;
+  doi?: string;
   title: string;
   subtitle: string;
   author: string;
@@ -74,7 +74,7 @@ export interface ResearchPaper {
   category: string;
   date: string;
   version: string;
-  status: 'Published' | 'Peer Reviewed' | 'Working Paper' | 'Pre-Print' | 'Technical Monograph';
+  status: 'Published' | 'Peer Reviewed' | 'Working Paper' | 'Pre-Print' | 'Technical Monograph' | 'Technical Study' | 'Research' | 'Ongoing' | 'Experimental';
   readTime: string;
   excerpt?: string;
   abstract: string;

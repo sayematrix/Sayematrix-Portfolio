@@ -50,34 +50,34 @@ export const IntroductionSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#08090B] border-b border-[#242830] relative" id="intro-section">
+    <section className="py-20 bg-[#041618] border-b border-[#0E353C] relative" id="intro-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#101216] border border-[#242830]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#061D20] border border-[#0E353C]">
             <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">
               SYSTEMS ENGINEERING METHODOLOGY
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold tracking-tight text-[#F5F5F5] uppercase">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold tracking-tight text-[#F8FAFC] uppercase">
             BUILDING SYSTEMS, <br />
             <span className="text-emerald-400">NOT JUST PROJECTS.</span>
           </h2>
 
-          <p className="text-base sm:text-lg font-sans text-[#9299A5] leading-relaxed italic border-l-2 border-emerald-500/50 pl-4 py-1">
+          <p className="text-base sm:text-lg font-sans text-[#94A3B8] leading-relaxed italic border-l-2 border-emerald-500/50 pl-4 py-1">
             “I’m interested in how technology, finance, and intelligent systems can work together to solve real problems, improve decision-making, and create better ways of working.”
           </p>
         </div>
 
         {/* Process Flow Visualizer */}
-        <div className="mt-12 bg-[#101216] p-6 sm:p-8 rounded-xl border border-[#242830] shadow-2xl">
-          <div className="flex items-center justify-between pb-4 border-b border-[#242830] mb-6">
+        <div className="mt-12 bg-[#061D20] p-6 sm:p-8 rounded-xl border border-[#0E353C] shadow-2xl">
+          <div className="flex items-center justify-between pb-4 border-b border-[#0E353C] mb-6">
             <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-widest">
               INTERACTIVE RESEARCH & ENGINEERING WORKFLOW
             </span>
-            <span className="text-xs font-mono text-[#9299A5]">
+            <span className="text-xs font-mono text-[#94A3B8]">
               STEP {activeStepIndex + 1} OF {workflowSteps.length}
             </span>
           </div>
@@ -92,8 +92,8 @@ export const IntroductionSection: React.FC = () => {
                   onClick={() => setActiveStepIndex(idx)}
                   className={`p-3 rounded-lg border text-left transition-all relative ${
                     isActive
-                      ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400 shadow-md shadow-emerald-500/10'
-                      : 'bg-[#14171C] border-[#242830] text-[#9299A5] hover:text-[#F5F5F5] hover:border-emerald-500/30'
+                      ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-400 shadow-md shadow-emerald-500/10'
+                      : 'bg-[#082226] border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/30'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -109,16 +109,16 @@ export const IntroductionSection: React.FC = () => {
           </div>
 
           {/* Detailed Step Active Card */}
-          <div className="mt-6 p-5 bg-[#14171C] rounded-lg border border-[#242830] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="mt-6 p-5 bg-[#082226] rounded-lg border border-[#0E353C] flex flex-col sm:row items-start sm:items-center justify-between gap-4">
             <div className="space-y-1">
               <span className="text-xs font-mono text-emerald-400 font-bold uppercase">
                 {workflowSteps[activeStepIndex].title} — STAGE SPECS
               </span>
-              <p className="text-sm font-sans text-[#F5F5F5]">
+              <p className="text-sm font-sans text-[#F8FAFC]">
                 {workflowSteps[activeStepIndex].detail}
               </p>
             </div>
-            <div className="px-3 py-1 rounded bg-[#101216] border border-[#242830] text-[10px] font-mono text-[#9299A5]">
+            <div className="px-3 py-1 rounded bg-[#031214] border border-[#0E353C] text-[10px] font-mono text-[#94A3B8]">
               CONTINUOUS OPERATIONAL LOOP
             </div>
           </div>

@@ -25,6 +25,7 @@ import { AboutPage } from './pages/AboutPage';
 import { CvPage } from './pages/CvPage';
 import { EcosystemPage } from './pages/EcosystemPage';
 import { ResearchPaperPage } from './pages/ResearchPaperPage';
+import { ResearchPapersPage } from './pages/ResearchPapersPage';
 
 export default function App() {
   const [activePage, setActivePage] = useState<NavigationPage>('home');
@@ -52,7 +53,7 @@ export default function App() {
   const selectedProject = SELECTED_PROJECTS.find(p => p.id === selectedProjectId) || null;
 
   return (
-    <div className="min-h-screen bg-[#08090B] text-[#F5F5F5] font-sans antialiased selection:bg-emerald-500 selection:text-[#08090B]">
+    <div className="min-h-screen bg-[#041618] text-[#F8FAFC] font-sans antialiased selection:bg-emerald-500 selection:text-[#050608]">
       {/* Sticky Global Navigation */}
       <Navbar
         activePage={activePage}
@@ -92,14 +93,15 @@ export default function App() {
 
       {/* Main View Router */}
       <main>
-        {/* Full-Page Research Paper View */}
-        {(selectedPaperId || activePage === 'research') ? (
+        {/* Full-Page Research Paper Detail View (when a paper is selected for reading) */}
+        {selectedPaperId ? (
           <ResearchPaperPage
-            paperId={selectedPaperId || 'paper-001'}
+            paperId={selectedPaperId}
             onBack={() => {
               setSelectedPaperId(null);
-              setActivePage('home');
-              setTimeout(() => scrollToSection('research'), 50);
+              if (activePage === 'home') {
+                setTimeout(() => scrollToSection('research'), 50);
+              }
             }}
             onSelectPaper={(id) => setSelectedPaperId(id)}
           />
@@ -138,6 +140,10 @@ export default function App() {
                   onSelectPaper={(id) => {
                     setSelectedPaperId(id);
                   }}
+                  onSeeMore={() => {
+                    setActivePage('research');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 />
 
                 {/* 09. Knowledge Transformation Workflow */}
@@ -169,6 +175,16 @@ export default function App() {
                 {/* 15. Contact */}
                 <ContactSection />
               </>
+            )}
+
+            {activePage === 'research' && (
+              <ResearchPapersPage
+                onSelectPaper={(id) => setSelectedPaperId(id)}
+                onBackToMain={() => {
+                  setActivePage('home');
+                  setTimeout(() => scrollToSection('research'), 50);
+                }}
+              />
             )}
 
             {activePage === 'about' && (

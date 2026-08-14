@@ -18,20 +18,20 @@ export const ExpertiseSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-[#101216] border-b border-[#242830] relative" id="expertise">
+    <section className="py-20 bg-[#041618] border-b border-[#0E353C] relative" id="expertise">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#14171C] border border-[#242830] mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#061D20] border border-[#0E353C] mb-2">
             <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">
               MULTIDISCIPLINARY TOOLKIT
             </span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-[#F5F5F5] uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-[#F8FAFC] uppercase tracking-tight">
             EXPERTISE
           </h2>
-          <p className="text-sm font-sans text-[#9299A5] mt-2 max-w-xl">
+          <p className="text-sm font-sans text-[#94A3B8] mt-2 max-w-xl">
             A multidisciplinary toolkit for building intelligent systems, quantitative tools, and long-term ventures.
           </p>
         </div>
@@ -45,28 +45,28 @@ export const ExpertiseSection: React.FC = () => {
                 key={cat.id}
                 className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                   isExpanded
-                    ? 'bg-[#14171C] border-emerald-500/50 shadow-xl shadow-emerald-500/5'
-                    : 'bg-[#08090B] border-[#242830] hover:border-emerald-500/30'
+                    ? 'bg-[#061D20] border-emerald-500/50 shadow-xl shadow-emerald-500/5'
+                    : 'bg-[#031214] border-[#0E353C] hover:border-emerald-500/30'
                 }`}
               >
                 {/* Category Accordion Header */}
                 <button
                   onClick={() => setExpandedId(isExpanded ? '' : cat.id)}
-                  className="w-full p-5 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full p-5 flex items-center justify-between text-left focus:outline-none cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-emerald-400 px-2 py-1 rounded bg-[#101216] border border-[#242830]">
+                    <span className="font-mono text-xs font-bold text-emerald-400 px-2 py-1 rounded bg-[#031214] border border-[#0E353C]">
                       CAT {cat.number}
                     </span>
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded bg-[#101216] border border-[#242830]">
+                      <div className="p-2 rounded bg-[#031214] border border-[#0E353C]">
                         {getCategoryIcon(cat.iconName)}
                       </div>
                       <div>
-                        <h3 className="font-mono text-sm sm:text-base font-bold text-[#F5F5F5] uppercase tracking-wide">
+                        <h3 className="font-mono text-sm sm:text-base font-bold text-[#F8FAFC] uppercase tracking-wide">
                           {cat.title}
                         </h3>
-                        <p className="text-xs font-sans text-[#9299A5] hidden sm:block">
+                        <p className="text-xs font-sans text-[#94A3B8] hidden sm:block">
                           {cat.subtitle}
                         </p>
                       </div>
@@ -74,7 +74,7 @@ export const ExpertiseSection: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-mono text-[#9299A5] hidden md:inline-block">
+                    <span className="text-[11px] font-mono text-[#94A3B8] hidden md:inline-block">
                       {cat.skills.length} SPECIALIZATIONS
                     </span>
                     <ChevronDown
@@ -87,15 +87,15 @@ export const ExpertiseSection: React.FC = () => {
 
                 {/* Expanded Skill Tags Grid */}
                 {isExpanded && (
-                  <div className="px-5 pb-6 pt-2 border-t border-[#242830]/80 bg-[#101216]/50 animate-in fade-in duration-200">
-                    <p className="text-xs font-sans text-[#9299A5] mb-4 sm:hidden">
+                  <div className="px-5 pb-6 pt-2 border-t border-[#0E353C]/80 bg-[#031214]/60 animate-in fade-in duration-200">
+                    <p className="text-xs font-sans text-[#94A3B8] mb-4 sm:hidden">
                       {cat.subtitle}
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
                       {cat.skills.map((skill) => (
                         <div
                           key={skill}
-                          className="flex items-center gap-2 p-2.5 rounded bg-[#14171C] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+                          className="flex items-center gap-2 p-2.5 rounded bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                           <span>{skill}</span>

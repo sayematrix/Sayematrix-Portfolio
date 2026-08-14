@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage } from '../types';
+import { PERSONAL_INFO } from '../data/content';
 import { Search, ArrowUpRight, Menu, X, Command, ShieldCheck } from 'lucide-react';
+import { SayematrixLogo } from './SayematrixLogo';
 
 interface NavbarProps {
   activePage: NavigationPage;
@@ -18,7 +20,26 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState<string>('');
 
+  interface NavItem {
+    id: string;
+    label: string;
+    page: NavigationPage;
+    sectionId?: string;
+  }
+
+  const navItems: NavItem[] = [
+    { id: 'about', label: 'About', page: 'home', sectionId: 'about' },
+    { id: 'work', label: 'Work', page: 'home', sectionId: 'work' },
+    { id: 'research', label: 'Research', page: 'home', sectionId: 'research' },
+    { id: 'ventures', label: 'Ventures', page: 'home', sectionId: 'ventures' },
+    { id: 'ecosystem', label: 'Ecosystem', page: 'home', sectionId: 'ecosystem' },
+    { id: 'cv', label: 'CV', page: 'cv' },
+    { id: 'contact', label: 'Contact', page: 'home', sectionId: 'contact' },
+  ];
+
+  // Track scroll position & active section via IntersectionObserver & scroll spy
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -31,9 +52,69 @@ export const Navbar: React.FC<NavbarProps> = ({
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // IntersectionObserver + Scroll Spy for Active Section Detection
+  useEffect(() => {
+    if (activePage !== 'home') {
+      setActiveSection(activePage);
+      return;
+    }
+
+    const sectionIds = ['about', 'work', 'research', 'ventures', 'ecosystem', 'contact'];
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -50% 0px',
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Fallback scroll listener for smooth edge detection (top of hero / bottom contact)
+    const detectScrollFallback = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition + windowHeight >= documentHeight - 60) {
+        setActiveSection('contact');
+        return;
+      }
+
+      if (scrollPosition < 250) {
+        const aboutEl = document.getElementById('about');
+        if (aboutEl) {
+          const rect = aboutEl.getBoundingClientRect();
+          if (rect.top > windowHeight * 0.5) {
+            setActiveSection('');
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', detectScrollFallback, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', detectScrollFallback);
+    };
+  }, [activePage]);
 
   const handleNavClick = (page: NavigationPage, sectionId?: string) => {
     setActivePage(page);
@@ -50,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       {/* Top Scroll Progress Line */}
-      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-[#101216]">
+      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-[#061D20]">
         <div
           className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
@@ -60,100 +141,41 @@ export const Navbar: React.FC<NavbarProps> = ({
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'bg-[#08090B]/85 backdrop-blur-md border-b border-[#242830]/80 py-3 shadow-2xl'
+            ? 'bg-[#041618]/90 backdrop-blur-md border-b border-[#0E353C] py-3 shadow-2xl'
             : 'bg-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
-          <button
+          <SayematrixLogo
             onClick={() => handleNavClick('home')}
-            className="group flex items-center gap-3 text-left focus:outline-none"
+            size="md"
             id="nav-logo-btn"
-          >
-            <div className="w-8 h-8 rounded-md bg-[#14171C] border border-[#242830] group-hover:border-emerald-500/50 transition-colors flex items-center justify-center relative overflow-hidden">
-              <span className="font-mono text-xs font-bold text-emerald-400 tracking-tighter">S</span>
-              <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div>
-              <span className="font-sans text-sm font-bold tracking-widest text-[#F5F5F5] group-hover:text-emerald-400 transition-colors">
-                SAYEMATRIX
-              </span>
-            </div>
-          </button>
+          />
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#101216]/80 p-1.5 rounded-full border border-[#242830]">
-            <button
-              onClick={() => handleNavClick('home', 'about')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'about'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              About
-            </button>
-            <button
-              onClick={() => handleNavClick('home', 'work')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'work'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              Work
-            </button>
-            <button
-              onClick={() => handleNavClick('home', 'research')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'research'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              Research
-            </button>
-            <button
-              onClick={() => handleNavClick('home', 'ventures')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'ventures'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              Ventures
-            </button>
-            <button
-              onClick={() => handleNavClick('home', 'ecosystem')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'ecosystem'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              Ecosystem
-            </button>
-            <button
-              onClick={() => handleNavClick('cv')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'cv'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              CV
-            </button>
-            <button
-              onClick={() => handleNavClick('home', 'contact')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
-                activePage === 'contact'
-                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-                  : 'text-[#9299A5] hover:text-[#F5F5F5] hover:bg-[#14171C]'
-              }`}
-            >
-              Contact
-            </button>
+          {/* Desktop Navigation Links with Illuminated Active Effect */}
+          <nav className="hidden md:flex items-center gap-1 bg-[#061D20]/85 p-1.5 rounded-full border border-[#0E353C] backdrop-blur-md shadow-lg">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.page as NavigationPage, item.sectionId)}
+                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 flex items-center gap-1.5 select-none ${
+                    isActive
+                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/40 font-semibold shadow-[0_0_12px_rgba(16,185,129,0.25)]'
+                      : 'text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#0A2B30] border border-transparent'
+                  }`}
+                  id={`nav-item-${item.id}`}
+                >
+                  {/* Active illuminated signal dot */}
+                  {isActive && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10B981] shrink-0 animate-pulse" />
+                  )}
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
           </nav>
 
           {/* Right Action Tools */}
@@ -161,33 +183,33 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Command Palette Trigger Button */}
             <button
               onClick={onOpenCommandPalette}
-              className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#101216] border border-[#242830] text-xs font-mono text-[#9299A5] hover:text-[#F5F5F5] hover:border-emerald-500/40 transition-all"
+              className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/40 transition-all"
               id="cmd-palette-trigger"
               title="Open Command Palette (⌘ K)"
             >
               <Command className="w-3.5 h-3.5 text-emerald-400" />
               <span>Search</span>
-              <kbd className="px-1.5 py-0.5 rounded bg-[#14171C] border border-[#242830] text-[10px] text-[#9299A5]">
+              <kbd className="px-1.5 py-0.5 rounded bg-[#09282C] border border-[#0E353C] text-[10px] text-[#94A3B8]">
                 ⌘K
               </kbd>
             </button>
 
-            {/* LinkedIn External Link CTA */}
+            {/* Engage Telegram External Link CTA */}
             <a
-              href="https://linkedin.com/in/sayematrix"
+              href={PERSONAL_INFO.contact.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#14171C] hover:bg-[#1c2128] border border-[#242830] hover:border-emerald-500/50 text-xs font-mono text-[#F5F5F5] transition-all group"
-              id="linkedin-cta-btn"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#082226] hover:bg-[#0A2B30] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#F8FAFC] transition-all group"
+              id="engage-cta-btn"
             >
-              <span>LinkedIn</span>
+              <span>Engage</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-md bg-[#101216] border border-[#242830] text-[#9299A5] hover:text-[#F5F5F5]"
+              className="md:hidden p-2 rounded-md bg-[#061D20] border border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC]"
               id="mobile-menu-toggle-btn"
               aria-label="Toggle navigation menu"
             >
@@ -196,14 +218,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Drawer with Illuminated Active State */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#08090B] border-b border-[#242830] px-4 pt-4 pb-6 mt-3 space-y-2 animate-in fade-in slide-in-from-top duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-[#242830]/50">
+          <div className="md:hidden bg-[#041618] border-b border-[#0E353C] px-4 pt-4 pb-6 mt-3 space-y-2 animate-in fade-in slide-in-from-top duration-200">
+            <div className="flex items-center justify-between pb-3 border-b border-[#0E353C]/70">
               <span className="text-xs font-mono text-emerald-400">NAVIGATION MENU</span>
               <button
                 onClick={onOpenCommandPalette}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#9299A5]"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8]"
               >
                 <Command className="w-3 h-3 text-emerald-400" />
                 <span>Search (⌘K)</span>
@@ -211,48 +233,31 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             <div className="grid grid-cols-2 gap-2 pt-2">
-              <button
-                onClick={() => handleNavClick('home', 'about')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                01. About
-              </button>
-              <button
-                onClick={() => handleNavClick('home', 'work')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                02. Work
-              </button>
-              <button
-                onClick={() => handleNavClick('home', 'research')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                03. Research
-              </button>
-              <button
-                onClick={() => handleNavClick('home', 'ventures')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                04. Ventures
-              </button>
-              <button
-                onClick={() => handleNavClick('home', 'ecosystem')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                05. Ecosystem
-              </button>
-              <button
-                onClick={() => handleNavClick('cv')}
-                className="text-left px-3 py-2 rounded bg-[#101216] border border-[#242830] text-xs font-mono text-[#F5F5F5] hover:border-emerald-500/50"
-              >
-                06. CV / Resume
-              </button>
+              {navItems.map((item, index) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.page as NavigationPage, item.sectionId)}
+                    className={`text-left px-3.5 py-2.5 rounded-lg text-xs font-mono transition-all duration-300 flex items-center justify-between border ${
+                      isActive
+                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-[0_0_12px_rgba(16,185,129,0.25)] font-bold'
+                        : 'bg-[#061D20] border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/30'
+                    }`}
+                  >
+                    <span>0{index + 1}. {item.label}</span>
+                    {isActive && (
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10B981] shrink-0" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="pt-3 flex items-center justify-between">
               <button
                 onClick={() => handleNavClick('home', 'contact')}
-                className="w-full text-center py-2 rounded bg-emerald-500/10 border border-emerald-500/40 text-xs font-mono text-emerald-400 font-semibold"
+                className="w-full text-center py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-xs font-mono text-emerald-400 font-semibold shadow-[0_0_10px_rgba(16,185,129,0.15)]"
               >
                 Contact SAYEM →
               </button>
@@ -263,3 +268,4 @@ export const Navbar: React.FC<NavbarProps> = ({
     </>
   );
 };
+

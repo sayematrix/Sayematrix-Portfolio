@@ -4,20 +4,20 @@ import { Compass, Sparkles } from 'lucide-react';
 
 export const PersonalDimensionSection: React.FC = () => {
   return (
-    <section className="py-16 bg-[#08090B] border-b border-[#242830] relative" id="personal-dimension">
+    <section className="py-16 bg-[#041618] border-b border-[#0E353C] relative" id="personal-dimension">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="p-8 rounded-2xl bg-[#101216] border border-[#242830] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="p-8 rounded-2xl bg-[#061D20] border border-[#0E353C] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           
           <div className="space-y-3 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#14171C] border border-[#242830]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#031214] border border-[#0E353C]">
               <Compass className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-[10px] font-mono text-[#9299A5] uppercase tracking-widest">
+              <span className="text-[10px] font-mono text-[#94A3B8] uppercase tracking-widest">
                 PERSONAL DIMENSION
               </span>
             </div>
 
-            <h3 className="text-2xl font-sans font-extrabold text-[#F5F5F5] uppercase">
+            <h3 className="text-2xl font-sans font-extrabold text-[#F8FAFC] uppercase">
               BEYOND THE WORK
             </h3>
 
@@ -30,7 +30,7 @@ export const PersonalDimensionSection: React.FC = () => {
             {PERSONAL_INFO.beyondWorkInterests.map((item) => (
               <span
                 key={item}
-                className="px-3 py-1.5 rounded-lg bg-[#14171C] border border-[#242830] text-xs font-mono text-[#F5F5F5]"
+                className="px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#F8FAFC]"
               >
                 {item}
               </span>
