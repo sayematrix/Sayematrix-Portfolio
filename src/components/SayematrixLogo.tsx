@@ -2,7 +2,6 @@ import React from 'react';
 
 interface SayematrixLogoProps {
   size?: 'sm' | 'md' | 'lg';
-  showWordmark?: boolean;
   className?: string;
   onClick?: () => void;
   id?: string;
@@ -10,7 +9,7 @@ interface SayematrixLogoProps {
 
 /**
  * SAYEMATRIX Plain Text Wordmark
- * Displays 'SAYEMATRIX' as clean, bold plain text wordmark without icons or graphics.
+ * Displays 'SAYEMATRIX' as a clean, bold text wordmark without icons or graphics.
  */
 export const SayematrixLogo: React.FC<SayematrixLogoProps> = ({
   size = 'md',
@@ -34,7 +33,7 @@ export const SayematrixLogo: React.FC<SayematrixLogoProps> = ({
       role={onClick ? 'button' : 'img'}
       aria-label="SAYEMATRIX"
     >
-      <span className={`font-sans font-black tracking-[0.18em] uppercase text-[#F8FAFC] group-hover:text-white transition-colors duration-200 ${textSize}`}>
+      <span className={`font-sans font-black tracking-[0.18em] uppercase text-[#F8FAFC] group-hover:text-emerald-400 transition-colors duration-200 ${textSize}`}>
         SAYEMATRIX
       </span>
     </div>

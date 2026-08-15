@@ -45,7 +45,7 @@ export const PERSONAL_INFO = {
     'Learning', 'Faith', 'Fitness', 'Discipline', 'Creativity', 'Technology', 'Business', 'Personal Development'
   ],
   contact: {
-    email: 'sayem.professiona@gmail.com',
+    email: 'sayem.professional@gmail.com',
     emailNote: 'For professional inquiries and opportunities.',
     linkedin: 'https://www.linkedin.com/in/sayematrix/',
     linkedinNote: 'For professional networking and industry connections.',

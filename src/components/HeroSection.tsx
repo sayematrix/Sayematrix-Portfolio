@@ -18,21 +18,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
           
           {/* 1. SAYEM & Primary Identity Statement */}
           <div className="space-y-6">
-            <h1 className="text-7xl sm:text-9xl lg:text-[11rem] font-sans font-black tracking-tight text-[#F8FAFC] leading-none uppercase select-none">
+            <h1 
+              className="text-7xl sm:text-9xl md:text-[10rem] lg:text-[11.5rem] font-bold font-wordmark tracking-tight text-[#F8FAFC] leading-none uppercase select-none cursor-default transition-colors duration-300 hover:text-emerald-400" 
+              id="hero-sayem-heading"
+            >
               SAYEM
             </h1>
             
             {/* 2. Primary Identity Statement */}
             <p className="text-2xl sm:text-3xl md:text-4xl font-sans font-medium text-[#F8FAFC] tracking-wide flex items-center flex-wrap gap-x-3 gap-y-2">
-              <span>Entrepreneur</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-emerald-400">Entrepreneur</span>
               <span className="text-emerald-400 font-light">•</span>
-              <span>Investor</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-emerald-400">Investor</span>
               <span className="text-emerald-400 font-light">•</span>
-              <span>Developer</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-emerald-400">Developer</span>
               <span className="text-emerald-400 font-light">•</span>
-              <span>OS Builder</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-emerald-400">OS Builder</span>
               <span className="text-emerald-400 font-light">•</span>
-              <span>Creator</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-emerald-400">Creator</span>
             </p>
           </div>
 
