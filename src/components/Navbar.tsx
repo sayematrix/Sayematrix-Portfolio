@@ -139,19 +139,21 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? 'bg-[#041618]/90 backdrop-blur-md border-b border-[#0E353C] py-3 shadow-2xl'
-            : 'bg-transparent py-5'
+        className={`fixed top-0 left-0 right-0 w-full max-w-full box-border z-40 transition-all duration-300 ${
+          scrolled || mobileMenuOpen
+            ? 'bg-[#041618]/95 backdrop-blur-md border-b border-[#0E353C] py-3 shadow-2xl'
+            : 'bg-transparent py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-w-0 box-border">
           {/* Brand Logo */}
-          <SayematrixLogo
-            onClick={() => handleNavClick('home')}
-            size="md"
-            id="nav-logo-btn"
-          />
+          <div className="shrink-0 min-w-0">
+            <SayematrixLogo
+              onClick={() => handleNavClick('home')}
+              size="md"
+              id="nav-logo-btn"
+            />
+          </div>
 
           {/* Desktop Navigation Links with Illuminated Active Effect */}
           <nav className="hidden md:flex items-center gap-1 bg-[#061D20]/85 p-1.5 rounded-full border border-[#0E353C] backdrop-blur-md shadow-lg">
@@ -179,11 +181,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Right Action Tools */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Command Palette Trigger Button */}
             <button
               onClick={onOpenCommandPalette}
-              className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/40 transition-all"
+              className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/40 transition-all shrink-0"
               id="cmd-palette-trigger"
               title="Open Command Palette (⌘ K)"
             >
@@ -199,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href={PERSONAL_INFO.contact.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#082226] hover:bg-[#0A2B30] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#F8FAFC] transition-all group"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#082226] hover:bg-[#0A2B30] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#F8FAFC] transition-all group shrink-0"
               id="engage-cta-btn"
             >
               <span>Engage</span>
@@ -209,43 +211,46 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-md bg-[#061D20] border border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC]"
+              className="md:hidden p-2 rounded-md bg-[#061D20] border border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] focus:outline-none focus:ring-1 focus:ring-emerald-500/40 shrink-0"
               id="mobile-menu-toggle-btn"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-emerald-400" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Drawer with Illuminated Active State */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#041618] border-b border-[#0E353C] px-4 pt-4 pb-6 mt-3 space-y-2 animate-in fade-in slide-in-from-top duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-[#0E353C]/70">
-              <span className="text-xs font-mono text-emerald-400">NAVIGATION MENU</span>
+          <div className="md:hidden w-full max-w-full box-border bg-[#041618] border-b border-[#0E353C] px-4 pt-3 pb-6 mt-3 space-y-2.5 max-h-[calc(100dvh-4.5rem)] overflow-y-auto overflow-x-hidden animate-in fade-in slide-in-from-top duration-200">
+            {/* Responsive Search Action */}
+            <div className="pb-2.5 border-b border-[#0E353C]/70 min-w-0 w-full box-border">
               <button
                 onClick={onOpenCommandPalette}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8]"
+                className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/40 transition-colors"
+                id="mobile-search-trigger"
               >
-                <Command className="w-3 h-3 text-emerald-400" />
+                <Command className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>Search (⌘K)</span>
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 pt-2">
-              {navItems.map((item, index) => {
+            {/* Navigation Grid */}
+            <div className="grid grid-cols-2 gap-2 pt-1 w-full min-w-0 box-border">
+              {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.page as NavigationPage, item.sectionId)}
-                    className={`text-left px-3.5 py-2.5 rounded-lg text-xs font-mono transition-all duration-300 flex items-center justify-between border ${
+                    className={`min-w-0 w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-mono transition-all duration-300 flex items-center justify-between gap-1.5 border box-border ${
                       isActive
                         ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-[0_0_12px_rgba(16,185,129,0.25)] font-bold'
                         : 'bg-[#061D20] border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/30'
                     }`}
+                    id={`mobile-nav-item-${item.id}`}
                   >
-                    <span>0{index + 1}. {item.label}</span>
+                    <span className="truncate min-w-0">{item.label}</span>
                     {isActive && (
                       <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10B981] shrink-0" />
                     )}
@@ -254,10 +259,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </div>
 
-            <div className="pt-3 flex items-center justify-between">
+            {/* Bottom Contact Action */}
+            <div className="pt-2 w-full min-w-0 flex items-center justify-between box-border">
               <button
                 onClick={() => handleNavClick('home', 'contact')}
-                className="w-full text-center py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-xs font-mono text-emerald-400 font-semibold shadow-[0_0_10px_rgba(16,185,129,0.15)]"
+                className="w-full max-w-full box-border text-center py-2.5 px-3 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-xs font-mono text-emerald-400 font-semibold shadow-[0_0_10px_rgba(16,185,129,0.15)] truncate hover:bg-emerald-500/20 transition-all"
+                id="mobile-contact-cta"
               >
                 Contact SAYEM →
               </button>
