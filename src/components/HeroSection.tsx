@@ -76,8 +76,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
                   PRIMARY FOCUS
                 </span>
                 <p className="text-base sm:text-lg font-mono font-semibold text-[#F8FAFC] leading-relaxed">
-                  AI <span className="text-emerald-400 font-bold">•</span> Automation <span className="text-emerald-400 font-bold">•</span> FinTech <span className="text-emerald-400 font-bold">•</span> Financial Intelligence
-                </p>
+                  AI <span className="text-emerald-400 font-bold">•</span> Automation <span className="text-emerald-400 font-bold">•</span> Quant Finance & Algorithmic Trading <span className="text-emerald-400 font-bold">•</span> Financial Intelligence 
+                  <span className="text-emerald-400 font-bold">•</span>FinTech <span className="text-emerald-400 font-bold">•</span> Data & Analytics <span className="text-emerald-400 font-bold">•</span> Product Development </p>
               </div>
 
               {/* 6. Supporting Expertise */}
