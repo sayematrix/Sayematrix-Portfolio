@@ -191,22 +191,32 @@ export const CORE_FOCUS_ITEMS = [
   {
     number: '01',
     title: 'AI & AUTOMATION',
-    description: 'Intelligent multi-agent architectures, automated workflow pipelines, and cognitive decision tools.'
+    description: 'Artificial intelligence, machine learning, intelligent automation, and autonomous workflows.'
   },
   {
     number: '02',
-    title: 'FINANCIAL TECHNOLOGY',
-    description: 'Algorithmic trading engines, financial data analytics, and quantitative risk infrastructure.'
+    title: 'QUANTITATIVE FINANCE & TRADING',
+    description: 'Quantitative finance, algorithmic trading, systematic strategies, financial modeling, and risk management.'
   },
   {
     number: '03',
-    title: 'QUANTITATIVE SYSTEMS',
-    description: 'Mathematical market modeling, tick-level backtesting frameworks, and systematic risk management.'
+    title: 'FINANCIAL MARKETS & INTELLIGENCE',
+    description: 'Financial markets, macroeconomics, market microstructure, data-driven intelligence, and quantitative research.'
   },
   {
     number: '04',
-    title: 'DIGITAL VENTURES',
-    description: 'Scalable software assets, structured knowledge products, and long-term venture engines.'
+    title: 'DATA & COMPUTATIONAL SYSTEMS',
+    description: 'Data analysis, statistics, programming, computational research, and quantitative data infrastructure.'
+  },
+  {
+    number: '05',
+    title: 'SYSTEM ARCHITECTURE & ENGINEERING',
+    description: 'Software systems, architecture, APIs, infrastructure, scalable engineering, and trading technology.'
+  },
+  {
+    number: '06',
+    title: 'BUSINESS & DIGITAL PRODUCTS',
+    description: 'Business strategy, product development, digital products, web platforms, automation, and venture building.'
   }
 ];
 
@@ -538,7 +548,7 @@ export const ECOSYSTEM_DOMAINS: EcosystemDomain[] = [
   {
     id: 'faith',
     pillar: 'FAITH',
-    brand: 'GUID2FAITH',
+    brand: 'GUIDE2FAITH',
     tagline: 'Spiritual grounding & purposeful living',
     description: 'Focused on faith, authentic Islamic knowledge, character development, and living with moral clarity and ultimate purpose.',
     focusArea: 'Faith, Islamic knowledge, meaningful living',
@@ -621,7 +631,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     year: 'SAYEMATRIX',
     title: 'Digital Ecosystem Expansion',
     subtitle: 'Unified Multi-Domain Brand Engine',
-    description: 'Launching GUID2FAITH, NEUROMATRIX, TOP10.INSIGHTS, WEALTRIXO, and ARTENIXO under the core SAYEMATRIX umbrella.',
+    description: 'Launching GUIDE2FAITH, NEUROMATRIX, TOP10.INSIGHTS, WEALTRIXO, and ARTENIXO under the core SAYEMATRIX umbrella.',
     status: 'In Progress',
     tags: ['Ecosystem', 'Knowledge Hub', 'Digital Assets']
   },

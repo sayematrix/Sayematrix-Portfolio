@@ -1,14 +1,16 @@
 import React from 'react';
 import { CORE_FOCUS_ITEMS } from '../data/content';
-import { Cpu, LineChart, Binary, Layers } from 'lucide-react';
+import { Cpu, LineChart, Globe, Database, Network, Briefcase } from 'lucide-react';
 
 export const CoreFocusStrip: React.FC = () => {
   const getIcon = (idx: number) => {
     switch (idx) {
       case 0: return <Cpu className="w-5 h-5 text-emerald-400" />;
       case 1: return <LineChart className="w-5 h-5 text-cyan-400" />;
-      case 2: return <Binary className="w-5 h-5 text-blue-400" />;
-      case 3: return <Layers className="w-5 h-5 text-purple-400" />;
+      case 2: return <Globe className="w-5 h-5 text-blue-400" />;
+      case 3: return <Database className="w-5 h-5 text-teal-400" />;
+      case 4: return <Network className="w-5 h-5 text-purple-400" />;
+      case 5: return <Briefcase className="w-5 h-5 text-amber-400" />;
       default: return <Cpu className="w-5 h-5 text-emerald-400" />;
     }
   };
@@ -16,7 +18,7 @@ export const CoreFocusStrip: React.FC = () => {
   return (
     <section className="bg-[#041618] border-b border-[#0E353C] py-8 relative" id="core-focus-strip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {CORE_FOCUS_ITEMS.map((item, idx) => (
             <div
               key={item.number}

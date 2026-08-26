@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
               </li>
               <li>
                 <a href="https://www.instagram.com/guide2faith/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
-                  <span>GUID2FAITH</span>
+                  <span>GUIDE2FAITH</span>
                   <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
                 </a>
               </li>

@@ -312,7 +312,6 @@ ${PERSONAL_INFO.professionalPositioning.operatingLoop}
                 <span className="text-xs font-mono text-[#94A3B8]">Bangladesh</span>
               </div>
               <div className="text-left sm:text-right">
-                <span className="text-[10px] font-mono text-[#94A3B8] uppercase block">UNDERGRADUATE STUDIES</span>
                 <span className="text-xs font-mono text-emerald-400 font-bold">Computer Science &amp; Engineering</span>
               </div>
             </div>

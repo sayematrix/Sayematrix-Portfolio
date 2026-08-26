@@ -39,7 +39,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onReadFullProfile })
                   A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.
                 </p>
                 <p>
-                  Combines quantitative analysis, market intelligence, data, AI, automation, and systems engineering to research, design, and build intelligent financial systems, trading technologies, and digital products.
+                  Combines quantitative analysis, market intelligence, data, AI, automation, and systems architecture to research, design, and build intelligent financial systems, trading technologies, and digital products.
                 </p>
                 <p>
                   Through <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.

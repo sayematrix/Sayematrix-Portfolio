@@ -43,7 +43,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateS
                 A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.
               </p>
               <p>
-                Combines quantitative analysis, market intelligence, data, AI, automation, and systems engineering to research, design, and build intelligent financial systems, trading technologies, and digital products.
+                Combines quantitative analysis, market intelligence, data, AI, automation, and systems architecture to research, design, and build intelligent financial systems, trading technologies, and digital products.
               </p>
               <p>
                 Through <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
@@ -104,11 +104,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateS
                 Southeast University
               </h3>
               <p className="text-xs font-mono text-[#94A3B8]">
-                Higher Education — Bangladesh
+                Bangladesh
               </p>
             </div>
-            <div className="px-3 py-1 rounded bg-[#061D20] border border-[#0E353C] text-xs font-mono text-emerald-400 font-semibold">
-              ACADEMIC FOUNDATION
+            <div className="text-left sm:text-right">
+              <span className="text-xs font-mono text-emerald-400 font-bold">
+                Computer Science &amp; Engineering
+              </span>
             </div>
           </div>
         </div>
