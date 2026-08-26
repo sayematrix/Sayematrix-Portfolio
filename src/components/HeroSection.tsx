@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
           {/* Asymmetric Typography Grid for Credentials & Disciplines */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pt-8 border-t border-[#0E353C]">
             
-            {/* Left Column: Founder & Creator Identities */}
+            {/* Left Column: Founder, Creator & Core Identity */}
             <div className="md:col-span-6 space-y-6">
               
               {/* 3. Founder Identity */}
@@ -56,7 +56,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
               </div>
 
               {/* 4. Creator Identity */}
-              <div className="space-y-1.5 pt-2">
+              <div className="space-y-1.5 pt-1">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#94A3B8] block font-semibold">
                   CREATOR &amp; BUILDER
                 </span>
@@ -65,28 +65,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
                 </p>
               </div>
 
+              {/* 5. Core Identity */}
+              <div className="space-y-1.5 pt-1">
+                <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 block font-semibold">
+                  CORE IDENTITY
+                </span>
+                <p className="text-lg sm:text-xl font-mono font-bold text-[#F8FAFC] tracking-tight">
+                  Quant Finance &amp; Algorithmic Trading
+                </p>
+              </div>
+
             </div>
 
             {/* Right Column: Professional Disciplines */}
             <div className="md:col-span-6 space-y-6">
               
-              {/* 5. Primary Professional Focus */}
+              {/* 6. Primary Focus */}
               <div className="space-y-1.5">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#94A3B8] block font-semibold">
                   PRIMARY FOCUS
                 </span>
                 <p className="text-base sm:text-lg font-mono font-semibold text-[#F8FAFC] leading-relaxed">
-                  AI <span className="text-emerald-400 font-bold">•</span> Automation <span className="text-emerald-400 font-bold">•</span> Quant Finance & Algorithmic Trading <span className="text-emerald-400 font-bold">•</span> Financial Intelligence 
-                  <span className="text-emerald-400 font-bold">•</span>FinTech <span className="text-emerald-400 font-bold">•</span> Data & Analytics <span className="text-emerald-400 font-bold">•</span> Product Development </p>
+                  Financial Intelligence <span className="text-emerald-400 font-bold">•</span> AI <span className="text-emerald-400 font-bold">•</span> Automation <span className="text-emerald-400 font-bold">•</span> FinTech <span className="text-emerald-400 font-bold">•</span> Data &amp; Analytics <span className="text-emerald-400 font-bold">•</span> Product Development
+                </p>
               </div>
 
-              {/* 6. Supporting Expertise */}
+              {/* 7. Supporting Expertise */}
               <div className="space-y-1.5 pt-1">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#94A3B8] block font-semibold">
                   SUPPORTING EXPERTISE
                 </span>
                 <p className="text-sm sm:text-base font-mono text-[#94A3B8] leading-relaxed">
-                  Quantitative Analysis <span className="text-[#154D56]">•</span> Digital Systems <span className="text-[#154D56]">•</span> Research
+                  Quantitative Analysis <span className="text-emerald-500/60">•</span> Digital Systems <span className="text-emerald-500/60">•</span> Research <span className="text-emerald-500/60">•</span> Software &amp; Systems Architecture
                 </p>
               </div>
 
