@@ -16,6 +16,7 @@ import { KnowledgeWorkflow } from './components/KnowledgeWorkflow';
 import { VenturesSection } from './components/VenturesSection';
 import { EcosystemSection } from './components/EcosystemSection';
 import { PhilosophySection } from './components/PhilosophySection';
+import { LifestyleSection } from './components/LifestyleSection';
 import { PersonalDimensionSection } from './components/PersonalDimensionSection';
 import { TimelineSection } from './components/TimelineSection';
 import { ContactSection } from './components/ContactSection';
@@ -24,6 +25,7 @@ import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { AboutPage } from './pages/AboutPage';
 import { CvPage } from './pages/CvPage';
 import { EcosystemPage } from './pages/EcosystemPage';
+import { LifestylePage } from './pages/LifestylePage';
 import { ResearchPaperPage } from './pages/ResearchPaperPage';
 import { ResearchPapersPage } from './pages/ResearchPapersPage';
 
@@ -166,13 +168,21 @@ export default function App() {
                 {/* 12. Philosophy */}
                 <PhilosophySection />
 
-                {/* 13. Personal Dimension */}
+                {/* 13. Lifestyle & Human Systems Architecture */}
+                <LifestyleSection
+                  onExploreLifestylePage={() => {
+                    setActivePage('lifestyle');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                />
+
+                {/* 14. Personal Dimension */}
                 <PersonalDimensionSection />
 
-                {/* 14. Timeline / Journey */}
+                {/* 15. Timeline / Journey */}
                 <TimelineSection />
 
-                {/* 15. Contact */}
+                {/* 16. Contact */}
                 <ContactSection />
               </>
             )}
@@ -197,6 +207,13 @@ export default function App() {
             {activePage === 'cv' && <CvPage />}
 
             {activePage === 'ecosystem' && <EcosystemPage />}
+
+            {activePage === 'lifestyle' && (
+              <LifestylePage
+                onBackToMain={() => setActivePage('home')}
+                setActivePage={setActivePage}
+              />
+            )}
           </>
         )}
       </main>

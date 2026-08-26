@@ -35,6 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'research', label: 'Research', page: 'home', sectionId: 'research' },
     { id: 'ventures', label: 'Ventures', page: 'home', sectionId: 'ventures' },
     { id: 'ecosystem', label: 'Ecosystem', page: 'home', sectionId: 'ecosystem' },
+    { id: 'lifestyle', label: 'Lifestyle', page: 'home', sectionId: 'lifestyle' },
     { id: 'cv', label: 'CV', page: 'cv' },
     { id: 'contact', label: 'Contact', page: 'home', sectionId: 'contact' },
   ];
@@ -63,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       return;
     }
 
-    const sectionIds = ['about', 'work', 'research', 'ventures', 'ecosystem', 'contact'];
+    const sectionIds = ['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'];
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {

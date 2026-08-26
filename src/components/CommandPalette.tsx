@@ -164,6 +164,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 </button>
 
                 <button
+                  onClick={() => handleAction('section', 'lifestyle')}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                >
+                  <div className="flex items-center gap-2">
+                    <Compass className="w-3.5 h-3.5 text-rose-400" />
+                    <span>Lifestyle & Human Systems</span>
+                  </div>
+                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                </button>
+
+                <button
                   onClick={() => handleAction('page', 'cv')}
                   className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
                 >

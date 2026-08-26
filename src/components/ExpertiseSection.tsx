@@ -3,7 +3,7 @@ import { EXPERTISE_CATEGORIES } from '../data/content';
 import { Bot, LineChart, Cpu, TrendingUp, BrainCircuit, Layers, ChevronDown, Sparkles } from 'lucide-react';
 
 export const ExpertiseSection: React.FC = () => {
-  const [expandedId, setExpandedId] = useState<string>('ai-automation');
+  const [expandedId, setExpandedId] = useState<string>('quant-algo');
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {

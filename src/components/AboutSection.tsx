@@ -31,21 +31,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onReadFullProfile })
           <div className="lg:col-span-7 bg-[#061D20] p-6 sm:p-8 rounded-xl border border-[#0E353C]">
             <div className="space-y-4">
               <h3 className="text-xl font-sans font-bold text-[#F8FAFC] leading-snug">
-                Building at the intersection of AI, Automation, Financial Intelligence, and Financial Markets.
+                PROFESSIONAL SUMMARY
               </h3>
               
               <div className="space-y-3 text-sm font-sans text-[#94A3B8] leading-relaxed">
                 <p>
-                  SAYEM is a founder, builder, systems thinker, quantitative researcher, and technology-focused entrepreneur. He operates across multi-disciplinary domains, engineering structured software systems and data-driven infrastructure designed for long-term operational efficiency.
+                  A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.
                 </p>
                 <p>
-                  His core technical focus spans artificial intelligence, workflow automation, quantitative finance, and financial modeling. By combining algorithmic trading architecture, backtesting methodologies, and systematic risk management, he builds computational tools and software engines tailored for complex market environments.
+                  Combines quantitative analysis, market intelligence, data, AI, automation, and systems engineering to research, design, and build intelligent financial systems, trading technologies, and digital products.
                 </p>
                 <p>
-                  Driven by rigorous research, SAYEM explores market microstructure, macroeconomics, institutional liquidity, behavioral finance, portfolio construction, derivatives, and decentralized technologies. His work translates complex quantitative insights into actionable decision-support frameworks and analytics platforms.
-                </p>
-                <p>
-                  As the founder of <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and creator of the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> digital ecosystem, his mission is to build scalable technology, financial intelligence models, and digital systems that unite research, automation, and sustainable value creation.
+                  Through <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
                 </p>
               </div>
             </div>
@@ -69,40 +66,39 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onReadFullProfile })
           <div className="lg:col-span-5 bg-[#031214] p-6 sm:p-8 rounded-xl border border-[#0E353C] space-y-5">
             <div className="flex items-center justify-between pb-3 border-b border-[#0E353C]">
               <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
-                TECHNICAL PROFILE INDEX
+                CORE ROLES &amp; TITLES
               </span>
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
             </div>
 
-            <div className="space-y-4 text-xs font-mono">
+            <div className="space-y-3 text-xs font-mono">
               <div className="p-3 rounded bg-[#061D20] border border-[#0E353C]">
                 <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">FOUNDER</span>
                 <span className="text-[#F8FAFC] font-bold text-sm">SANR Corporation Limited</span>
               </div>
 
               <div className="p-3 rounded bg-[#061D20] border border-[#0E353C]">
-                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">CREATOR</span>
-                <span className="text-emerald-400 font-bold text-sm">SAYEMATRIX Ecosystem</span>
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">CREATOR &amp; SYSTEMS ARCHITECT</span>
+                <span className="text-emerald-400 font-bold text-sm">SAYEMATRIX</span>
               </div>
 
               <div className="p-3 rounded bg-[#061D20] border border-[#0E353C]">
-                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">CORE FOCUS</span>
-                <span className="text-[#F8FAFC] font-semibold">AI • Automation • FinTech</span>
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">CORE DISCIPLINE</span>
+                <span className="text-[#F8FAFC] font-bold text-xs">Quant Finance &amp; Algorithmic Trading</span>
               </div>
 
               <div className="p-3 rounded bg-[#061D20] border border-[#0E353C]">
-                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">INTERESTS</span>
-                <div className="flex flex-wrap gap-1.5">
-                  {['Quantitative Systems', 'Financial Markets', 'Digital Infrastructure', 'Research', 'Technology', 'Business'].map(item => (
-                    <span key={item} className="px-2 py-0.5 rounded bg-[#082226] text-[10px] text-[#94A3B8] border border-[#0E353C]">
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">TECHNOLOGY &amp; SYSTEMS</span>
+                <span className="text-[#94A3B8] text-xs">AI • Automation • Financial Technology</span>
+              </div>
+
+              <div className="p-3 rounded bg-[#061D20] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-0.5">ANALYTICS &amp; RESEARCH</span>
+                <span className="text-[#94A3B8] text-xs">Quantitative Analysis • Market Systems • Research</span>
               </div>
 
               <div className="flex items-center justify-between p-3 rounded bg-[#061D20] border border-[#0E353C]">
-                <span className="text-[#94A3B8] text-[10px] uppercase">LOCATION</span>
+                <span className="text-[#94A3B8] text-[10px] uppercase font-bold">LOCATION:</span>
                 <span className="text-[#F8FAFC] font-semibold flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-emerald-400" />
                   {PERSONAL_INFO.location}

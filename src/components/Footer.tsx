@@ -83,8 +83,13 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                 </button>
               </li>
               <li>
+                <button onClick={() => handleNav('lifestyle')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                  06. Lifestyle &amp; Human Systems
+                </button>
+              </li>
+              <li>
                 <button onClick={() => handleNav('cv')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
-                  06. CV / Resume
+                  07. CV / Resume
                 </button>
               </li>
             </ul>

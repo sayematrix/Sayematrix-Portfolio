@@ -1,58 +1,90 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO, SELECTED_PROJECTS, EXPERTISE_CATEGORIES, VENTURES, CURRENT_FOCUS_GRID } from '../data/content';
-import { FileText, Download, Copy, Check, Printer, Mail, Linkedin, MapPin, ExternalLink, Target } from 'lucide-react';
+import { FileText, Download, Copy, Check, Printer, Mail, Linkedin, MapPin, Target, Sparkles, Compass } from 'lucide-react';
 
 export const CvPage: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const generateFullCvText = () => {
     return `SAYEM
-AI & Automation • Financial Technology & Systems • Financial Markets • Quantitative Analysis • Digital Systems
-Location: ${PERSONAL_INFO.location}
-Email: ${PERSONAL_INFO.contact.email}
-LinkedIn: ${PERSONAL_INFO.contact.linkedin}
-Website: https://sayematrix.com
 
-==================================================
+Quant Finance & Algorithmic Trading • AI & Automation • Financial Technology
+
+${PERSONAL_INFO.location}
+${PERSONAL_INFO.contact.email} · LinkedIn Profile
+
 01. PROFESSIONAL SUMMARY
-==================================================
+
 ${PERSONAL_INFO.bioSummary}
 
-${PERSONAL_INFO.fullBioParagraphs.join('\n\n')}
+${PERSONAL_INFO.fullBioParagraphs[1]}
 
-==================================================
+${PERSONAL_INFO.fullBioParagraphs[2]}
+
 02. CURRENT FOCUS AREAS
-==================================================
-${CURRENT_FOCUS_GRID.map(f => `• ${f.title}: ${f.description}`).join('\n')}
 
-==================================================
+Active R&D pipelines and systems currently under development in 2026.
+
+${CURRENT_FOCUS_GRID.map(f => `${f.number}. ${f.title}\n\n${f.description}\n\nSTATUS: ACTIVE`).join('\n\n')}
+
 03. CORE EXPERTISE & SPECIALIZATIONS
-==================================================
-${EXPERTISE_CATEGORIES.map(c => `[${c.title}]: ${c.skills.join(', ')}`).join('\n')}
+${EXPERTISE_CATEGORIES.map(c => `${c.title}\n\n${c.subtitle}\n\n${c.skills.join('\n')}`).join('\n\n')}
 
-==================================================
-04. PRIMARY VENTURES & DIGITAL BRAND
-==================================================
-- ${VENTURES[0].name} (${VENTURES[0].label})
-  ${VENTURES[0].description}
+04. PRIMARY VENTURES & DIGITAL BRANDS
+${VENTURES[0].name}
 
-- ${VENTURES[1].name} (${VENTURES[1].label})
-  ${VENTURES[1].description}
+${VENTURES[0].label}
 
-==================================================
+${VENTURES[0].description}
+
+${VENTURES[0].highlights.join('\n')}
+
+${VENTURES[1].name}
+
+${VENTURES[1].label}
+
+${VENTURES[1].description}
+
+${VENTURES[1].highlights.join('\n')}
+
 05. SELECTED SYSTEMS & PROJECTS
-==================================================
-${SELECTED_PROJECTS.map(p => `• ${p.title} (${p.category}): ${p.description}`).join('\n')}
+${SELECTED_PROJECTS.map(p => `${p.title}\n\n${p.category}\n\n${p.description}`).join('\n\n')}
 
-==================================================
 06. EDUCATION
-==================================================
-Southeast University — Bangladesh
+SOUTHEAST UNIVERSITY
 
-==================================================
+Bangladesh
+
+ACADEMIC PROGRAM
+
+Computer Science & Engineering
+
 07. WORKING PRINCIPLES
-==================================================
-${PERSONAL_INFO.workingPrinciples.join(' -> ')}
+
+${PERSONAL_INFO.workingPrinciplesDetailed.map(wp => `${wp.number} — ${wp.title}\n${wp.description}`).join('\n\n')}
+
+PROFESSIONAL POSITIONING
+
+CORE IDENTITY
+${PERSONAL_INFO.professionalPositioning.coreIdentity}
+
+TECHNICAL EDGE
+${PERSONAL_INFO.professionalPositioning.technicalEdge}
+
+PRIMARY DOMAIN
+${PERSONAL_INFO.professionalPositioning.primaryDomain}
+
+BUILDING FOCUS
+${PERSONAL_INFO.professionalPositioning.buildingFocus}
+
+LONG-TERM DIRECTION
+${PERSONAL_INFO.professionalPositioning.longTermDirection}
+
+BUSINESS VEHICLES
+${PERSONAL_INFO.professionalPositioning.businessVehicles}
+
+OPERATING LOOP
+${PERSONAL_INFO.professionalPositioning.operatingLoop}
 `;
   };
 
@@ -125,8 +157,8 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
             <h1 className="text-4xl sm:text-5xl font-black text-[#F8FAFC] tracking-tight uppercase print:text-black">
               SAYEM
             </h1>
-            <p className="text-xs sm:text-sm font-mono text-emerald-400 font-bold uppercase tracking-wider leading-relaxed print:text-emerald-800">
-              AI & Automation • Financial Technology & Systems • Financial Markets • Quantitative Analysis • Digital Systems
+            <p className="text-xs sm:text-sm font-mono text-emerald-400 font-bold tracking-wide leading-relaxed print:text-emerald-800">
+              Quant Finance &amp; Algorithmic Trading • AI &amp; Automation • Financial Technology
             </p>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs font-mono text-[#94A3B8]">
@@ -158,28 +190,36 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
               01. PROFESSIONAL SUMMARY
             </h2>
             <p className="text-xs sm:text-sm text-[#F8FAFC] leading-relaxed font-semibold">
-              {PERSONAL_INFO.bioSummary}
+              A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.
             </p>
-            {PERSONAL_INFO.fullBioParagraphs.map((para, i) => (
-              <p key={i} className="text-xs text-[#94A3B8] leading-relaxed">
-                {para}
-              </p>
-            ))}
+            <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              Combines quantitative analysis, market intelligence, data, AI, automation, and systems architecture to research, design, and build intelligent financial systems, trading technologies, and digital products.
+            </p>
+            <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+              Through <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
+            </p>
           </div>
 
           {/* Section 02: Current Focus */}
           <div className="space-y-3">
-            <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5 flex items-center justify-between">
-              <span>02. CURRENT FOCUS AREAS</span>
-              <Target className="w-3.5 h-3.5 text-emerald-400" />
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="border-b border-[#0E353C] pb-1.5 flex items-center justify-between">
+              <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                02. CURRENT FOCUS AREAS
+              </h2>
+              <span className="text-[10px] font-mono text-[#94A3B8]">
+                Active R&amp;D pipelines and systems currently under development in 2026.
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               {CURRENT_FOCUS_GRID.map((item) => (
-                <div key={item.number} className="p-3.5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-emerald-400 font-bold">{item.number}. {item.title}</span>
+                <div key={item.number} className="p-3.5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-1.5 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold block">{item.number}. {item.title}</span>
+                    <p className="text-[11px] text-[#94A3B8] leading-relaxed mt-1">{item.description}</p>
                   </div>
-                  <p className="text-[11px] text-[#94A3B8] leading-relaxed">{item.description}</p>
+                  <div className="pt-2 flex items-center justify-between text-[9px] font-mono text-emerald-400 font-bold border-t border-[#0E353C]/60">
+                    <span>STATUS: ACTIVE</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -188,20 +228,23 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
           {/* Section 03: Core Expertise & Specializations */}
           <div className="space-y-4">
             <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5">
-              03. CORE EXPERTISE & SPECIALIZATIONS
+              03. CORE EXPERTISE &amp; SPECIALIZATIONS
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {EXPERTISE_CATEGORIES.map(cat => (
-                <div key={cat.id} className="p-3.5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-1.5">
-                  <span className="text-xs font-mono text-emerald-400 font-bold block">{cat.title}</span>
-                  <p className="text-[10px] font-mono text-[#94A3B8] italic">{cat.subtitle}</p>
-                  <div className="flex flex-wrap gap-1 pt-1">
-                    {cat.skills.map(skill => (
-                      <span key={skill} className="px-2 py-0.5 rounded bg-[#061D20] border border-[#0E353C] text-[10px] font-mono text-[#F8FAFC]">
-                        {skill}
-                      </span>
-                    ))}
+                <div key={cat.id} className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
+                  <div>
+                    <span className="text-xs font-mono text-emerald-400 font-bold block uppercase">{cat.title}</span>
+                    <p className="text-[10px] font-mono text-[#94A3B8] italic mt-0.5">{cat.subtitle}</p>
                   </div>
+                  <ul className="space-y-1 pt-1">
+                    {cat.skills.map(skill => (
+                      <li key={skill} className="text-xs font-mono text-[#F8FAFC] flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                        <span>{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -210,14 +253,14 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
           {/* Section 04: Ventures & Digital Brand */}
           <div className="space-y-4">
             <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5">
-              04. PRIMARY VENTURES & DIGITAL BRAND
+              04. PRIMARY VENTURES &amp; DIGITAL BRANDS
             </h2>
 
             <div className="space-y-3">
               {VENTURES.map(venture => (
-                <div key={venture.id} className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
+                <div key={venture.id} className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <h3 className="text-sm font-bold text-[#F8FAFC]">{venture.name}</h3>
+                    <h3 className="text-sm font-bold text-[#F8FAFC] uppercase font-mono tracking-wide">{venture.name}</h3>
                     <span className="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 w-fit">
                       {venture.label}
                     </span>
@@ -227,8 +270,8 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
                     {venture.highlights.map((h, idx) => (
-                      <span key={idx} className="text-[11px] font-mono text-[#94A3B8] flex items-center gap-1.5">
-                        <span className="w-1 h-1 rounded-full bg-emerald-400 inline-block"></span>
+                      <span key={idx} className="text-[11px] font-mono text-[#F8FAFC] flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-emerald-400 shrink-0"></span>
                         {h}
                       </span>
                     ))}
@@ -241,13 +284,13 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
           {/* Section 05: Selected Systems & Projects */}
           <div className="space-y-4">
             <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5">
-              05. SELECTED SYSTEMS & PROJECTS
+              05. SELECTED SYSTEMS &amp; PROJECTS
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {SELECTED_PROJECTS.map(proj => (
                 <div key={proj.id} className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#F8FAFC]">{proj.title}</span>
+                    <span className="text-xs font-bold text-[#F8FAFC] uppercase font-mono">{proj.title}</span>
                     <span className="text-[9px] font-mono text-emerald-400 px-1.5 py-0.5 rounded bg-[#061D20] border border-[#0E353C]">
                       {proj.category}
                     </span>
@@ -263,14 +306,15 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
             <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5">
               06. EDUCATION
             </h2>
-            <div className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] flex items-center justify-between">
+            <div className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <span className="text-xs font-bold text-[#F8FAFC] block">Southeast University</span>
-                <span className="text-[11px] font-mono text-[#94A3B8]">Bangladesh</span>
+                <span className="text-sm font-bold text-[#F8FAFC] block font-mono">SOUTHEAST UNIVERSITY</span>
+                <span className="text-xs font-mono text-[#94A3B8]">Bangladesh</span>
               </div>
-              <span className="text-[10px] font-mono text-emerald-400 font-semibold px-2 py-1 rounded bg-[#061D20] border border-[#0E353C]">
-                ACADEMIC DEGREES
-              </span>
+              <div className="text-left sm:text-right">
+                <span className="text-[10px] font-mono text-[#94A3B8] uppercase block">UNDERGRADUATE STUDIES</span>
+                <span className="text-xs font-mono text-emerald-400 font-bold">Computer Science &amp; Engineering</span>
+              </div>
             </div>
           </div>
 
@@ -279,13 +323,62 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
             <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5">
               07. WORKING PRINCIPLES
             </h2>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {PERSONAL_INFO.workingPrinciples.map((principle, idx) => (
-                <span key={principle} className="px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#F8FAFC]">
-                  <span className="text-emerald-400 font-bold mr-1.5">0{idx + 1}.</span>
-                  {principle}
-                </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-1">
+              {PERSONAL_INFO.workingPrinciplesDetailed.map((principle) => (
+                <div key={principle.number} className="p-3.5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-1">
+                  <span className="text-xs font-mono text-emerald-400 font-bold block">
+                    {principle.number} — {principle.title}
+                  </span>
+                  <p className="text-xs text-[#94A3B8] leading-relaxed">
+                    {principle.description}
+                  </p>
+                </div>
               ))}
+            </div>
+          </div>
+
+          {/* Professional Positioning */}
+          <div className="space-y-4 pt-4 border-t border-[#0E353C]">
+            <h2 className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest border-b border-[#0E353C] pb-1.5 flex items-center gap-2">
+              <Compass className="w-3.5 h-3.5 text-emerald-400" />
+              <span>PROFESSIONAL POSITIONING</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-mono">
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">CORE IDENTITY</span>
+                <span className="text-[#F8FAFC] font-bold">{PERSONAL_INFO.professionalPositioning.coreIdentity}</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">TECHNICAL EDGE</span>
+                <span className="text-[#F8FAFC] font-bold">{PERSONAL_INFO.professionalPositioning.technicalEdge}</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">PRIMARY DOMAIN</span>
+                <span className="text-[#F8FAFC] font-bold">{PERSONAL_INFO.professionalPositioning.primaryDomain}</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">BUILDING FOCUS</span>
+                <span className="text-[#F8FAFC] font-bold">{PERSONAL_INFO.professionalPositioning.buildingFocus}</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">LONG-TERM DIRECTION</span>
+                <span className="text-emerald-400 font-bold">{PERSONAL_INFO.professionalPositioning.longTermDirection}</span>
+              </div>
+
+              <div className="p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">BUSINESS VEHICLES</span>
+                <span className="text-[#F8FAFC] font-bold">{PERSONAL_INFO.professionalPositioning.businessVehicles}</span>
+              </div>
+
+              <div className="sm:col-span-2 md:col-span-3 p-3 rounded-lg bg-[#031214] border border-[#0E353C]">
+                <span className="text-[#94A3B8] block text-[10px] uppercase mb-1">OPERATING LOOP</span>
+                <span className="text-emerald-400 font-mono font-bold">{PERSONAL_INFO.professionalPositioning.operatingLoop}</span>
+              </div>
             </div>
           </div>
 
@@ -295,4 +388,5 @@ ${PERSONAL_INFO.workingPrinciples.join(' -> ')}
     </div>
   );
 };
+
 

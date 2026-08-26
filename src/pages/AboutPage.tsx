@@ -40,13 +40,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateS
 
             <div className="space-y-4 text-sm font-sans text-[#94A3B8] leading-relaxed">
               <p>
-                AI, automation, financial technology, and financial markets enthusiast focused on building intelligent systems, quantitative tools, automation workflows, and digital products.
+                A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.
               </p>
               <p>
-                {PERSONAL_INFO.fullBioParagraphs[1]}
+                Combines quantitative analysis, market intelligence, data, AI, automation, and systems engineering to research, design, and build intelligent financial systems, trading technologies, and digital products.
               </p>
               <p>
-                {PERSONAL_INFO.fullBioParagraphs[2]}
+                Through <strong className="text-[#F8FAFC]">SANR Corporation Limited</strong> and the <strong className="text-[#F8FAFC]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
               </p>
             </div>
 
@@ -66,7 +66,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateS
           <div className="md:col-span-4 bg-[#061D20] p-6 rounded-2xl border border-[#0E353C] space-y-4 flex flex-col justify-between">
             <div>
               <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-4">
-                CORE ROLES & TITLES
+                CORE ROLES &amp; TITLES
               </span>
 
               <div className="space-y-3 text-xs font-mono text-[#F8FAFC]">
@@ -80,7 +80,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateS
             </div>
 
             <div className="p-3 rounded bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#94A3B8] flex items-center justify-between">
-              <span>LOCATION:</span>
+              <span className="font-bold uppercase">LOCATION:</span>
               <span className="text-[#F8FAFC] font-bold flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
                 {PERSONAL_INFO.location}

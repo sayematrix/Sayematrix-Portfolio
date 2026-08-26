@@ -1,16 +1,17 @@
 import React from 'react';
 import { CURRENT_FOCUS_GRID } from '../data/content';
-import { Cpu, Workflow, Landmark, Binary, Box, BrainCircuit } from 'lucide-react';
+import { BrainCircuit, LineChart, Database, Workflow, BarChart3, Layers, Globe, Cpu } from 'lucide-react';
 
 export const CurrentFocusSection: React.FC = () => {
   const getIcon = (idx: number) => {
     switch (idx) {
-      case 0: return <Cpu className="w-5 h-5 text-emerald-400" />;
-      case 1: return <Workflow className="w-5 h-5 text-cyan-400" />;
-      case 2: return <Landmark className="w-5 h-5 text-blue-400" />;
-      case 3: return <Binary className="w-5 h-5 text-purple-400" />;
-      case 4: return <Box className="w-5 h-5 text-amber-400" />;
-      case 5: return <BrainCircuit className="w-5 h-5 text-emerald-400" />;
+      case 0: return <BrainCircuit className="w-5 h-5 text-emerald-400" />;
+      case 1: return <LineChart className="w-5 h-5 text-cyan-400" />;
+      case 2: return <Database className="w-5 h-5 text-blue-400" />;
+      case 3: return <Workflow className="w-5 h-5 text-purple-400" />;
+      case 4: return <BarChart3 className="w-5 h-5 text-amber-400" />;
+      case 5: return <Layers className="w-5 h-5 text-emerald-400" />;
+      case 6: return <Globe className="w-5 h-5 text-cyan-400" />;
       default: return <Cpu className="w-5 h-5 text-emerald-400" />;
     }
   };
@@ -33,12 +34,14 @@ export const CurrentFocusSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Six-Item Grid */}
+        {/* Focus Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {CURRENT_FOCUS_GRID.map((item, idx) => (
             <div
               key={item.number}
-              className="group p-6 rounded-xl bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/50 hover:bg-[#0A2B30] transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between"
+              className={`group p-6 rounded-xl bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/50 hover:bg-[#0A2B30] transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between ${
+                idx === 6 ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-3xl font-extrabold text-[#0E353C] group-hover:text-emerald-400 transition-colors">
