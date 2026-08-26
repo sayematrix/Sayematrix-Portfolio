@@ -113,7 +113,7 @@ ${PERSONAL_INFO.professionalPositioning.operatingLoop}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Top Actions Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-[#061D20] border border-[#0E353C]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-[#061D20] border border-[#0E353C] no-print">
           <div className="flex items-center gap-2 text-xs font-mono text-[#F8FAFC]">
             <FileText className="w-4 h-4 text-emerald-400" />
             <span>SAYEMATRIX // OFFICIAL CV & PROFESSIONAL PROFILE</span>

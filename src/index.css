@@ -76,3 +76,43 @@
   background-color: #031214;
 }
 
+/* Custom terminal scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020C0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0E353C;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #154D56;
+}
+
+/* Print optimizations for CV and Research Paper exports */
+@media print {
+  body, html {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  header, footer, nav, #cmd-palette-trigger, #mobile-menu-toggle-btn, .no-print {
+    display: none !important;
+  }
+
+  .print-clean {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
+
+

@@ -53,7 +53,7 @@ export const LifestylePage: React.FC<LifestylePageProps> = ({ onBackToMain, setA
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between no-print">
           <button
             onClick={() => {
               if (onBackToMain) onBackToMain();
