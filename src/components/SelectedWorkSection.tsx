@@ -17,7 +17,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
     : SELECTED_PROJECTS.filter(p => p.tags.includes(selectedTag));
 
   return (
-    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative" id="work">
+    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="work">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

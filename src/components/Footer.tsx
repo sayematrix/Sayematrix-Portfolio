@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
   const handleNav = (page: NavigationPage, sectionId?: string) => {
     setActivePage(page);
     if (page === 'home' && sectionId) {
-      setTimeout(() => onNavigateSection(sectionId), 50);
+      onNavigateSection(sectionId);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }

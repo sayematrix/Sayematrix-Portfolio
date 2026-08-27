@@ -8,7 +8,7 @@ interface VenturesSectionProps {
 
 export const VenturesSection: React.FC<VenturesSectionProps> = ({ onExploreVenture }) => {
   return (
-    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative" id="ventures">
+    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="ventures">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

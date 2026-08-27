@@ -121,9 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setActivePage(page);
     setMobileMenuOpen(false);
     if (page === 'home' && sectionId) {
-      setTimeout(() => {
-        onNavigateSection(sectionId);
-      }, 50);
+      onNavigateSection(sectionId);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }

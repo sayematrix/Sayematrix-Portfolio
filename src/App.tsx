@@ -36,20 +36,76 @@ export default function App() {
   const [selectedPaperId, setSelectedPaperId] = useState<string | null>(null);
 
   const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const performScroll = () => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
+        if (window.history.pushState) {
+          window.history.pushState(null, '', `#${sectionId}`);
+        }
+        return true;
+      }
+      return false;
+    };
+
+    if (!performScroll()) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (performScroll() || attempts > 25) {
+          clearInterval(interval);
+        }
+      }, 35);
     }
   };
 
+  // Sync hash routing on initial load & back/forward navigation
+  React.useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) return;
+
+      if (hash === 'cv') {
+        setActivePage('cv');
+      } else if (hash === 'about-page') {
+        setActivePage('about');
+      } else if (hash === 'research-library' || hash === 'papers') {
+        setActivePage('research');
+      } else if (hash === 'ecosystem-page') {
+        setActivePage('ecosystem');
+      } else if (hash === 'lifestyle-page') {
+        setActivePage('lifestyle');
+      } else if (['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'].includes(hash)) {
+        setActivePage('home');
+        setSelectedPaperId(null);
+        setSelectedProjectId(null);
+        scrollToSection(hash);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   const handleExploreWork = () => {
     setActivePage('home');
-    setTimeout(() => scrollToSection('work'), 50);
+    setSelectedPaperId(null);
+    scrollToSection('work');
   };
 
   const handleAboutMe = () => {
     setActivePage('home');
-    setTimeout(() => scrollToSection('about'), 50);
+    setSelectedPaperId(null);
+    scrollToSection('about');
   };
 
   const selectedProject = SELECTED_PROJECTS.find(p => p.id === selectedProjectId) || null;
@@ -102,7 +158,7 @@ export default function App() {
             onBack={() => {
               setSelectedPaperId(null);
               if (activePage === 'home') {
-                setTimeout(() => scrollToSection('research'), 50);
+                scrollToSection('research');
               }
             }}
             onSelectPaper={(id) => setSelectedPaperId(id)}
@@ -192,7 +248,7 @@ export default function App() {
                 onSelectPaper={(id) => setSelectedPaperId(id)}
                 onBackToMain={() => {
                   setActivePage('home');
-                  setTimeout(() => scrollToSection('research'), 50);
+                  scrollToSection('research');
                 }}
               />
             )}

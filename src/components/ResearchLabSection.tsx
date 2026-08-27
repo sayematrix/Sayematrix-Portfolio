@@ -40,7 +40,7 @@ export const ResearchLabSection: React.FC<ResearchLabSectionProps> = ({
   });
 
   return (
-    <section className="py-24 bg-[#050607] border-b border-[#1B2127] relative select-none" id="research">
+    <section className="py-24 bg-[#050607] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="research">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

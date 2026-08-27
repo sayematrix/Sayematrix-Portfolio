@@ -42,7 +42,7 @@ export const EcosystemSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-[#050607] border-b border-[#1B2127] relative overflow-hidden" id="ecosystem">
+    <section className="py-24 bg-[#050607] border-b border-[#1B2127] relative overflow-hidden scroll-mt-20 sm:scroll-mt-24" id="ecosystem">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

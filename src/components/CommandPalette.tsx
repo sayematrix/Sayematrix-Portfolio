@@ -50,19 +50,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (type === 'section') {
       setActivePage('home');
-      setTimeout(() => onNavigateSection(value), 50);
+      onNavigateSection(value);
     } else if (type === 'project' && onSelectProject) {
       setActivePage('home');
-      setTimeout(() => {
-        onNavigateSection('work');
-        onSelectProject(value);
-      }, 50);
+      onNavigateSection('work');
+      onSelectProject(value);
     } else if (type === 'note' && onSelectNote) {
-      setActivePage('home');
-      setTimeout(() => {
-        onNavigateSection('research');
-        onSelectNote(value);
-      }, 50);
+      setActivePage('research');
+      onSelectNote(value);
     } else if (type === 'external') {
       window.open(value, '_blank');
     }

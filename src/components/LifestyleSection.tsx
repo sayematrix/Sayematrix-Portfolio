@@ -46,7 +46,7 @@ export const LifestyleSection: React.FC<LifestyleSectionProps> = ({ onExploreLif
     : LIFESTYLE_DATA.detailedItems.filter(item => item.category === selectedCategory);
 
   return (
-    <section className="py-20 bg-[#050607] border-b border-[#1B2127] relative" id="lifestyle">
+    <section className="py-20 bg-[#050607] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="lifestyle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header Block */}

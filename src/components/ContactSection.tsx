@@ -44,7 +44,7 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#0A0D10] border-b border-[#1B2127] relative overflow-hidden" id="contact">
+    <section className="py-24 bg-[#0A0D10] border-b border-[#1B2127] relative overflow-hidden scroll-mt-20 sm:scroll-mt-24" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl space-y-8">
           
