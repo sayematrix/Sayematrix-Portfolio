@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // IntersectionObserver + Scroll Spy for Active Section Detection
+  // Precision Scroll Spy & Active Section Detection
   useEffect(() => {
     if (activePage !== 'home') {
       setActiveSection(activePage);
@@ -66,54 +66,67 @@ export const Navbar: React.FC<NavbarProps> = ({
 
     const sectionIds = ['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'];
 
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
+    let ticking = false;
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -50% 0px',
-      threshold: 0.15,
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    // Fallback scroll listener for smooth edge detection (top of hero / bottom contact)
-    const detectScrollFallback = () => {
+    const detectActiveSection = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
+      // Bottom edge detection for contact / footer
       if (scrollPosition + windowHeight >= documentHeight - 60) {
         setActiveSection('contact');
+        ticking = false;
         return;
       }
 
-      if (scrollPosition < 250) {
-        const aboutEl = document.getElementById('about');
-        if (aboutEl) {
-          const rect = aboutEl.getBoundingClientRect();
-          if (rect.top > windowHeight * 0.5) {
-            setActiveSection('');
+      // Top of page (Hero & intro strip before 'about')
+      const triggerPoint = Math.min(220, windowHeight * 0.35);
+
+      const aboutEl = document.getElementById('about');
+      if (aboutEl) {
+        const aboutRect = aboutEl.getBoundingClientRect();
+        if (aboutRect.top > triggerPoint) {
+          setActiveSection('');
+          ticking = false;
+          return;
+        }
+      }
+
+      // Find the currently active section by iterating from bottom to top
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerPoint) {
+            setActiveSection(id);
+            ticking = false;
+            return;
           }
         }
       }
+
+      setActiveSection('');
+      ticking = false;
     };
 
-    window.addEventListener('scroll', detectScrollFallback, { passive: true });
+    const handleScrollThrottled = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(detectActiveSection);
+        ticking = true;
+      }
+    };
+
+    // Run once on mount / page change
+    detectActiveSection();
+
+    window.addEventListener('scroll', handleScrollThrottled, { passive: true });
+    window.addEventListener('resize', handleScrollThrottled, { passive: true });
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', detectScrollFallback);
+      window.removeEventListener('scroll', handleScrollThrottled);
+      window.removeEventListener('resize', handleScrollThrottled);
     };
   }, [activePage]);
 
