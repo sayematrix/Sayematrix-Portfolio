@@ -86,7 +86,7 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#041618] text-[#F8FAFC] font-sans pt-20 pb-24 selection:bg-emerald-500 selection:text-[#031214] print:bg-white print:text-black">
+    <div className="min-h-screen bg-[#050607] text-[#F5F7FA] font-sans pt-20 pb-24 selection:bg-[#42B8E8] selection:text-[#050607] print:bg-white print:text-black">
       
       {/* Print-Only Styles Injection */}
       <style>{`
@@ -123,13 +123,13 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
             color: #111111 !important;
           }
 
-          /* Primary emerald accents formatted cleanly for print */
-          .text-emerald-400, .text-emerald-300 {
-            color: #047857 !important;
+          /* Primary accents formatted cleanly for print */
+          .text-\\[\\#42B8E8\\] {
+            color: #0284c7 !important;
           }
 
           /* Convert dark container cards into light bordered boxes */
-          .bg-\[\#061D20\], .bg-\[\#031214\], .bg-\[\#082226\] {
+          .bg-\\[\\#0A0D10\\], .bg-\\[\\#0E1217\\], .bg-\\[\\#050607\\] {
             background-color: #f9fafb !important;
             border: 1px solid #e5e7eb !important;
           }
@@ -172,44 +172,44 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
       `}</style>
 
       {/* Top Academic Navigation Header */}
-      <div className="no-print bg-[#061D20]/90 border-b border-[#0E353C] sticky top-14 z-30 backdrop-blur-md">
+      <div className="no-print bg-[#0A0D10]/95 border-b border-[#1B2127] sticky top-14 z-30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
           
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#F8FAFC] hover:text-emerald-400 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#42B8E8]/50 text-xs font-mono text-[#F5F7FA] hover:text-[#42B8E8] transition-all cursor-pointer"
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-emerald-400" />
+            <ArrowLeft className="w-3.5 h-3.5 text-[#42B8E8]" />
             <span>Back to Research Library</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-3 text-xs font-mono text-[#94A3B8]">
-            <span className="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold">
+          <div className="hidden md:flex items-center gap-3 text-xs font-mono text-[#6F7882]">
+            <span className="px-2 py-0.5 rounded bg-[#42B8E8]/10 border border-[#42B8E8]/30 text-[#42B8E8] font-bold">
               {paper.paperNumber}
             </span>
-            <span className="text-[#0E353C]">|</span>
+            <span className="text-[#1B2127]">|</span>
             <span>DOI: {paper.doi}</span>
-            <span className="text-[#0E353C]">|</span>
-            <span className="text-[#F8FAFC] font-semibold">{paper.status}</span>
+            <span className="text-[#1B2127]">|</span>
+            <span className="text-[#F5F7FA] font-semibold">{paper.status}</span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyCitation}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#94A3B8] hover:text-[#F8FAFC] transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#42B8E8]/50 text-xs font-mono text-[#A7B0BA] hover:text-[#F5F7FA] transition-all cursor-pointer"
               title="Copy academic citation string"
             >
-              {copiedCitation ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-emerald-400" />}
+              {copiedCitation ? <Check className="w-3.5 h-3.5 text-[#42B8E8]" /> : <Copy className="w-3.5 h-3.5 text-[#42B8E8]" />}
               <span className="hidden sm:inline">{copiedCitation ? 'Citation Copied' : 'Cite Paper'}</span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] hover:border-emerald-500/50 text-xs font-mono text-[#F8FAFC] hover:text-emerald-400 transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#42B8E8]/50 text-xs font-mono text-[#F5F7FA] hover:text-[#42B8E8] transition-all cursor-pointer"
               title="Print or export paper as PDF"
               id="print-paper-btn"
             >
-              <Printer className="w-3.5 h-3.5 text-emerald-400" />
+              <Printer className="w-3.5 h-3.5 text-[#42B8E8]" />
               <span className="hidden sm:inline">Print / Save PDF</span>
             </button>
           </div>
@@ -222,10 +222,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
           
           {/* Table of Contents Sidebar (Desktop) */}
           <aside className="no-print hidden lg:block lg:col-span-3 sticky top-32 space-y-6">
-            <div className="p-4 rounded-xl bg-[#061D20] border border-[#0E353C]">
-              <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#0E353C]">
-                <BookOpen className="w-4 h-4 text-emerald-400" />
-                <span className="text-xs font-mono font-bold text-[#F8FAFC] uppercase tracking-wider">
+            <div className="p-4 rounded-xl bg-[#0A0D10] border border-[#1B2127]">
+              <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#1B2127]">
+                <BookOpen className="w-4 h-4 text-[#42B8E8]" />
+                <span className="text-xs font-mono font-bold text-[#F5F7FA] uppercase tracking-wider">
                   PAPER OUTLINE
                 </span>
               </div>
@@ -236,38 +236,38 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                     onClick={() => scrollToSection(item.id)}
                     className={`w-full text-left px-2.5 py-1.5 rounded text-xs font-mono transition-all flex items-center justify-between cursor-pointer ${
                       activeSection === item.id
-                        ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 font-bold pl-3'
-                        : 'text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#082226]'
+                        ? 'bg-[#42B8E8]/10 text-[#42B8E8] border-l-2 border-[#42B8E8] font-bold pl-3'
+                        : 'text-[#A7B0BA] hover:text-[#F5F7FA] hover:bg-[#0E1217]'
                     }`}
                   >
                     <span className="truncate">{item.label}</span>
-                    {activeSection === item.id && <ChevronRight className="w-3 h-3 text-emerald-400 shrink-0" />}
+                    {activeSection === item.id && <ChevronRight className="w-3 h-3 text-[#42B8E8] shrink-0" />}
                   </button>
                 ))}
               </nav>
             </div>
 
             {/* Quick Metrics */}
-            <div className="p-4 rounded-xl bg-[#061D20] border border-[#0E353C] space-y-3">
-              <span className="text-[10px] font-mono font-bold text-[#94A3B8] uppercase tracking-widest block">
+            <div className="p-4 rounded-xl bg-[#0A0D10] border border-[#1B2127] space-y-3">
+              <span className="text-[10px] font-mono font-bold text-[#6F7882] uppercase tracking-widest block">
                 PUBLICATION METRICS
               </span>
               <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-                <div className="p-2 rounded bg-[#031214] border border-[#0E353C]">
-                  <span className="text-[10px] text-[#94A3B8] block">Est. Reading</span>
-                  <span className="font-bold text-[#F8FAFC]">{paper.readTime}</span>
+                <div className="p-2 rounded bg-[#0E1217] border border-[#1B2127]">
+                  <span className="text-[10px] text-[#6F7882] block">Est. Reading</span>
+                  <span className="font-bold text-[#F5F7FA]">{paper.readTime}</span>
                 </div>
-                <div className="p-2 rounded bg-[#031214] border border-[#0E353C]">
-                  <span className="text-[10px] text-[#94A3B8] block">References</span>
-                  <span className="font-bold text-[#F8FAFC]">{paper.references.length} Citations</span>
+                <div className="p-2 rounded bg-[#0E1217] border border-[#1B2127]">
+                  <span className="text-[10px] text-[#6F7882] block">References</span>
+                  <span className="font-bold text-[#F5F7FA]">{paper.references.length} Citations</span>
                 </div>
-                <div className="p-2 rounded bg-[#031214] border border-[#0E353C]">
-                  <span className="text-[10px] text-[#94A3B8] block">Category</span>
-                  <span className="font-bold text-emerald-400 truncate block">{paper.category}</span>
+                <div className="p-2 rounded bg-[#0E1217] border border-[#1B2127]">
+                  <span className="text-[10px] text-[#6F7882] block">Category</span>
+                  <span className="font-bold text-[#42B8E8] truncate block">{paper.category}</span>
                 </div>
-                <div className="p-2 rounded bg-[#031214] border border-[#0E353C]">
-                  <span className="text-[10px] text-[#94A3B8] block">Status</span>
-                  <span className="font-bold text-[#F8FAFC] truncate block">{paper.status}</span>
+                <div className="p-2 rounded bg-[#0E1217] border border-[#1B2127]">
+                  <span className="text-[10px] text-[#6F7882] block">Status</span>
+                  <span className="font-bold text-[#F5F7FA] truncate block">{paper.status}</span>
                 </div>
               </div>
             </div>
@@ -277,52 +277,52 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
           <article className="lg:col-span-9 space-y-12 print-full-width">
             
             {/* Paper Title & Metadata Header */}
-            <header className="space-y-6 pb-8 border-b border-[#0E353C]">
+            <header className="space-y-6 pb-8 border-b border-[#1B2127]">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                <span className="px-2.5 py-1 rounded bg-[#42B8E8]/10 border border-[#42B8E8]/30 text-xs font-mono font-bold text-[#42B8E8] uppercase tracking-widest">
                   {paper.paperNumber}
                 </span>
-                <span className="px-2.5 py-1 rounded bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#94A3B8]">
+                <span className="px-2.5 py-1 rounded bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#A7B0BA]">
                   {paper.category}
                 </span>
-                <span className="px-2.5 py-1 rounded bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] font-semibold">
+                <span className="px-2.5 py-1 rounded bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] font-semibold">
                   {paper.version}
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-sans font-extrabold text-[#F8FAFC] tracking-tight leading-tight print-text-dark">
+              <h1 className="text-3xl sm:text-5xl font-sans font-extrabold text-[#F5F7FA] tracking-tight leading-tight print-text-dark">
                 {paper.title}
               </h1>
 
-              <p className="text-base sm:text-lg font-sans text-[#94A3B8] leading-relaxed">
+              <p className="text-base sm:text-lg font-sans text-[#A7B0BA] leading-relaxed">
                 {paper.subtitle}
               </p>
 
               {/* Author & Affiliation Details Card */}
-              <div className="p-5 rounded-xl bg-[#061D20] border border-[#0E353C] grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+              <div className="p-5 rounded-xl bg-[#0A0D10] border border-[#1B2127] grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
                 <div>
-                  <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block mb-1">
-                    PRIMARY RESEARCHER & AUTHOR
+                  <span className="text-[10px] text-[#6F7882] uppercase tracking-wider block mb-1">
+                    PRIMARY RESEARCHER &amp; AUTHOR
                   </span>
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    <span className="text-sm font-bold text-[#F8FAFC]">{paper.author}</span>
+                    <ShieldCheck className="w-4 h-4 text-[#42B8E8]" />
+                    <span className="text-sm font-bold text-[#F5F7FA]">{paper.author}</span>
                   </div>
-                  <span className="text-[#94A3B8] block mt-0.5">{paper.authorRole}</span>
+                  <span className="text-[#A7B0BA] block mt-0.5">{paper.authorRole}</span>
                 </div>
 
                 <div>
-                  <span className="text-[10px] text-[#94A3B8] uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] text-[#6F7882] uppercase tracking-wider block mb-1">
                     RESEARCH INSTITUTION / LAB
                   </span>
-                  <span className="text-xs font-semibold text-[#F8FAFC] block">{paper.affiliation}</span>
-                  <div className="flex items-center gap-4 text-[#94A3B8] mt-1.5 text-[11px]">
+                  <span className="text-xs font-semibold text-[#F5F7FA] block">{paper.affiliation}</span>
+                  <div className="flex items-center gap-4 text-[#6F7882] mt-1.5 text-[11px]">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3 text-emerald-400" />
+                      <Calendar className="w-3 h-3 text-[#42B8E8]" />
                       {paper.date}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-emerald-400" />
+                      <Clock className="w-3 h-3 text-[#42B8E8]" />
                       {paper.readTime}
                     </span>
                   </div>
@@ -332,28 +332,28 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Abstract Section */}
             <section id="abstract" className="space-y-6 scroll-mt-28">
-              <div className="p-6 sm:p-8 rounded-2xl bg-[#061D20] border border-emerald-500/30 shadow-xl space-y-6 relative overflow-hidden">
-                <div className="flex items-center justify-between border-b border-[#0E353C] pb-4">
+              <div className="p-6 sm:p-8 rounded-xl bg-[#0A0D10] border border-[#1B2127] space-y-6 relative overflow-hidden">
+                <div className="flex items-center justify-between border-b border-[#1B2127] pb-4">
                   <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-emerald-400" />
-                    <h2 className="text-sm font-mono font-bold text-[#F8FAFC] uppercase tracking-widest">
+                    <FileText className="w-4 h-4 text-[#42B8E8]" />
+                    <h2 className="text-sm font-mono font-bold text-[#F5F7FA] uppercase tracking-widest">
                       EXECUTIVE ABSTRACT
                     </h2>
                   </div>
-                  <span className="text-[10px] font-mono text-[#94A3B8]">DOI: {paper.doi}</span>
+                  <span className="text-[10px] font-mono text-[#6F7882]">DOI: {paper.doi}</span>
                 </div>
 
-                <p className="text-sm sm:text-base font-sans text-[#E2E8F0] leading-relaxed italic">
+                <p className="text-sm sm:text-base font-sans text-[#F5F7FA] leading-relaxed italic">
                   "{paper.abstract}"
                 </p>
 
                 {/* Keywords */}
-                <div className="pt-2 border-t border-[#0E353C]/80 flex flex-wrap items-center gap-2">
-                  <span className="text-[10px] font-mono text-[#94A3B8] uppercase">KEYWORDS:</span>
+                <div className="pt-2 border-t border-[#1B2127] flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] font-mono text-[#6F7882] uppercase">KEYWORDS:</span>
                   {paper.keywords.map((kw) => (
                     <span
                       key={kw}
-                      className="px-2.5 py-1 rounded bg-[#031214] border border-[#0E353C] text-[11px] font-mono text-emerald-400"
+                      className="px-2.5 py-1 rounded bg-[#0E1217] border border-[#1B2127] text-[11px] font-mono text-[#42B8E8]"
                     >
                       {kw}
                     </span>
@@ -361,14 +361,14 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                 </div>
 
                 {/* Key Takeaways */}
-                <div className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] space-y-3">
-                  <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-400" /> KEY RESEARCH TAKEAWAYS
+                <div className="p-4 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-3">
+                  <span className="text-xs font-mono font-bold text-[#42B8E8] uppercase tracking-wider flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#42B8E8]" /> KEY RESEARCH TAKEAWAYS
                   </span>
-                  <ul className="space-y-2 text-xs sm:text-sm font-sans text-[#F8FAFC]">
+                  <ul className="space-y-2 text-xs sm:text-sm font-sans text-[#F5F7FA]">
                     {paper.keyTakeaways.map((takeaway, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <span className="font-mono text-emerald-400 font-bold shrink-0">{idx + 1}.</span>
+                        <span className="font-mono text-[#42B8E8] font-bold shrink-0">{idx + 1}.</span>
                         <span className="leading-snug">{takeaway}</span>
                       </li>
                     ))}
@@ -380,10 +380,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 1: Introduction */}
             <section id="introduction" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">1.0</span> INTRODUCTION
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">1.0</span> INTRODUCTION
               </h2>
-              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#94A3B8] space-y-4 leading-relaxed font-sans">
+              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#A7B0BA] space-y-4 leading-relaxed font-sans">
                 {paper.introduction.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -392,10 +392,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 2: Literature Review */}
             <section id="literature" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">2.0</span> BACKGROUND & LITERATURE REVIEW
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">2.0</span> BACKGROUND &amp; LITERATURE REVIEW
               </h2>
-              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#94A3B8] space-y-4 leading-relaxed font-sans">
+              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#A7B0BA] space-y-4 leading-relaxed font-sans">
                 {paper.literatureReview.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -404,20 +404,20 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 3: Problem Statement */}
             <section id="problem" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">3.0</span> RESEARCH QUESTION & PROBLEM STATEMENT
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">3.0</span> RESEARCH QUESTION &amp; PROBLEM STATEMENT
               </h2>
-              <div className="p-5 rounded-xl bg-[#061D20] border border-[#0E353C] text-sm sm:text-base text-[#F8FAFC] leading-relaxed font-sans italic border-l-4 border-l-emerald-400">
+              <div className="p-5 rounded-lg bg-[#0A0D10] border border-[#1B2127] text-sm sm:text-base text-[#F5F7FA] leading-relaxed font-sans italic border-l-4 border-l-[#42B8E8]">
                 {paper.problemStatement}
               </div>
             </section>
 
             {/* Section 4: Methodology */}
             <section id="methodology" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">4.0</span> METHODOLOGY & RESEARCH FRAMEWORK
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">4.0</span> METHODOLOGY &amp; RESEARCH FRAMEWORK
               </h2>
-              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#94A3B8] space-y-4 leading-relaxed font-sans">
+              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#A7B0BA] space-y-4 leading-relaxed font-sans">
                 {paper.methodology.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -426,30 +426,30 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 5: Analysis & Results */}
             <section id="analysis" className="space-y-8 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">5.0</span> EMPIRICAL ANALYSIS & FINDINGS
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">5.0</span> EMPIRICAL ANALYSIS &amp; FINDINGS
               </h2>
 
               {paper.analysisAndResults.map((sec) => (
-                <div key={sec.id} className="space-y-6 p-6 rounded-xl bg-[#061D20] border border-[#0E353C]">
-                  <h3 className="text-lg font-mono font-bold text-[#F8FAFC] flex items-center gap-2">
-                    <span className="text-emerald-400">{sec.number}</span> {sec.title}
+                <div key={sec.id} className="space-y-6 p-6 rounded-xl bg-[#0A0D10] border border-[#1B2127]">
+                  <h3 className="text-lg font-mono font-bold text-[#F5F7FA] flex items-center gap-2">
+                    <span className="text-[#42B8E8]">{sec.number}</span> {sec.title}
                   </h3>
 
-                  <p className="text-sm text-[#94A3B8] leading-relaxed font-sans">
+                  <p className="text-sm text-[#A7B0BA] leading-relaxed font-sans">
                     {sec.content}
                   </p>
 
                   {/* Mathematical Equation Block */}
                   {sec.equation && (
-                    <div className="p-5 rounded-xl bg-[#031214] border border-emerald-500/30 space-y-2 text-center">
-                      <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-1">
+                    <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2 text-center">
+                      <div className="text-xs font-mono text-[#42B8E8] uppercase tracking-widest block mb-1">
                         FORMAL MATHEMATICAL EQUATION
                       </div>
-                      <div className="py-3 font-mono text-base sm:text-lg text-[#F8FAFC] overflow-x-auto font-bold tracking-wide">
+                      <div className="py-3 font-mono text-base sm:text-lg text-[#F5F7FA] overflow-x-auto font-bold tracking-wide">
                         {sec.equation.latex}
                       </div>
-                      <p className="text-xs font-mono text-[#94A3B8] italic">
+                      <p className="text-xs font-mono text-[#6F7882] italic">
                         {sec.equation.description}
                       </p>
                     </div>
@@ -457,13 +457,13 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
                   {/* Callout Research Note */}
                   {sec.callout && (
-                    <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/30 flex items-start gap-3 text-xs font-sans">
-                      <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div className="p-4 rounded-lg bg-[#0E1217] border border-[#42B8E8]/30 flex items-start gap-3 text-xs font-sans">
+                      <Info className="w-4 h-4 text-[#42B8E8] shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-mono font-bold text-emerald-400 uppercase block mb-1">
+                        <span className="font-mono font-bold text-[#42B8E8] uppercase block mb-1">
                           {sec.callout.title}
                         </span>
-                        <p className="text-[#D4D4D8] leading-relaxed">{sec.callout.text}</p>
+                        <p className="text-[#A7B0BA] leading-relaxed">{sec.callout.text}</p>
                       </div>
                     </div>
                   )}
@@ -471,24 +471,24 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                   {/* Data Table */}
                   {sec.table && (
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-xs font-mono text-[#F8FAFC] font-bold">
-                        <TableIcon className="w-4 h-4 text-emerald-400" />
+                      <div className="flex items-center gap-2 text-xs font-mono text-[#F5F7FA] font-bold">
+                        <TableIcon className="w-4 h-4 text-[#42B8E8]" />
                         <span>{sec.table.title}</span>
                       </div>
-                      <div className="overflow-x-auto rounded-lg border border-[#0E353C]">
+                      <div className="overflow-x-auto rounded-lg border border-[#1B2127]">
                         <table className="w-full text-left border-collapse text-xs font-mono">
                           <thead>
-                            <tr className="bg-[#031214] border-b border-[#0E353C] text-[#F8FAFC]">
+                            <tr className="bg-[#0E1217] border-b border-[#1B2127] text-[#F5F7FA]">
                               {sec.table.headers.map((h, i) => (
                                 <th key={i} className="p-3 uppercase font-bold">{h}</th>
                               ))}
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-[#0E353C]/60 text-[#94A3B8]">
+                          <tbody className="divide-y divide-[#1B2127] text-[#A7B0BA]">
                             {sec.table.rows.map((row, rIdx) => (
-                              <tr key={rIdx} className="hover:bg-[#082226]/50 transition-colors">
+                              <tr key={rIdx} className="hover:bg-[#0E1217]/50 transition-colors">
                                 {row.map((cell, cIdx) => (
-                                  <td key={cIdx} className={`p-3 ${cIdx === 0 ? 'font-bold text-[#F8FAFC]' : ''}`}>
+                                  <td key={cIdx} className={`p-3 ${cIdx === 0 ? 'font-bold text-[#F5F7FA]' : ''}`}>
                                     {cell}
                                   </td>
                                 ))}
@@ -502,10 +502,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
                   {/* Figure / Chart Visual */}
                   {sec.figure && (
-                    <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-4">
+                    <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-4">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-xs font-mono text-[#F8FAFC] font-bold">
-                          <BarChart2 className="w-4 h-4 text-emerald-400" />
+                        <div className="flex items-center gap-2 text-xs font-mono text-[#F5F7FA] font-bold">
+                          <BarChart2 className="w-4 h-4 text-[#42B8E8]" />
                           <span>{sec.figure.title}</span>
                         </div>
                       </div>
@@ -515,12 +515,12 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                           {sec.figure.dataPoints.map((dp, idx) => (
                             <div key={idx} className="space-y-1 text-xs font-mono">
                               <div className="flex justify-between text-[11px]">
-                                <span className="text-[#D4D4D8]">{dp.label}</span>
-                                <span className="text-emerald-400 font-bold">{dp.value}</span>
+                                <span className="text-[#A7B0BA]">{dp.label}</span>
+                                <span className="text-[#42B8E8] font-bold">{dp.value}</span>
                               </div>
-                              <div className="h-2 w-full bg-[#082226] rounded-full overflow-hidden flex">
+                              <div className="h-2 w-full bg-[#050607] rounded-full overflow-hidden flex">
                                 <div
-                                  className="h-full bg-emerald-500 transition-all duration-500"
+                                  className="h-full bg-[#2D9CDB] transition-all duration-500"
                                   style={{ width: `${Math.min(100, (dp.value / (sec.figure?.dataPoints?.[0]?.value || 1)) * 100)}%` }}
                                 />
                               </div>
@@ -529,7 +529,7 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                         </div>
                       )}
 
-                      <p className="text-[11px] font-mono text-[#94A3B8] italic border-t border-[#0E353C] pt-3">
+                      <p className="text-[11px] font-mono text-[#6F7882] italic border-t border-[#1B2127] pt-3">
                         {sec.figure.caption}
                       </p>
                     </div>
@@ -538,19 +538,19 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
                   {/* Code Snippet Box */}
                   {sec.codeSnippet && (
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
-                        <span className="flex items-center gap-1.5 text-emerald-400">
+                      <div className="flex items-center justify-between text-xs font-mono text-[#6F7882]">
+                        <span className="flex items-center gap-1.5 text-[#42B8E8]">
                           <Code2 className="w-4 h-4" /> {sec.codeSnippet.filename || 'CODE SPECIFICATION'}
                         </span>
                         <button
                           onClick={() => handleCopyCode(sec.codeSnippet!.code, sec.id)}
-                          className="flex items-center gap-1 hover:text-[#F8FAFC] cursor-pointer"
+                          className="flex items-center gap-1 hover:text-[#F5F7FA] cursor-pointer"
                         >
-                          {copiedCode === sec.id ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-emerald-400" />}
+                          {copiedCode === sec.id ? <Check className="w-3.5 h-3.5 text-[#42B8E8]" /> : <Copy className="w-3.5 h-3.5 text-[#42B8E8]" />}
                           <span>{copiedCode === sec.id ? 'Copied' : 'Copy'}</span>
                         </button>
                       </div>
-                      <pre className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] text-xs font-mono text-emerald-300 overflow-x-auto leading-relaxed">
+                      <pre className="p-4 rounded-lg bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#7DD3FC] overflow-x-auto leading-relaxed">
                         <code>{sec.codeSnippet.code}</code>
                       </pre>
                     </div>
@@ -562,10 +562,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 6: Discussion */}
             <section id="discussion" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">6.0</span> DISCUSSION & PRACTICAL IMPLICATIONS
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">6.0</span> DISCUSSION &amp; PRACTICAL IMPLICATIONS
               </h2>
-              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#94A3B8] space-y-4 leading-relaxed font-sans">
+              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#A7B0BA] space-y-4 leading-relaxed font-sans">
                 {paper.discussion.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -574,10 +574,10 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 7: Conclusion */}
             <section id="conclusion" className="space-y-4 scroll-mt-28">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2 border-b border-[#0E353C] pb-2">
-                <span className="text-emerald-400">7.0</span> CONCLUSION & FUTURE RESEARCH
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2 border-b border-[#1B2127] pb-2">
+                <span className="text-[#42B8E8]">7.0</span> CONCLUSION &amp; FUTURE RESEARCH
               </h2>
-              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#94A3B8] space-y-4 leading-relaxed font-sans">
+              <div className="prose prose-invert max-w-none text-sm sm:text-base text-[#A7B0BA] space-y-4 leading-relaxed font-sans">
                 {paper.conclusion.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -585,21 +585,21 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
             </section>
 
             {/* Section 8: References / Bibliography */}
-            <section id="references" className="space-y-4 scroll-mt-28 border-t border-[#0E353C] pt-8">
-              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2">
-                <span className="text-emerald-400">8.0</span> REFERENCES & BIBLIOGRAPHY
+            <section id="references" className="space-y-4 scroll-mt-28 border-t border-[#1B2127] pt-8">
+              <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2">
+                <span className="text-[#42B8E8]">8.0</span> REFERENCES &amp; BIBLIOGRAPHY
               </h2>
-              <div className="space-y-3 font-mono text-xs text-[#94A3B8]">
+              <div className="space-y-3 font-mono text-xs text-[#A7B0BA]">
                 {paper.references.map((ref) => (
-                  <div key={ref.id} className="p-3.5 rounded-lg bg-[#061D20] border border-[#0E353C] space-y-1">
+                  <div key={ref.id} className="p-3.5 rounded-lg bg-[#0A0D10] border border-[#1B2127] space-y-1">
                     <div className="flex items-start gap-2">
-                      <span className="font-bold text-emerald-400">[{ref.id}]</span>
-                      <p className="text-[#F8FAFC] leading-relaxed">
-                        <span className="font-bold">{ref.authors}</span> ({ref.year}). "{ref.title}". <span className="italic text-[#94A3B8]">{ref.journal}</span>.
+                      <span className="font-bold text-[#42B8E8]">[{ref.id}]</span>
+                      <p className="text-[#F5F7FA] leading-relaxed">
+                        <span className="font-bold">{ref.authors}</span> ({ref.year}). "{ref.title}". <span className="italic text-[#A7B0BA]">{ref.journal}</span>.
                       </p>
                     </div>
                     {ref.doi && (
-                      <div className="pl-6 text-[11px] text-emerald-400/80">
+                      <div className="pl-6 text-[11px] text-[#42B8E8]">
                         <span>DOI: {ref.doi}</span>
                       </div>
                     )}
@@ -610,16 +610,16 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
 
             {/* Section 9: Appendix (if exists) */}
             {paper.appendix && (
-              <section id="appendix" className="space-y-4 scroll-mt-28 border-t border-[#0E353C] pt-8">
-                <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F8FAFC] flex items-center gap-2">
-                  <span className="text-emerald-400">9.0</span> {paper.appendix.title}
+              <section id="appendix" className="space-y-4 scroll-mt-28 border-t border-[#1B2127] pt-8">
+                <h2 className="text-xl sm:text-2xl font-mono font-bold text-[#F5F7FA] flex items-center gap-2">
+                  <span className="text-[#42B8E8]">9.0</span> {paper.appendix.title}
                 </h2>
-                <div className="p-6 rounded-xl bg-[#061D20] border border-[#0E353C] space-y-4">
-                  <p className="text-sm font-sans text-[#94A3B8] leading-relaxed">
+                <div className="p-6 rounded-lg bg-[#0A0D10] border border-[#1B2127] space-y-4">
+                  <p className="text-sm font-sans text-[#A7B0BA] leading-relaxed">
                     {paper.appendix.content}
                   </p>
                   {paper.appendix.codeSnippet && (
-                    <pre className="p-4 rounded-xl bg-[#031214] border border-[#0E353C] text-xs font-mono text-emerald-300 overflow-x-auto leading-relaxed">
+                    <pre className="p-4 rounded-lg bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#7DD3FC] overflow-x-auto leading-relaxed">
                       <code>{paper.appendix.codeSnippet.code}</code>
                     </pre>
                   )}
@@ -628,16 +628,16 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
             )}
 
             {/* Previous / Next Research Navigation Bar */}
-            <div className="no-print pt-12 border-t border-[#0E353C] grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="no-print pt-12 border-t border-[#1B2127] grid grid-cols-1 sm:grid-cols-2 gap-4">
               {prevPaper ? (
                 <button
                   onClick={() => onSelectPaper(prevPaper.id)}
-                  className="group p-4 rounded-xl bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/50 text-left transition-all space-y-1 cursor-pointer"
+                  className="group p-4 rounded-lg bg-[#0A0D10] border border-[#1B2127] hover:border-[#42B8E8]/50 text-left transition-all space-y-1 cursor-pointer"
                 >
-                  <span className="text-[10px] font-mono text-[#94A3B8] uppercase block flex items-center gap-1">
-                    <ArrowLeft className="w-3 h-3 text-emerald-400" /> PREVIOUS RESEARCH PAPER
+                  <span className="text-[10px] font-mono text-[#6F7882] uppercase block flex items-center gap-1">
+                    <ArrowLeft className="w-3 h-3 text-[#42B8E8]" /> PREVIOUS RESEARCH PAPER
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#F8FAFC] group-hover:text-emerald-400 transition-colors line-clamp-1">
+                  <span className="text-xs font-mono font-bold text-[#F5F7FA] group-hover:text-[#42B8E8] transition-colors line-clamp-1">
                     {prevPaper.paperNumber}: {prevPaper.title}
                   </span>
                 </button>
@@ -646,12 +646,12 @@ export const ResearchPaperPage: React.FC<ResearchPaperPageProps> = ({
               {nextPaper ? (
                 <button
                   onClick={() => onSelectPaper(nextPaper.id)}
-                  className="group p-4 rounded-xl bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/50 text-right transition-all space-y-1 cursor-pointer"
+                  className="group p-4 rounded-lg bg-[#0A0D10] border border-[#1B2127] hover:border-[#42B8E8]/50 text-right transition-all space-y-1 cursor-pointer"
                 >
-                  <span className="text-[10px] font-mono text-[#94A3B8] uppercase block flex items-center justify-end gap-1">
-                    NEXT RESEARCH PAPER <ArrowRight className="w-3 h-3 text-emerald-400" />
+                  <span className="text-[10px] font-mono text-[#6F7882] uppercase block flex items-center justify-end gap-1">
+                    NEXT RESEARCH PAPER <ArrowRight className="w-3 h-3 text-[#42B8E8]" />
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#F8FAFC] group-hover:text-emerald-400 transition-colors line-clamp-1">
+                  <span className="text-xs font-mono font-bold text-[#F5F7FA] group-hover:text-[#42B8E8] transition-colors line-clamp-1">
                     {nextPaper.paperNumber}: {nextPaper.title}
                   </span>
                 </button>

@@ -11,23 +11,23 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#031214]/90 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
-      <div className="w-full max-w-4xl my-8 bg-[#061D20] border border-[#0E353C] rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050607]/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
+      <div className="w-full max-w-4xl my-8 bg-[#0A0D10] border border-[#1B2127] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
         
         {/* Modal Top Header Bar */}
-        <div className="px-6 py-4 bg-[#031214] border-b border-[#0E353C] flex items-center justify-between sticky top-0 z-10">
+        <div className="px-6 py-4 bg-[#0E1217] border-b border-[#1B2127] flex items-center justify-between sticky top-0 z-10">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-bold text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30">
+            <span className="font-mono text-xs font-bold text-[#42B8E8] px-2.5 py-1 rounded bg-[#2D9CDB]/10 border border-[#2D9CDB]/30">
               PROJECT {project.number}
             </span>
-            <span className="text-xs font-mono text-[#94A3B8] uppercase hidden sm:inline">
+            <span className="text-xs font-mono text-[#A7B0BA] uppercase hidden sm:inline">
               {project.category}
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-[#061D20] border border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-emerald-500/40 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg bg-[#0A0D10] border border-[#1B2127] text-[#A7B0BA] hover:text-[#F5F7FA] hover:border-[#2D9CDB]/40 transition-colors cursor-pointer"
             aria-label="Close project modal"
           >
             <X className="w-5 h-5" />
@@ -35,63 +35,63 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-8 font-sans text-[#94A3B8]">
+        <div className="p-6 sm:p-8 overflow-y-auto space-y-8 font-sans text-[#A7B0BA]">
           
           {/* Header Title & Status */}
-          <div className="space-y-2 border-b border-[#0E353C] pb-6">
+          <div className="space-y-2 border-b border-[#1B2127] pb-6">
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              <span className="text-[10px] font-mono px-2.5 py-0.5 rounded bg-[#2D9CDB]/10 text-[#42B8E8] border border-[#2D9CDB]/30">
                 STATUS: {project.status}
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F5F7FA] tracking-tight">
               {project.title}
             </h2>
-            <p className="text-sm font-sans text-[#94A3B8] leading-relaxed">
+            <p className="text-sm font-sans text-[#A7B0BA] leading-relaxed">
               {project.description}
             </p>
           </div>
 
           {/* Grid Overview & Problem */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">
+            <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2">
+              <span className="text-xs font-mono font-bold text-[#42B8E8] uppercase tracking-widest block">
                 OVERVIEW
               </span>
-              <p className="text-xs text-[#F8FAFC] leading-relaxed">
+              <p className="text-xs text-[#F5F7FA] leading-relaxed">
                 {project.overview}
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
-              <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block flex items-center gap-1.5">
+            <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2">
+              <span className="text-xs font-mono font-bold text-[#7DD3FC] uppercase tracking-widest block flex items-center gap-1.5">
                 <AlertTriangle className="w-3.5 h-3.5" /> PROBLEM STATEMENT
               </span>
-              <p className="text-xs text-[#F8FAFC] leading-relaxed">
+              <p className="text-xs text-[#F5F7FA] leading-relaxed">
                 {project.problem}
               </p>
             </div>
           </div>
 
           {/* Approach */}
-          <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
-            <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest block flex items-center gap-1.5">
+          <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2">
+            <span className="text-xs font-mono font-bold text-[#42B8E8] uppercase tracking-widest block flex items-center gap-1.5">
               <Lightbulb className="w-3.5 h-3.5" /> SYSTEM APPROACH
             </span>
-            <p className="text-xs text-[#F8FAFC] leading-relaxed">
+            <p className="text-xs text-[#F5F7FA] leading-relaxed">
               {project.approach}
             </p>
           </div>
 
           {/* System Architecture */}
           <div className="space-y-3">
-            <h3 className="text-xs font-mono font-bold text-[#F8FAFC] uppercase tracking-widest flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" /> SYSTEM ARCHITECTURE
+            <h3 className="text-xs font-mono font-bold text-[#F5F7FA] uppercase tracking-widest flex items-center gap-2">
+              <Layers className="w-4 h-4 text-[#42B8E8]" /> SYSTEM ARCHITECTURE
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {project.architecture.map((item, idx) => (
-                <div key={idx} className="p-3 rounded-lg bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div key={idx} className="p-3 rounded-lg bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#42B8E8]" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -101,12 +101,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           {/* Technology & Process */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-3">
-              <h3 className="text-xs font-mono font-bold text-[#F8FAFC] uppercase tracking-widest flex items-center gap-2">
-                <Code2 className="w-4 h-4 text-blue-400" /> TECHNOLOGY STACK
+              <h3 className="text-xs font-mono font-bold text-[#F5F7FA] uppercase tracking-widest flex items-center gap-2">
+                <Code2 className="w-4 h-4 text-[#42B8E8]" /> TECHNOLOGY STACK
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {project.techStack.map(tech => (
-                  <span key={tech} className="px-2.5 py-1 rounded bg-[#031214] border border-[#0E353C] text-xs font-mono text-emerald-400">
+                  <span key={tech} className="px-2.5 py-1 rounded bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#42B8E8]">
                     {tech}
                   </span>
                 ))}
@@ -114,13 +114,13 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-xs font-mono font-bold text-[#F8FAFC] uppercase tracking-widest">
+              <h3 className="text-xs font-mono font-bold text-[#F5F7FA] uppercase tracking-widest">
                 ENGINEERING PROCESS
               </h3>
-              <ul className="space-y-2 text-xs text-[#94A3B8]">
+              <ul className="space-y-2 text-xs text-[#A7B0BA]">
                 {project.process.map((p, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="font-mono text-emerald-400 text-[10px]">{idx + 1}.</span>
+                    <span className="font-mono text-[#42B8E8] text-[10px]">{idx + 1}.</span>
                     <span>{p}</span>
                   </li>
                 ))}
@@ -130,28 +130,28 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
           {/* Results & Key Learnings */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-5 rounded-xl bg-emerald-500/5 border border-emerald-500/30 space-y-2">
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">
+            <div className="p-5 rounded-lg bg-[#2D9CDB]/5 border border-[#2D9CDB]/20 space-y-2">
+              <span className="text-xs font-mono font-bold text-[#42B8E8] uppercase tracking-widest block">
                 EMPIRICAL RESULTS
               </span>
-              <ul className="space-y-1.5 text-xs text-[#F8FAFC]">
+              <ul className="space-y-1.5 text-xs text-[#F5F7FA]">
                 {project.results.map((r, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#42B8E8] shrink-0 mt-0.5" />
                     <span>{r}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
-              <span className="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest block">
+            <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2">
+              <span className="text-xs font-mono font-bold text-[#7DD3FC] uppercase tracking-widest block">
                 SYSTEM LEARNINGS
               </span>
-              <ul className="space-y-1.5 text-xs text-[#94A3B8]">
+              <ul className="space-y-1.5 text-xs text-[#A7B0BA]">
                 {project.learnings.map((l, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-purple-400">•</span>
+                    <span className="text-[#42B8E8]">•</span>
                     <span>{l}</span>
                   </li>
                 ))}
@@ -160,14 +160,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           </div>
 
           {/* Next Steps */}
-          <div className="p-5 rounded-xl bg-[#031214] border border-[#0E353C] space-y-2">
-            <span className="text-xs font-mono font-bold text-[#F8FAFC] uppercase tracking-widest block">
-              NEXT STEPS & EXPANSION
+          <div className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] space-y-2">
+            <span className="text-xs font-mono font-bold text-[#F5F7FA] uppercase tracking-widest block">
+              NEXT STEPS &amp; EXPANSION
             </span>
-            <ul className="space-y-1.5 text-xs text-[#94A3B8]">
+            <ul className="space-y-1.5 text-xs text-[#A7B0BA]">
               {project.nextSteps.map((s, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <span className="text-emerald-400">→</span>
+                  <span className="text-[#42B8E8]">→</span>
                   <span>{s}</span>
                 </li>
               ))}
@@ -177,16 +177,16 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
         </div>
 
         {/* Modal Footer CTA */}
-        <div className="px-6 py-4 bg-[#031214] border-t border-[#0E353C] flex items-center justify-between">
+        <div className="px-6 py-4 bg-[#0E1217] border-t border-[#1B2127] flex items-center justify-between">
           <button
             onClick={onClose}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061D20] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] hover:border-emerald-500/40 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0A0D10] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] hover:border-[#2D9CDB]/40 transition-colors cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4 text-emerald-400" />
+            <ArrowLeft className="w-4 h-4 text-[#42B8E8]" />
             <span>Back to Work</span>
           </button>
 
-          <span className="text-[10px] font-mono text-[#94A3B8]">
+          <span className="text-[10px] font-mono text-[#6F7882]">
             SAYEMATRIX PROJECT ARCHIVE
           </span>
         </div>

@@ -78,22 +78,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-[#031214]/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="w-full max-w-2xl bg-[#061D20] border border-[#0E353C] rounded-xl shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-[#050607]/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="w-full max-w-2xl bg-[#0A0D10] border border-[#1B2127] rounded-xl shadow-2xl overflow-hidden flex flex-col">
         {/* Search Bar Input */}
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#0E353C] bg-[#031214]">
-          <Search className="w-4 h-4 text-emerald-400" />
+        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#1B2127] bg-[#0E1217]">
+          <Search className="w-4 h-4 text-[#42B8E8]" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search SAYEMATRIX (Projects, Research, Ecosystem, CV, Contact)..."
-            className="w-full bg-transparent text-sm font-mono text-[#F8FAFC] placeholder-[#64748B] focus:outline-none"
+            className="w-full bg-transparent text-sm font-mono text-[#F5F7FA] placeholder-[#6F7882] focus:outline-none"
             autoFocus
           />
           <button
             onClick={onClose}
-            className="p-1 rounded bg-[#061D20] border border-[#0E353C] text-[#94A3B8] hover:text-[#F8FAFC] cursor-pointer"
+            className="p-1 rounded bg-[#0A0D10] border border-[#1B2127] text-[#A7B0BA] hover:text-[#F5F7FA] cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -104,85 +104,85 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           {/* Main Navigation Options */}
           {!query && (
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#94A3B8] px-2">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#6F7882] px-2">
                 CORE NAVIGATION
               </span>
               <div className="mt-1 space-y-1">
                 <button
                   onClick={() => handleAction('section', 'about')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <User className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>About SAYEM & Professional Profile</span>
+                    <User className="w-3.5 h-3.5 text-[#42B8E8]" />
+                    <span>About SAYEM &amp; Professional Profile</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('section', 'work')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Selected Work & Systems</span>
+                    <Briefcase className="w-3.5 h-3.5 text-[#7DD3FC]" />
+                    <span>Selected Work &amp; Systems</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('section', 'research')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <BookOpen className="w-3.5 h-3.5 text-purple-400" />
+                    <BookOpen className="w-3.5 h-3.5 text-[#42B8E8]" />
                     <span>Research Lab Notes</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('section', 'ventures')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Compass className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Ventures (SANR Corp & SAYEMATRIX)</span>
+                    <Compass className="w-3.5 h-3.5 text-[#42B8E8]" />
+                    <span>Ventures (SANR Corp &amp; SAYEMATRIX)</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('section', 'ecosystem')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Layers className="w-3.5 h-3.5 text-emerald-400" />
+                    <Layers className="w-3.5 h-3.5 text-[#42B8E8]" />
                     <span>SAYEMATRIX Ecosystem Domains</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('section', 'lifestyle')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Compass className="w-3.5 h-3.5 text-rose-400" />
-                    <span>Lifestyle & Human Systems</span>
+                    <Compass className="w-3.5 h-3.5 text-[#42B8E8]" />
+                    <span>Lifestyle &amp; Human Systems</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
 
                 <button
                   onClick={() => handleAction('page', 'cv')}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <FileText className="w-3.5 h-3.5 text-blue-400" />
+                    <FileText className="w-3.5 h-3.5 text-[#7DD3FC]" />
                     <span>View / Download CV</span>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                  <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
               </div>
             </div>
@@ -191,7 +191,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           {/* Filtered Projects */}
           {filteredProjects.length > 0 && (
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#94A3B8] px-2">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#6F7882] px-2">
                 PROJECTS ({filteredProjects.length})
               </span>
               <div className="mt-1 space-y-1">
@@ -199,16 +199,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   <button
                     key={proj.id}
                     onClick={() => handleAction('project', proj.id)}
-                    className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-left transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-left transition-colors cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono text-emerald-400 font-bold">{proj.number}</span>
-                        <span className="text-xs font-mono font-medium text-[#F8FAFC]">{proj.title}</span>
+                        <span className="text-[10px] font-mono text-[#42B8E8] font-bold">{proj.number}</span>
+                        <span className="text-xs font-mono font-medium text-[#F5F7FA]">{proj.title}</span>
                       </div>
-                      <p className="text-[11px] font-mono text-[#94A3B8] truncate max-w-md">{proj.description}</p>
+                      <p className="text-[11px] font-mono text-[#A7B0BA] truncate max-w-md">{proj.description}</p>
                     </div>
-                    <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                    <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                   </button>
                 ))}
               </div>
@@ -218,7 +218,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           {/* Filtered Research Notes */}
           {filteredNotes.length > 0 && (
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#94A3B8] px-2">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#6F7882] px-2">
                 RESEARCH NOTES ({filteredNotes.length})
               </span>
               <div className="mt-1 space-y-1">
@@ -226,16 +226,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   <button
                     key={note.id}
                     onClick={() => handleAction('note', note.id)}
-                    className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-left transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-left transition-colors cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono text-cyan-400 font-bold">{note.noteNumber}</span>
-                        <span className="text-xs font-mono font-medium text-[#F8FAFC]">{note.title}</span>
+                        <span className="text-[10px] font-mono text-[#42B8E8] font-bold">{note.noteNumber}</span>
+                        <span className="text-xs font-mono font-medium text-[#F5F7FA]">{note.title}</span>
                       </div>
-                      <p className="text-[11px] font-mono text-[#94A3B8] truncate max-w-md">{note.subtitle}</p>
+                      <p className="text-[11px] font-mono text-[#A7B0BA] truncate max-w-md">{note.subtitle}</p>
                     </div>
-                    <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                    <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                   </button>
                 ))}
               </div>
@@ -244,39 +244,39 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
           {/* Quick External Actions */}
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#94A3B8] px-2">
-              EXTERNAL LINKS & CONTACT
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#6F7882] px-2">
+              EXTERNAL LINKS &amp; CONTACT
             </span>
             <div className="mt-1 space-y-1">
               <button
                 onClick={() => handleAction('external', PERSONAL_INFO.contact.linkedin)}
-                className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <Linkedin className="w-3.5 h-3.5 text-blue-400" />
+                  <Linkedin className="w-3.5 h-3.5 text-[#42B8E8]" />
                   <span>LinkedIn Profile ↗</span>
                 </div>
-                <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                <ArrowRight className="w-3 h-3 text-[#6F7882]" />
               </button>
 
               <button
                 onClick={() => handleAction('external', `mailto:${PERSONAL_INFO.contact.email}`)}
-                className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#031214] hover:bg-[#082226] border border-[#0E353C] text-xs font-mono text-[#F8FAFC] transition-colors cursor-pointer"
+                className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-emerald-400" />
+                  <Mail className="w-3.5 h-3.5 text-[#42B8E8]" />
                   <span>Email Direct Contact ({PERSONAL_INFO.contact.email})</span>
                 </div>
-                <ArrowRight className="w-3 h-3 text-[#94A3B8]" />
+                <ArrowRight className="w-3 h-3 text-[#6F7882]" />
               </button>
             </div>
           </div>
         </div>
 
         {/* Footer info */}
-        <div className="px-4 py-2.5 border-t border-[#0E353C] bg-[#031214] flex items-center justify-between text-[11px] font-mono text-[#94A3B8]">
+        <div className="px-4 py-2.5 border-t border-[#1B2127] bg-[#0E1217] flex items-center justify-between text-[11px] font-mono text-[#6F7882]">
           <div className="flex items-center gap-2">
-            <Command className="w-3 h-3 text-emerald-400" />
+            <Command className="w-3 h-3 text-[#42B8E8]" />
             <span>SAYEMATRIX OS Search</span>
           </div>
           <div className="flex items-center gap-3">

@@ -44,25 +44,25 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#041618] border-b border-[#0E353C] relative overflow-hidden" id="contact">
+    <section className="py-24 bg-[#0A0D10] border-b border-[#1B2127] relative overflow-hidden" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl space-y-8">
           
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#061D20] border border-[#0E353C]">
-              <Mail className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-[10px] font-mono text-[#94A3B8] uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0E1217] border border-[#1B2127]">
+              <Mail className="w-3.5 h-3.5 text-[#42B8E8]" />
+              <span className="text-[10px] font-mono text-[#A7B0BA] uppercase tracking-widest">
                 DIRECT COMMUNICATION CHANNELS
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-6xl font-sans font-black text-[#F8FAFC] uppercase tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-6xl font-sans font-black text-[#F5F7FA] uppercase tracking-tight leading-tight">
               LET’S BUILD <br />
-              <span className="text-emerald-400">SOMETHING</span> <br />
+              <span className="text-[#42B8E8]">SOMETHING</span> <br />
               MEANINGFUL.
             </h2>
 
-            <p className="text-base font-sans text-[#94A3B8] leading-relaxed max-w-xl">
+            <p className="text-base font-sans text-[#A7B0BA] leading-relaxed max-w-xl">
               Interested in technology, financial systems, research, automation, or long-term ventures? Connect directly through any of these primary channels.
             </p>
           </div>
@@ -72,16 +72,16 @@ export const ContactSection: React.FC = () => {
             {contactChannels.map((channel, idx) => {
               const IconComponent = channel.icon;
               return (
-                <div key={idx} className="p-5 rounded-xl bg-[#061D20] border border-[#0E353C] hover:border-emerald-500/40 hover:bg-[#0A2B30] transition-all space-y-3 flex flex-col justify-between">
+                <div key={idx} className="p-5 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#2D9CDB]/40 hover:bg-[#151A20] transition-all duration-200 space-y-3 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-1.5">
                       <div className="flex items-center gap-2">
-                        <IconComponent className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span className="font-sans font-bold text-[#F8FAFC] text-sm">{channel.title}</span>
+                        <IconComponent className="w-4 h-4 text-[#42B8E8] shrink-0" />
+                        <span className="font-sans font-bold text-[#F5F7FA] text-sm">{channel.title}</span>
                       </div>
-                      <span className="text-[10px] font-mono text-[#94A3B8] uppercase">{channel.value}</span>
+                      <span className="text-[10px] font-mono text-[#6F7882] uppercase">{channel.value}</span>
                     </div>
-                    <p className="text-xs font-mono text-[#94A3B8] leading-snug">
+                    <p className="text-xs font-mono text-[#A7B0BA] leading-snug">
                       {channel.note}
                     </p>
                   </div>
@@ -93,7 +93,7 @@ export const ContactSection: React.FC = () => {
                         href={link.href}
                         target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+                        className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#42B8E8] hover:text-[#7DD3FC] transition-colors"
                       >
                         <span>{link.label} →</span>
                       </a>
@@ -104,8 +104,8 @@ export const ContactSection: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-2 text-xs font-mono text-[#94A3B8] flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="pt-2 text-xs font-mono text-[#6F7882] flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#42B8E8]" />
             <span>Direct messages routed to SAYEM personal system inbox</span>
           </div>
 

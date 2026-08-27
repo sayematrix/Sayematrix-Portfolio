@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
   };
 
   return (
-    <footer className="bg-[#031214] border-t border-[#0E353C] pt-16 pb-12 relative text-[#94A3B8]">
+    <footer className="bg-[#050607] border-t border-[#1B2127] pt-16 pb-12 relative text-[#A7B0BA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Footer Grid */}
@@ -34,17 +34,17 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
               id="footer-logo-btn"
             />
 
-            <p className="text-sm font-mono text-emerald-400">
+            <p className="text-sm font-mono text-[#42B8E8]">
               Learn. Build. Create. Grow.
             </p>
 
-            <p className="text-xs font-sans text-[#94A3B8] leading-relaxed max-w-sm">
+            <p className="text-xs font-sans text-[#A7B0BA] leading-relaxed max-w-sm">
               An independent digital operating system, research lab, and venture hub created by SAYEM.
             </p>
 
             <div className="flex flex-wrap gap-1.5 pt-2">
               {['AI', 'AUTOMATION', 'FINTECH', 'QUANT', 'RESEARCH', 'SYSTEMS', 'VENTURES'].map(tag => (
-                <span key={tag} className="px-2 py-0.5 rounded bg-[#061D20] border border-[#0E353C] text-[9px] font-mono text-[#94A3B8]">
+                <span key={tag} className="px-2 py-0.5 rounded bg-[#0E1217] border border-[#1B2127] text-[9px] font-mono text-[#6F7882]">
                   {tag}
                 </span>
               ))}
@@ -53,42 +53,42 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
 
           {/* Navigation Links Column */}
           <div className="md:col-span-4 space-y-3">
-            <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold tracking-widest block">
+            <span className="text-[10px] font-mono uppercase text-[#42B8E8] font-bold tracking-widest block">
               SYSTEM NAVIGATION
             </span>
             <ul className="space-y-2 text-xs font-mono">
               <li>
-                <button onClick={() => handleNav('home', 'about')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('home', 'about')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   01. About SAYEM
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('home', 'work')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('home', 'work')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   02. Selected Work
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('home', 'research')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('home', 'research')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   03. Research Lab
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('home', 'ventures')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
-                  04. SANR & Ventures
+                <button onClick={() => handleNav('home', 'ventures')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
+                  04. SANR &amp; Ventures
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('home', 'ecosystem')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('home', 'ecosystem')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   05. SAYEMATRIX Ecosystem
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('lifestyle')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('lifestyle')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   06. Lifestyle &amp; Human Systems
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('cv')} className="hover:text-[#F8FAFC] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('cv')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
                   07. CV / Resume
                 </button>
               </li>
@@ -97,8 +97,8 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
 
           {/* Connect & Legal Column */}
           <div className="md:col-span-3 space-y-3">
-            <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold tracking-widest block">
-              CONNECT & SOCIALS
+            <span className="text-[10px] font-mono uppercase text-[#42B8E8] font-bold tracking-widest block">
+              CONNECT &amp; SOCIALS
             </span>
             <ul className="space-y-2 text-xs font-mono">
               <li>
@@ -106,10 +106,10 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   href={`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(PERSONAL_INFO.contact.email)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F8FAFC] flex items-center justify-between transition-colors"
+                  className="hover:text-[#F5F7FA] flex items-center justify-between transition-colors"
                 >
                   <span>Email</span>
-                  <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                  <ArrowUpRight className="w-3 h-3 text-[#42B8E8]" />
                 </a>
               </li>
               <li>
@@ -117,10 +117,10 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   href={PERSONAL_INFO.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F8FAFC] flex items-center justify-between transition-colors"
+                  className="hover:text-[#F5F7FA] flex items-center justify-between transition-colors"
                 >
                   <span>LinkedIn</span>
-                  <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                  <ArrowUpRight className="w-3 h-3 text-[#42B8E8]" />
                 </a>
               </li>
               <li>
@@ -128,10 +128,10 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   href={PERSONAL_INFO.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F8FAFC] flex items-center justify-between transition-colors"
+                  className="hover:text-[#F5F7FA] flex items-center justify-between transition-colors"
                 >
                   <span>GitHub</span>
-                  <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                  <ArrowUpRight className="w-3 h-3 text-[#42B8E8]" />
                 </a>
               </li>
               <li>
@@ -139,10 +139,10 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   href={PERSONAL_INFO.contact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F8FAFC] flex items-center justify-between transition-colors"
+                  className="hover:text-[#F5F7FA] flex items-center justify-between transition-colors"
                 >
                   <span>SAYEMATRIX (IG)</span>
-                  <ArrowUpRight className="w-3 h-3 text-pink-400" />
+                  <ArrowUpRight className="w-3 h-3 text-[#7DD3FC]" />
                 </a>
               </li>
               <li>
@@ -150,47 +150,47 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   href={PERSONAL_INFO.contact.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#F8FAFC] flex items-center justify-between transition-colors"
+                  className="hover:text-[#F5F7FA] flex items-center justify-between transition-colors"
                 >
                   <span>SAYEMATRIX (YT)</span>
-                  <ArrowUpRight className="w-3 h-3 text-red-400" />
+                  <ArrowUpRight className="w-3 h-3 text-[#7DD3FC]" />
                 </a>
               </li>
-              <li className="pt-2 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+              <li className="pt-2 text-[10px] font-bold text-[#42B8E8] uppercase tracking-wider">
                 ECOSYSTEM BRANDS
               </li>
               <li>
-                <a href="https://www.instagram.com/guide2faith/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
+                <a href="https://www.instagram.com/guide2faith/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F7FA] flex items-center justify-between text-[11px] transition-colors">
                   <span>GUIDE2FAITH</span>
-                  <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/neuromatrixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
+                <a href="https://www.instagram.com/neuromatrixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F7FA] flex items-center justify-between text-[11px] transition-colors">
                   <span>NEUROMATRIX</span>
-                  <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/wealtrixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
+                <a href="https://www.instagram.com/wealtrixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F7FA] flex items-center justify-between text-[11px] transition-colors">
                   <span>WEALTRIXO</span>
-                  <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/artenixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
+                <a href="https://www.instagram.com/artenixo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F7FA] flex items-center justify-between text-[11px] transition-colors">
                   <span>ARTENIXO</span>
-                  <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/top10.insights/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
                   <span>TOP10.INSIGHTS</span>
-                  <span className="text-[10px] text-pink-400 font-bold">IG ↗</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
-              <li className="pt-2 text-[10px] text-[#94A3B8]">
-                PRIMARY VENTURE: <strong className="text-[#F8FAFC] block">SANR Corporation Limited</strong>
+              <li className="pt-2 text-[10px] text-[#A7B0BA]">
+                PRIMARY VENTURE: <strong className="text-[#F5F7FA] block">SANR Corporation Limited</strong>
               </li>
             </ul>
           </div>
@@ -198,7 +198,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#0E353C] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#94A3B8]">
+        <div className="pt-8 border-t border-[#1B2127] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#6F7882]">
           <div>
             ©SAYEMATRIX. All Rights Reserved.
           </div>

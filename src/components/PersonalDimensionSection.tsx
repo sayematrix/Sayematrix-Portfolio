@@ -4,24 +4,24 @@ import { Compass, Sparkles } from 'lucide-react';
 
 export const PersonalDimensionSection: React.FC = () => {
   return (
-    <section className="py-16 bg-[#041618] border-b border-[#0E353C] relative" id="personal-dimension">
+    <section className="py-16 bg-[#050607] border-b border-[#1B2127] relative" id="personal-dimension">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="p-8 rounded-2xl bg-[#061D20] border border-[#0E353C] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="p-8 rounded-lg bg-[#0A0D10] border border-[#1B2127] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           
           <div className="space-y-3 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#031214] border border-[#0E353C]">
-              <Compass className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-[10px] font-mono text-[#94A3B8] uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0E1217] border border-[#1B2127]">
+              <Compass className="w-3.5 h-3.5 text-[#42B8E8]" />
+              <span className="text-[10px] font-mono text-[#A7B0BA] uppercase tracking-widest">
                 PERSONAL DIMENSION
               </span>
             </div>
 
-            <h3 className="text-2xl font-sans font-extrabold text-[#F8FAFC] uppercase">
+            <h3 className="text-2xl font-sans font-extrabold text-[#F5F7FA] uppercase">
               BEYOND THE WORK
             </h3>
 
-            <p className="text-sm font-sans text-emerald-400 font-mono italic">
+            <p className="text-sm font-sans text-[#42B8E8] font-mono italic">
               “Building a better life while building better systems.”
             </p>
           </div>
@@ -30,7 +30,7 @@ export const PersonalDimensionSection: React.FC = () => {
             {PERSONAL_INFO.beyondWorkInterests.map((item) => (
               <span
                 key={item}
-                className="px-3 py-1.5 rounded-lg bg-[#031214] border border-[#0E353C] text-xs font-mono text-[#F8FAFC]"
+                className="px-3 py-1.5 rounded-md bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#F5F7FA]"
               >
                 {item}
               </span>

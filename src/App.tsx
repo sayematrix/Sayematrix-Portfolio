@@ -55,7 +55,7 @@ export default function App() {
   const selectedProject = SELECTED_PROJECTS.find(p => p.id === selectedProjectId) || null;
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#041618] text-[#F8FAFC] font-sans antialiased selection:bg-emerald-500 selection:text-[#050608]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#050607] text-[#F5F7FA] font-sans antialiased selection:bg-[#42B8E8] selection:text-[#050607]">
       {/* Sticky Global Navigation */}
       <Navbar
         activePage={activePage}

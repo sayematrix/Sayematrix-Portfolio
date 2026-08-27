@@ -33,7 +33,7 @@ export const SayematrixLogo: React.FC<SayematrixLogoProps> = ({
       role={onClick ? 'button' : 'img'}
       aria-label="SAYEMATRIX"
     >
-      <span className={`font-sans font-black tracking-[0.18em] uppercase text-[#F8FAFC] group-hover:text-emerald-400 transition-colors duration-200 ${textSize}`}>
+      <span className={`font-sans font-black tracking-[0.18em] uppercase text-[#F5F7FA] group-hover:text-[#42B8E8] transition-colors duration-200 ${textSize}`}>
         SAYEMATRIX
       </span>
     </div>
