@@ -45,7 +45,7 @@ export const IntroductionSection: React.FC = () => {
       id: 'apply',
       title: '07. APPLY',
       icon: <CheckCircle2 className="w-4 h-4 text-[#42B8E8]" />,
-      detail: 'Deploy live production assets into SANR Corp ventures and SAYEMATRIX digital ecosystem.'
+      detail: 'Deploy live production assets into QYNTIQ software systems and the SAYEMATRIX digital ecosystem.'
     }
   ];
 

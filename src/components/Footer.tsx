@@ -74,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
               </li>
               <li>
                 <button onClick={() => handleNav('home', 'ventures')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
-                  04. SANR &amp; Ventures
+                  04. QYNTIQ &amp; Ventures
                 </button>
               </li>
               <li>
@@ -88,8 +88,8 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('cv')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
-                  07. CV / Resume
+                <button onClick={() => handleNav('home', 'contact')} className="hover:text-[#F5F7FA] transition-colors cursor-pointer">
+                  07. Contact SAYEM
                 </button>
               </li>
             </ul>
@@ -189,8 +189,14 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onNavigateSection
                   <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
                 </a>
               </li>
+              <li>
+                <a href="https://www.instagram.com/pynriq/" target="_blank" rel="noopener noreferrer" className="hover:text-[#F8FAFC] flex items-center justify-between text-[11px] transition-colors">
+                  <span>PYNRIQ</span>
+                  <span className="text-[10px] text-[#42B8E8] font-bold">IG ↗</span>
+                </a>
+              </li>
               <li className="pt-2 text-[10px] text-[#A7B0BA]">
-                PRIMARY VENTURE: <strong className="text-[#F5F7FA] block">SANR Corporation Limited</strong>
+                PRIMARY VENTURE: <strong className="text-[#F5F7FA] block">QYNTIQ</strong>
               </li>
             </ul>
           </div>

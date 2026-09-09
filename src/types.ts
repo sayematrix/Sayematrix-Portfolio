@@ -1,4 +1,4 @@
-export type NavigationPage = 'home' | 'about' | 'work' | 'research' | 'ventures' | 'ecosystem' | 'lifestyle' | 'cv' | 'contact';
+export type NavigationPage = 'home' | 'about' | 'work' | 'research' | 'ventures' | 'ecosystem' | 'lifestyle' | 'contact';
 
 export interface Project {
   id: string;
@@ -124,6 +124,11 @@ export interface Venture {
   status: string;
   linkText: string;
   url?: string;
+  flow?: string;
+  direction?: string;
+  coreAreas?: string[];
+  keyPurpose?: string;
+  positioningStatement?: string;
 }
 
 export interface EcosystemDomain {
@@ -137,6 +142,8 @@ export interface EcosystemDomain {
   color: string;
   active: boolean;
   instagramUrl?: string;
+  actionText?: string;
+  brandType?: string;
 }
 
 export interface TimelineMilestone {

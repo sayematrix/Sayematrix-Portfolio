@@ -23,7 +23,6 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { AboutPage } from './pages/AboutPage';
-import { CvPage } from './pages/CvPage';
 import { EcosystemPage } from './pages/EcosystemPage';
 import { LifestylePage } from './pages/LifestylePage';
 import { ResearchPaperPage } from './pages/ResearchPaperPage';
@@ -47,10 +46,6 @@ export default function App() {
           top: Math.max(0, offsetPosition),
           behavior: 'smooth'
         });
-
-        if (window.history.pushState) {
-          window.history.pushState(null, '', `#${sectionId}`);
-        }
         return true;
       }
       return false;
@@ -67,15 +62,37 @@ export default function App() {
     }
   };
 
-  // Sync hash routing on initial load & back/forward navigation
+  // Enforce Hero section at top on initial load & sync standalone page routes
   React.useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (!hash) return;
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
 
-      if (hash === 'cv') {
-        setActivePage('cv');
-      } else if (hash === 'about-page') {
+    // If an initial route/hash is #ventures, remove it immediately
+    const initialHash = window.location.hash.replace('#', '').toLowerCase();
+    if (initialHash === 'ventures' || initialHash.includes('ventures')) {
+      if (window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+
+    // Force initial scroll position to strictly start at top on Hero section
+    window.scrollTo(0, 0);
+    const topTimer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
+
+    const handleHash = (isInitial = false) => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) {
+        if (isInitial) {
+          window.scrollTo(0, 0);
+        }
+        return;
+      }
+
+      // Standalone full pages
+      if (hash === 'about-page') {
         setActivePage('about');
       } else if (hash === 'research-library' || hash === 'papers') {
         setActivePage('research');
@@ -84,6 +101,11 @@ export default function App() {
       } else if (hash === 'lifestyle-page') {
         setActivePage('lifestyle');
       } else if (['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'].includes(hash)) {
+        // On initial page load, NEVER auto-scroll to sections; start at Hero section
+        if (isInitial) {
+          window.scrollTo(0, 0);
+          return;
+        }
         setActivePage('home');
         setSelectedPaperId(null);
         setSelectedProjectId(null);
@@ -91,9 +113,24 @@ export default function App() {
       }
     };
 
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
+    handleHash(true);
+    const onHashChange = () => handleHash(false);
+    window.addEventListener('hashchange', onHashChange);
+
+    // Global keyboard shortcut to open Command Palette
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+
+    return () => {
+      clearTimeout(topTimer);
+      window.removeEventListener('hashchange', onHashChange);
+      window.removeEventListener('keydown', handleGlobalKeyDown);
+    };
   }, []);
 
   const handleExploreWork = () => {
@@ -131,6 +168,7 @@ export default function App() {
       {/* Command Palette Search Overlay */}
       <CommandPalette
         isOpen={commandPaletteOpen}
+        onOpen={() => setCommandPaletteOpen(true)}
         onClose={() => setCommandPaletteOpen(false)}
         setActivePage={(page) => {
           setActivePage(page);
@@ -207,7 +245,7 @@ export default function App() {
                 {/* 09. Knowledge Transformation Workflow */}
                 <KnowledgeWorkflow />
 
-                {/* 10. Ventures (SANR & SAYEMATRIX) */}
+                {/* 10. Ventures (QYNTIQ & SAYEMATRIX) */}
                 <VenturesSection
                   onExploreVenture={(ventureId) => {
                     if (ventureId === 'sayematrix-eco') {
@@ -257,12 +295,21 @@ export default function App() {
               <AboutPage
                 setActivePage={setActivePage}
                 onNavigateSection={scrollToSection}
+                onBackToMain={() => {
+                  setActivePage('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               />
             )}
 
-            {activePage === 'cv' && <CvPage />}
-
-            {activePage === 'ecosystem' && <EcosystemPage />}
+            {activePage === 'ecosystem' && (
+              <EcosystemPage
+                onBackToMain={() => {
+                  setActivePage('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            )}
 
             {activePage === 'lifestyle' && (
               <LifestylePage

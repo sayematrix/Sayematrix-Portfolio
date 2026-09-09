@@ -57,7 +57,6 @@ SAYEMATRIX serves as a comprehensive digital nexus designed to organize and pres
     ├── types.ts            # TypeScript interfaces & domain types
     ├── pages/              # Standalone page views
     │   ├── AboutPage.tsx   # Detailed profile page
-    │   ├── CvPage.tsx      # Interactive CV & career resume
     │   └── EcosystemPage.tsx # Deep-dive Ecosystem sub-brand page
     ├── data/
     │   └── content.ts      # Structured data for projects, research, timeline, & ecosystem

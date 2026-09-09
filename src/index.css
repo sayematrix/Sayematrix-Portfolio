@@ -90,7 +90,7 @@
   background: #242C35;
 }
 
-/* Print optimizations for CV and Research Paper exports */
+/* Print optimizations for Research Paper exports */
 @media print {
   body, html {
     background-color: #ffffff !important;

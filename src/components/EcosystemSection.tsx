@@ -9,6 +9,7 @@ import {
   BookOpen, 
   TrendingUp, 
   Palette, 
+  PenTool,
   Globe, 
   Cpu, 
   Layers, 
@@ -35,6 +36,9 @@ export const EcosystemSection: React.FC = () => {
         return <TrendingUp className={className} />;
       case 'creative':
         return <Palette className={className} />;
+      case 'pynriq':
+      case 'writing':
+        return <PenTool className={className} />;
       case 'life':
       default:
         return <Globe className={className} />;
@@ -148,7 +152,7 @@ export const EcosystemSection: React.FC = () => {
                     <span 
                       className="text-[10px] font-mono font-bold uppercase tracking-widest block text-[#42B8E8]"
                     >
-                      {selectedDomain.pillar} VERTICAL NODE
+                      {selectedDomain.brandType ? selectedDomain.brandType.toUpperCase() : `${selectedDomain.pillar} VERTICAL NODE`}
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-sans font-black text-[#F5F7FA]">
                       {selectedDomain.brand}
@@ -210,24 +214,19 @@ export const EcosystemSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Actions & Instagram */}
+            {/* Bottom Actions & Instagram Channel Direct Link */}
             <div className="pt-4 border-t border-[#1B2127] flex flex-wrap items-center justify-between gap-4">
-              {selectedDomain.instagramUrl ? (
+              {selectedDomain.instagramUrl && (
                 <a
                   href={selectedDomain.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#0E1217] border border-[#1B2127] hover:border-[#2D9CDB]/40 text-xs font-mono text-[#F5F7FA] transition-all group shadow-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#0E1217] border border-[#1B2127] hover:border-[#2D9CDB]/40 text-xs font-mono text-[#F5F7FA] transition-all group shadow-sm cursor-pointer"
                 >
                   <Instagram className="w-4 h-4 text-[#42B8E8] group-hover:rotate-6 transition-transform" />
                   <span>Access <strong className="text-[#42B8E8]">{selectedDomain.brand}</strong> Channel</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#6F7882] group-hover:text-[#42B8E8] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </a>
-              ) : (
-                <div className="text-xs font-mono text-[#6F7882] flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#42B8E8]" />
-                  <span>Integrated Central Ecosystem Node</span>
-                </div>
               )}
 
               <div className="text-[11px] font-mono text-[#6F7882]">
@@ -315,9 +314,7 @@ export const EcosystemSection: React.FC = () => {
             </div>
 
           </div>
-
         </div>
-
       </div>
     </section>
   );

@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
                   FOUNDER
                 </span>
                 <p className="text-xl sm:text-2xl font-sans font-bold text-[#F5F7FA] tracking-tight">
-                  SANR Corporation Limited
+                  QYNTIQ
                 </p>
               </div>
 

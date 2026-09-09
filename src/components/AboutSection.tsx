@@ -42,14 +42,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onReadFullProfile })
                   Combines quantitative analysis, market intelligence, data, AI, automation, and systems architecture to research, design, and build intelligent financial systems, trading technologies, and digital products.
                 </p>
                 <p>
-                  Through <strong className="text-[#F5F7FA]">SANR Corporation Limited</strong> and the <strong className="text-[#F5F7FA]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
+                  Through <strong className="text-[#F5F7FA]">QYNTIQ</strong> and the <strong className="text-[#F5F7FA]">SAYEMATRIX</strong> ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.
                 </p>
               </div>
             </div>
 
             <div className="pt-6 mt-6 border-t border-[#1B2127] flex flex-wrap items-center justify-between gap-4">
               <div className="text-xs font-mono text-[#A7B0BA]">
-                PRIMARY BUSINESS: <span className="text-[#42B8E8] font-bold">SANR CORP</span>
+                PRIMARY BUSINESS: <span className="text-[#42B8E8] font-bold">QYNTIQ</span>
               </div>
               <button
                 onClick={onReadFullProfile}
@@ -74,7 +74,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onReadFullProfile })
             <div className="space-y-3 text-xs font-mono">
               <div className="p-3 rounded bg-[#0E1217] border border-[#1B2127]">
                 <span className="text-[#6F7882] block text-[10px] uppercase mb-0.5">FOUNDER</span>
-                <span className="text-[#F5F7FA] font-bold text-sm">SANR Corporation Limited</span>
+                <span className="text-[#F5F7FA] font-bold text-sm">QYNTIQ</span>
               </div>
 
               <div className="p-3 rounded bg-[#0E1217] border border-[#1B2127]">

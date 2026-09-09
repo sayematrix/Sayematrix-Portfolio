@@ -7,7 +7,7 @@ export { RESEARCH_PAPERS };
 export const PERSONAL_INFO = {
   name: 'SAYEM',
   brand: 'SAYEMATRIX',
-  company: 'SANR Corporation Limited',
+  company: 'QYNTIQ',
   tagline: 'Quant Finance & Algorithmic Trading • AI & Automation • Financial Technology',
   headline: 'Building at the intersection of AI, Automation, Financial Technology, and Quantitative Systems.',
   subheadline: 'Focused on multi-agent AI, financial market technology, automated workflow infrastructure, and quantitative decision platforms.',
@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   education: 'Southeast University',
   degreeProgram: 'Computer Science & Engineering',
   roles: [
-    'Founder | SANR Corporation Limited',
+    'Founder | QYNTIQ',
     'Creator & Systems Architect | SAYEMATRIX',
     'Quant Finance & Algorithmic Trading',
     'AI • Automation • Financial Technology',
@@ -26,7 +26,7 @@ export const PERSONAL_INFO = {
   fullBioParagraphs: [
     `A multidisciplinary builder focused on quantitative finance, algorithmic trading, financial intelligence, AI, automation, and financial technology.`,
     `Combines quantitative analysis, market intelligence, data, AI, automation, and systems architecture to research, design, and build intelligent financial systems, trading technologies, and digital products.`,
-    `Through SANR Corporation Limited and the SAYEMATRIX ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.`
+    `Through QYNTIQ and the SAYEMATRIX ecosystem, conducts multidisciplinary research and develops proprietary systems, tools, and digital infrastructure for long-term technological and venture development.`
   ],
   philosophies: [
     'RESEARCH DEEPLY.',
@@ -46,7 +46,7 @@ export const PERSONAL_INFO = {
     primaryDomain: 'Financial Technology & Financial Markets',
     buildingFocus: 'Trading Systems • Financial Intelligence • Digital Systems',
     longTermDirection: 'Financial Technology → Digital Products → Scalable Ventures',
-    businessVehicles: 'SANR Corporation Limited • SAYEMATRIX',
+    businessVehicles: 'QYNTIQ • SAYEMATRIX',
     operatingLoop: 'Research → Design → Build → Test → Deploy → Improve → Scale'
   },
   workingPrinciples: [
@@ -512,19 +512,36 @@ export const SELECTED_PROJECTS: Project[] = [
 
 export const VENTURES: Venture[] = [
   {
-    id: 'sanr-corp',
-    name: 'SANR CORPORATION LIMITED',
-    label: 'PRIMARY BUSINESS VENTURE',
-    subtitle: 'Primary Corporate Foundation',
-    description: 'SANR Corporation Limited serves as the primary corporate foundation for building, holding, and scaling technology ventures, software intellectual property, strategic investments, and long-term business assets.',
+    id: 'qyntiq',
+    name: 'QYNTIQ',
+    label: 'SOFTWARE COMPANY',
+    subtitle: 'AI × Quant Finance × FinTech Software Company',
+    description: 'QYNTIQ is a technology company focused on researching, engineering, and building intelligent software systems across artificial intelligence, quantitative finance, financial technology, algorithmic systems, data, and software engineering for complex financial and technical problems.',
     highlights: [
-      'Corporate framework for multi-domain technology ventures',
-      'Capital allocation and software equity development',
-      'Incubator for AI, FinTech, and enterprise automation',
-      'Structured for sustainable, long-term institutional value'
+      'Intelligent software engineering & complex financial problem solving',
+      'Quantitative analysis, algorithmic trading & financial markets technology',
+      'Scalable software architecture, high-throughput APIs & FinTech products'
     ],
-    status: 'Active / Core Foundation',
-    linkText: 'Explore SANR'
+    status: 'Active / Software Company',
+    linkText: 'EXPLORE QYNTIQ',
+    keyPurpose: 'QYNTIQ researches, engineers, and builds intelligent software and technology systems for complex financial and technical problems.',
+    positioningStatement: 'QYNTIQ is an institutional software and technology engineering company — not a retail trading signal provider, investment fund, broker, retail trading guru, or marketing agency.',
+    flow: 'Research → Engineering → Systems → Products → Scale',
+    direction: 'Technology Services → Quant Software → AI Systems → FinTech Products → Technology Venture',
+    coreAreas: [
+      'AI & Machine Learning',
+      'Quantitative Finance',
+      'Quantitative Analysis',
+      'Algorithmic & Systematic Trading Technology',
+      'Financial Markets Technology',
+      'Data Analysis & Financial Intelligence',
+      'Software Engineering',
+      'System Architecture',
+      'Automation',
+      'FinTech Products',
+      'APIs & SaaS',
+      'Quantitative Software Systems'
+    ]
   },
   {
     id: 'sayematrix-eco',
@@ -534,13 +551,11 @@ export const VENTURES: Venture[] = [
     description: 'SAYEMATRIX is an independent digital ecosystem integrating multidisciplinary research, technology, digital systems, financial intelligence, creative work, and personal development into a unified platform for learning, building, creating, and long-term growth.',
     highlights: [
       'Unified digital ecosystem connecting specialized domains and brands',
-      'Multidisciplinary research, knowledge, technology, and digital systems',
-      'Financial intelligence, creative development, and human growth',
-      'Modular digital products, tools, and proprietary systems',
-      'Built for continuous learning, creation, innovation, and scalable impact'
+      'Multidisciplinary research, technology, systems, and creative intelligence',
+      'Modular digital products, proprietary tools, and personal development'
     ],
     status: 'Active / Evolving Engine',
-    linkText: 'Explore SAYEMATRIX'
+    linkText: 'EXPLORE SAYEMATRIX'
   }
 ];
 
@@ -606,15 +621,16 @@ export const ECOSYSTEM_DOMAINS: EcosystemDomain[] = [
     instagramUrl: 'https://www.instagram.com/artenixo/'
   },
   {
-    id: 'life',
-    pillar: 'LIFE',
-    brand: 'SAYEMATRIX',
-    tagline: 'The overarching digital operating ecosystem',
-    description: 'The master node connecting learning, building, creating, personal growth, and holistic life balance into a singular operating system.',
-    focusArea: 'The broader ecosystem connecting learning, building, creating, and living',
-    topics: ['Life Operating System', 'Holistic Systems', 'Personal Growth', 'Legacy Building'],
-    color: '#10B981',
-    active: true
+    id: 'pynriq',
+    pillar: 'WRITING',
+    brand: 'PYNRIQ',
+    tagline: 'Personal Writing & Real Thoughts',
+    description: 'A personal space for my real thoughts, life experiences, stories, observations, lessons, ideas, and everything I genuinely want to write and share.',
+    focusArea: 'Personal writing, real thoughts, life experiences, observations, lessons, ideas',
+    topics: ['Real Thoughts', 'Life Experiences', 'Stories & Lessons', 'Observations & Ideas'],
+    color: '#38BDF8',
+    active: true,
+    instagramUrl: 'https://www.instagram.com/pynriq/'
   }
 ];
 
@@ -631,17 +647,17 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     year: 'SAYEMATRIX',
     title: 'Digital Ecosystem Expansion',
     subtitle: 'Unified Multi-Domain Brand Engine',
-    description: 'Launching GUIDE2FAITH, NEUROMATRIX, TOP10.INSIGHTS, WEALTRIXO, and ARTENIXO under the core SAYEMATRIX umbrella.',
+    description: 'Launching GUIDE2FAITH, NEUROMATRIX, TOP10.INSIGHTS, WEALTRIXO, ARTENIXO, and PYNRIQ under the core SAYEMATRIX umbrella.',
     status: 'In Progress',
     tags: ['Ecosystem', 'Knowledge Hub', 'Digital Assets']
   },
   {
-    year: 'SANR Corp',
-    title: 'Long-Term Business Venture',
-    subtitle: 'Corporate Foundation & Holding Infrastructure',
-    description: 'Establishing SANR Corporation Limited as the formal corporate vehicle for software ventures, technology investments, and enterprise operations.',
+    year: 'QYNTIQ',
+    title: 'Software Company & Quant Technology',
+    subtitle: 'AI × Quant Finance × FinTech Systems',
+    description: 'Building intelligent software for complex financial and technical problems across AI, quantitative finance, systematic trading, and FinTech systems.',
     status: 'In Progress',
-    tags: ['Venture', 'Corporate', 'Long-Term']
+    tags: ['QYNTIQ', 'AI', 'Quant Finance', 'FinTech']
   },
   {
     year: 'Future',

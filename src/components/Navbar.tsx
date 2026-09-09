@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage } from '../types';
-import { PERSONAL_INFO } from '../data/content';
-import { Search, ArrowUpRight, Menu, X, Command, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { SayematrixLogo } from './SayematrixLogo';
 
 interface NavbarProps {
   activePage: NavigationPage;
   setActivePage: (page: NavigationPage) => void;
-  onOpenCommandPalette: () => void;
+  onOpenCommandPalette?: () => void;
   onNavigateSection: (sectionId: string) => void;
 }
 
@@ -36,7 +35,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'ventures', label: 'Ventures', page: 'home', sectionId: 'ventures' },
     { id: 'ecosystem', label: 'Ecosystem', page: 'home', sectionId: 'ecosystem' },
     { id: 'lifestyle', label: 'Lifestyle', page: 'home', sectionId: 'lifestyle' },
-    { id: 'cv', label: 'CV', page: 'cv' },
     { id: 'contact', label: 'Contact', page: 'home', sectionId: 'contact' },
   ];
 
@@ -194,23 +192,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Action Tools */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Command Palette Trigger Button */}
-            <button
-              onClick={onOpenCommandPalette}
-              className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#A7B0BA] hover:text-[#F5F7FA] hover:border-[#2D9CDB]/40 transition-all shrink-0 cursor-pointer"
-              id="cmd-palette-trigger"
-              title="Open Command Palette (⌘ K)"
-            >
-              <Command className="w-3.5 h-3.5 text-[#42B8E8]" />
-              <span>Search</span>
-              <kbd className="px-1.5 py-0.5 rounded bg-[#151A1F] border border-[#1B2127] text-[10px] text-[#6F7882]">
-                ⌘K
-              </kbd>
-            </button>
-
-            {/* Engage Telegram External Link CTA */}
+            {/* Engage GitHub External Link CTA */}
             <a
-              href={PERSONAL_INFO.contact.telegram}
+              href="https://github.com/sayematrix"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#0E1217] hover:bg-[#151A1F] border border-[#1B2127] hover:border-[#2D9CDB]/40 text-xs font-mono text-[#F5F7FA] transition-all group shrink-0"
@@ -235,18 +219,6 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile Navigation Drawer with Illuminated Active State */}
         {mobileMenuOpen && (
           <div className="md:hidden w-full max-w-full box-border bg-[#050607] border-b border-[#1B2127] px-4 pt-3 pb-6 mt-3 space-y-2.5 max-h-[calc(100dvh-4.5rem)] overflow-y-auto overflow-x-hidden animate-in fade-in slide-in-from-top duration-200">
-            {/* Responsive Search Action */}
-            <div className="pb-2.5 border-b border-[#1B2127] min-w-0 w-full box-border">
-              <button
-                onClick={onOpenCommandPalette}
-                className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#0E1217] border border-[#1B2127] text-xs font-mono text-[#A7B0BA] hover:text-[#F5F7FA] hover:border-[#2D9CDB]/40 transition-colors"
-                id="mobile-search-trigger"
-              >
-                <Command className="w-3.5 h-3.5 text-[#42B8E8] shrink-0" />
-                <span>Search (⌘K)</span>
-              </button>
-            </div>
-
             {/* Navigation Grid */}
             <div className="grid grid-cols-2 gap-2 pt-1 w-full min-w-0 box-border">
               {navItems.map((item) => {
@@ -271,8 +243,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </div>
 
-            {/* Bottom Contact Action */}
-            <div className="pt-2 w-full min-w-0 flex items-center justify-between box-border">
+            {/* Bottom Actions */}
+            <div className="pt-2 w-full min-w-0 grid grid-cols-2 gap-2 box-border">
+              <a
+                href="https://github.com/sayematrix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-2.5 px-3 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#2D9CDB]/40 text-xs font-mono text-[#F5F7FA] font-medium flex items-center justify-center gap-1.5 transition-all"
+                id="mobile-engage-cta"
+              >
+                <span>Engage</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#42B8E8]" />
+              </a>
               <button
                 onClick={() => handleNavClick('home', 'contact')}
                 className="w-full max-w-full box-border text-center py-2.5 px-3 rounded-lg bg-[#2D9CDB]/10 border border-[#2D9CDB]/30 text-xs font-mono text-[#42B8E8] font-semibold shadow-[0_0_10px_rgba(45,156,219,0.12)] truncate hover:bg-[#2D9CDB]/20 transition-all"
