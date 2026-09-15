@@ -31,12 +31,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreProjects, onA
         
         <div className="max-w-5xl space-y-12 md:space-y-16">
           
-          {/* 1. SAYEM & Primary Identity Statement */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0A0D10]/80 border border-[#1B2127] text-[11px] font-mono tracking-widest text-[#A7B0BA] uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#42B8E8] animate-pulse" />
-              <span>SAYEMATRIX // PERSONAL DIGITAL ECOSYSTEM</span>
-            </div>
 
             <h1 
               className="text-7xl sm:text-9xl md:text-[10rem] lg:text-[11.5rem] font-bold font-wordmark tracking-tight text-[#F5F7FA] leading-none uppercase select-none cursor-default transition-colors duration-300 hover:text-[#42B8E8]" 
