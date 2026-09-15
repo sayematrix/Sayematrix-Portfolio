@@ -67,9 +67,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreProjects, onA
                 <span className="text-[11px] font-mono uppercase tracking-widest text-[#6F7882] block font-semibold">
                   FOUNDER
                 </span>
-                <p className="text-xl sm:text-2xl font-sans font-bold text-[#F5F7FA] tracking-tight">
+                <a
+                  href="https://www.qyntiq.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-xl sm:text-2xl font-sans font-bold text-[#F5F7FA] tracking-tight hover:text-[#42B8E8] transition-colors"
+                  id="hero-qyntiq-link"
+                >
                   QYNTIQ
-                </p>
+                </a>
               </div>
 
               {/* 4. Creator Identity */}
