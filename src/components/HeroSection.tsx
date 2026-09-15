@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreProjects, onA
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0A0D10]/80 border border-[#1B2127] text-[11px] font-mono tracking-widest text-[#A7B0BA] uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#42B8E8] animate-pulse" />
-              <span>SYSTEMS ARCHITECTURE // QUANT FINANCE &amp; AI</span>
+              <span>SAYEMATRIX // PERSONAL DIGITAL ECOSYSTEM</span>
             </div>
 
             <h1 
