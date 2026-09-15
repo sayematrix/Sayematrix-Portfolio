@@ -3,11 +3,11 @@ import { ArrowUpRight } from 'lucide-react';
 import heroBg from '../assets/images/hero_quant_command_center_1787802507626.jpg';
 
 interface HeroSectionProps {
-  onExploreWork: () => void;
+  onExploreProjects: () => void;
   onAboutMe: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAboutMe }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreProjects, onAboutMe }) => {
   return (
     <section 
       className="relative pt-28 pb-20 md:pt-36 md:pb-32 border-b border-[#1B2127] bg-[#050607] overflow-hidden" 
@@ -46,15 +46,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
             </h1>
             
             {/* 2. Primary Identity Statement */}
-            <p className="text-2xl sm:text-3xl md:text-4xl font-sans font-medium text-[#F5F7FA] tracking-wide flex items-center flex-wrap gap-x-3 gap-y-2">
+            <p className="text-xl sm:text-2xl md:text-[1.35rem] lg:text-[1.75rem] xl:text-[2rem] font-sans font-medium text-[#F5F7FA] tracking-wide flex items-center flex-wrap md:flex-nowrap md:whitespace-nowrap gap-x-2 sm:gap-x-2.5 md:gap-x-2 lg:gap-x-3 gap-y-2">
               <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Entrepreneur</span>
-              <span className="text-[#42B8E8] font-light">•</span>
-              <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Investor</span>
-              <span className="text-[#42B8E8] font-light">•</span>
+              <span className="text-[#42B8E8] font-light shrink-0">•</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Founder</span>
+              <span className="text-[#42B8E8] font-light shrink-0">•</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Quant</span>
+              <span className="text-[#42B8E8] font-light shrink-0">•</span>
               <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Developer</span>
-              <span className="text-[#42B8E8] font-light">•</span>
-              <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">OS Builder</span>
-              <span className="text-[#42B8E8] font-light">•</span>
+              <span className="text-[#42B8E8] font-light shrink-0">•</span>
+              <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Systems Builder</span>
+              <span className="text-[#42B8E8] font-light shrink-0">•</span>
               <span className="cursor-default transition-colors duration-200 hover:text-[#42B8E8]">Creator</span>
             </p>
           </div>
@@ -127,11 +129,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreWork, onAbout
           {/* 7. CTA Buttons */}
           <div className="pt-4 flex items-center gap-4 flex-wrap">
             <button
-              onClick={onExploreWork}
+              onClick={onExploreProjects}
               className="group inline-flex items-center gap-2 px-7 py-3 rounded-md bg-[#2D9CDB] hover:bg-[#42B8E8] text-[#050607] font-mono font-bold text-xs tracking-wider uppercase transition-all shadow-md shadow-[#2D9CDB]/15 active:scale-95 cursor-pointer"
-              id="hero-explore-work-btn"
+              id="hero-explore-projects-btn"
             >
-              <span>Explore Work</span>
+              <span>Explore Projects</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
 

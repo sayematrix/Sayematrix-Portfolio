@@ -1,4 +1,4 @@
-export type NavigationPage = 'home' | 'about' | 'work' | 'research' | 'ventures' | 'ecosystem' | 'lifestyle' | 'contact';
+export type NavigationPage = 'home' | 'about' | 'projects' | 'research' | 'ventures' | 'ecosystem' | 'lifestyle' | 'contact' | 'work';
 
 export interface Project {
   id: string;

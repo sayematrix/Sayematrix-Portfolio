@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems: NavItem[] = [
     { id: 'about', label: 'About', page: 'home', sectionId: 'about' },
-    { id: 'work', label: 'Work', page: 'home', sectionId: 'work' },
+    { id: 'projects', label: 'Projects', page: 'home', sectionId: 'projects' },
     { id: 'research', label: 'Research', page: 'home', sectionId: 'research' },
     { id: 'ventures', label: 'Ventures', page: 'home', sectionId: 'ventures' },
     { id: 'ecosystem', label: 'Ecosystem', page: 'home', sectionId: 'ecosystem' },
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       return;
     }
 
-    const sectionIds = ['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'];
+    const sectionIds = ['about', 'projects', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'];
 
     let ticking = false;
 
@@ -243,18 +243,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </div>
 
-            {/* Bottom Actions */}
-            <div className="pt-2 w-full min-w-0 grid grid-cols-2 gap-2 box-border">
-              <a
-                href="https://github.com/sayematrix"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full text-center py-2.5 px-3 rounded-lg bg-[#0E1217] border border-[#1B2127] hover:border-[#2D9CDB]/40 text-xs font-mono text-[#F5F7FA] font-medium flex items-center justify-center gap-1.5 transition-all"
-                id="mobile-engage-cta"
-              >
-                <span>Engage</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#42B8E8]" />
-              </a>
+            {/* Bottom Contact Action */}
+            <div className="pt-2 w-full min-w-0 flex items-center justify-between box-border">
               <button
                 onClick={() => handleNavClick('home', 'contact')}
                 className="w-full max-w-full box-border text-center py-2.5 px-3 rounded-lg bg-[#2D9CDB]/10 border border-[#2D9CDB]/30 text-xs font-mono text-[#42B8E8] font-semibold shadow-[0_0_10px_rgba(45,156,219,0.12)] truncate hover:bg-[#2D9CDB]/20 transition-all"

@@ -100,7 +100,7 @@ export default function App() {
         setActivePage('ecosystem');
       } else if (hash === 'lifestyle-page') {
         setActivePage('lifestyle');
-      } else if (['about', 'work', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'].includes(hash)) {
+      } else if (['about', 'projects', 'research', 'ventures', 'ecosystem', 'lifestyle', 'contact'].includes(hash)) {
         // On initial page load, NEVER auto-scroll to sections; start at Hero section
         if (isInitial) {
           window.scrollTo(0, 0);
@@ -110,6 +110,15 @@ export default function App() {
         setSelectedPaperId(null);
         setSelectedProjectId(null);
         scrollToSection(hash);
+      } else if (hash === 'work') {
+        if (isInitial) {
+          window.scrollTo(0, 0);
+          return;
+        }
+        setActivePage('home');
+        setSelectedPaperId(null);
+        setSelectedProjectId(null);
+        scrollToSection('projects');
       }
     };
 
@@ -133,10 +142,10 @@ export default function App() {
     };
   }, []);
 
-  const handleExploreWork = () => {
+  const handleExploreProjects = () => {
     setActivePage('home');
     setSelectedPaperId(null);
-    scrollToSection('work');
+    scrollToSection('projects');
   };
 
   const handleAboutMe = () => {
@@ -207,7 +216,7 @@ export default function App() {
               <>
                 {/* 01. Hero */}
                 <HeroSection
-                  onExploreWork={handleExploreWork}
+                  onExploreProjects={handleExploreProjects}
                   onAboutMe={handleAboutMe}
                 />
 
@@ -226,7 +235,7 @@ export default function App() {
                 {/* 06. Expertise */}
                 <ExpertiseSection />
 
-                {/* 07. Selected Work */}
+                {/* 07. Selected Projects */}
                 <SelectedWorkSection
                   onSelectProject={(id) => setSelectedProjectId(id)}
                 />
@@ -295,20 +304,11 @@ export default function App() {
               <AboutPage
                 setActivePage={setActivePage}
                 onNavigateSection={scrollToSection}
-                onBackToMain={() => {
-                  setActivePage('home');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
               />
             )}
 
             {activePage === 'ecosystem' && (
-              <EcosystemPage
-                onBackToMain={() => {
-                  setActivePage('home');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              />
+              <EcosystemPage />
             )}
 
             {activePage === 'lifestyle' && (

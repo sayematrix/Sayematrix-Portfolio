@@ -55,7 +55,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       onNavigateSection(value);
     } else if (type === 'project' && onSelectProject) {
       setActivePage('home');
-      onNavigateSection('work');
+      onNavigateSection('projects');
       onSelectProject(value);
     } else if (type === 'note' && onSelectNote) {
       setActivePage('research');
@@ -117,12 +117,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 </button>
 
                 <button
-                  onClick={() => handleAction('section', 'work')}
+                  onClick={() => handleAction('section', 'projects')}
                   className="w-full flex items-center justify-between px-3 py-2 rounded bg-[#0E1217] hover:bg-[#151A20] border border-[#1B2127] text-xs font-mono text-[#F5F7FA] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
                     <Briefcase className="w-3.5 h-3.5 text-[#7DD3FC]" />
-                    <span>Selected Work &amp; Systems</span>
+                    <span>Projects &amp; Systems</span>
                   </div>
                   <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>
@@ -133,7 +133,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 >
                   <div className="flex items-center gap-2">
                     <BookOpen className="w-3.5 h-3.5 text-[#42B8E8]" />
-                    <span>Research Lab Notes</span>
+                    <span>Research Lab</span>
                   </div>
                   <ArrowRight className="w-3 h-3 text-[#6F7882]" />
                 </button>

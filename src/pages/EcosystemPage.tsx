@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { ECOSYSTEM_DOMAINS } from '../data/content';
-import { Network, Sparkles, CheckCircle2, ArrowRight, ArrowLeft, Instagram, ArrowUpRight, PenTool } from 'lucide-react';
+import { Network, Sparkles, CheckCircle2, ArrowRight, Instagram, ArrowUpRight, PenTool } from 'lucide-react';
 
-interface EcosystemPageProps {
-  onBackToMain?: () => void;
-}
-
-export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onBackToMain }) => {
+export const EcosystemPage: React.FC = () => {
   const [activeDomainId, setActiveDomainId] = useState<string>('faith');
 
   const domain = ECOSYSTEM_DOMAINS.find(d => d.id === activeDomainId) || ECOSYSTEM_DOMAINS[0];
@@ -14,21 +10,6 @@ export const EcosystemPage: React.FC<EcosystemPageProps> = ({ onBackToMain }) =>
   return (
     <div className="pt-28 pb-20 bg-[#050607] min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* Navigation Breadcrumb */}
-        {onBackToMain && (
-          <div className="flex items-center justify-between">
-            <button
-              onClick={onBackToMain}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0A0D10] border border-[#1B2127] text-xs font-mono text-[#A7B0BA] hover:text-[#F5F7FA] hover:border-[#42B8E8]/40 transition-colors cursor-pointer"
-              id="ecosystem-back-btn"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 text-[#42B8E8]" />
-              <span>RETURN TO MAIN</span>
-            </button>
-          </div>
-        )}
-
         <div className="space-y-4 border-b border-[#1B2127] pb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0E1217] border border-[#1B2127]">
             <Network className="w-3.5 h-3.5 text-[#42B8E8]" />

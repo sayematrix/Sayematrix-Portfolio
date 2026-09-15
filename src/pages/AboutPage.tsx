@@ -1,40 +1,18 @@
 import React from 'react';
 import { PERSONAL_INFO, CURRENT_FOCUS_GRID, EXPERTISE_CATEGORIES } from '../data/content';
 import { NavigationPage } from '../types';
-import { User, GraduationCap, MapPin, Building2, ShieldCheck, ArrowRight, ArrowLeft, CheckCircle2, Award, Mail, Linkedin } from 'lucide-react';
+import { User, GraduationCap, MapPin, Building2, ShieldCheck, ArrowRight, CheckCircle2, Award, Mail, Linkedin } from 'lucide-react';
 
 interface AboutPageProps {
   setActivePage: (page: NavigationPage) => void;
   onNavigateSection: (sectionId: string) => void;
-  onBackToMain?: () => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateSection, onBackToMain }) => {
-  const handleBack = () => {
-    if (onBackToMain) {
-      onBackToMain();
-    } else {
-      setActivePage('home');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
+export const AboutPage: React.FC<AboutPageProps> = ({ setActivePage, onNavigateSection }) => {
   return (
     <div className="pt-28 pb-20 bg-[#050607] min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
-        {/* Navigation Breadcrumb */}
-        <div className="flex items-center justify-between">
-          <button
-            onClick={handleBack}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0A0D10] border border-[#1B2127] text-xs font-mono text-[#A7B0BA] hover:text-[#F5F7FA] hover:border-[#42B8E8]/40 transition-colors cursor-pointer"
-            id="about-back-btn"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 text-[#42B8E8]" />
-            <span>RETURN TO MAIN</span>
-          </button>
-        </div>
-
         {/* About Hero Header */}
         <div className="space-y-4 border-b border-[#1B2127] pb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0E1217] border border-[#1B2127]">

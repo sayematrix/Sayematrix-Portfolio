@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SELECTED_PROJECTS } from '../data/content';
-import { Project } from '../types';
-import { ArrowUpRight, FolderGit2, Sparkles, Filter } from 'lucide-react';
+import { ArrowUpRight, FolderGit2, Filter } from 'lucide-react';
 
 interface SelectedWorkSectionProps {
   onSelectProject: (projectId: string) => void;
@@ -17,7 +16,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
     : SELECTED_PROJECTS.filter(p => p.tags.includes(selectedTag));
 
   return (
-    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="work">
+    <section className="py-20 bg-[#0A0D10] border-b border-[#1B2127] relative scroll-mt-20 sm:scroll-mt-24" id="projects">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -30,7 +29,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-[#F5F7FA] uppercase tracking-tight">
-              SELECTED <span className="text-[#42B8E8]">WORK</span>
+              SELECTED <span className="text-[#42B8E8]">PROJECTS</span>
             </h2>
             <p className="text-sm font-sans text-[#A7B0BA] mt-2">
               Research, systems, experiments, and digital infrastructure.
@@ -129,3 +128,6 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({ onSele
     </section>
   );
 };
+
+export { SelectedWorkSection as ProjectsSection };
+
